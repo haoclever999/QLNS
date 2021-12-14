@@ -119,10 +119,12 @@ namespace QLNS
             cmd = new SqlCommand("select * from NhanVien", conn);
             SqlDataReader read = cmd.ExecuteReader();
             lsvDSNV.Items.Clear();
-            while(read.Read())
+            
+            /*while(read.Read())
             {
-
-            }
+                string[] ds = new string[10];
+                //ds[0] = 
+            }*/
             cmd.Dispose();
         }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
