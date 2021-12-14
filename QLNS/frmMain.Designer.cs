@@ -47,10 +47,12 @@
             this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelTop.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.panelLeft.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,7 +67,7 @@
             // 
             // panelTop
             // 
-            this.panelTop.BackColor = System.Drawing.Color.LimeGreen;
+            this.panelTop.BackColor = System.Drawing.Color.Transparent;
             this.panelTop.Controls.Add(this.txtTimKiem);
             this.panelTop.Controls.Add(this.cbHoTen);
             this.panelTop.Controls.Add(this.cbMaSo);
@@ -109,9 +111,11 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnTimKiem.BackColor = System.Drawing.Color.LimeGreen;
             this.btnTimKiem.FlatAppearance.BorderSize = 0;
             this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnTimKiem.Location = new System.Drawing.Point(762, 9);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(66, 29);
@@ -152,7 +156,9 @@
             // 
             // panelLeft
             // 
-            this.panelLeft.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panelLeft.BackColor = System.Drawing.Color.Transparent;
+            this.panelLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLeft.BackgroundImage")));
+            this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Controls.Add(this.btnCaiDat);
             this.panelLeft.Controls.Add(this.btnNghiPhep);
             this.panelLeft.Controls.Add(this.btnHopDong);
@@ -176,6 +182,7 @@
             this.btnCaiDat.FlatAppearance.BorderSize = 0;
             this.btnCaiDat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCaiDat.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCaiDat.Image = ((System.Drawing.Image)(resources.GetObject("btnCaiDat.Image")));
             this.btnCaiDat.Location = new System.Drawing.Point(2, 487);
             this.btnCaiDat.Name = "btnCaiDat";
             this.btnCaiDat.Size = new System.Drawing.Size(111, 53);
@@ -194,6 +201,7 @@
             this.btnNghiPhep.FlatAppearance.BorderSize = 0;
             this.btnNghiPhep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNghiPhep.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNghiPhep.Image = ((System.Drawing.Image)(resources.GetObject("btnNghiPhep.Image")));
             this.btnNghiPhep.Location = new System.Drawing.Point(4, 332);
             this.btnNghiPhep.Name = "btnNghiPhep";
             this.btnNghiPhep.Size = new System.Drawing.Size(111, 53);
@@ -212,6 +220,7 @@
             this.btnHopDong.FlatAppearance.BorderSize = 0;
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHopDong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHopDong.Image = ((System.Drawing.Image)(resources.GetObject("btnHopDong.Image")));
             this.btnHopDong.Location = new System.Drawing.Point(4, 279);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(111, 53);
@@ -230,6 +239,7 @@
             this.btnTuyenDung.FlatAppearance.BorderSize = 0;
             this.btnTuyenDung.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTuyenDung.Font = new System.Drawing.Font("Times New Roman", 13.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTuyenDung.Image = ((System.Drawing.Image)(resources.GetObject("btnTuyenDung.Image")));
             this.btnTuyenDung.Location = new System.Drawing.Point(4, 226);
             this.btnTuyenDung.Name = "btnTuyenDung";
             this.btnTuyenDung.Size = new System.Drawing.Size(111, 53);
@@ -248,6 +258,7 @@
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnLuong.Image")));
             this.btnLuong.Location = new System.Drawing.Point(4, 173);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.Size = new System.Drawing.Size(111, 53);
@@ -267,6 +278,9 @@
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
+            this.btnTongQuan.Image = ((System.Drawing.Image)(resources.GetObject("btnTongQuan.Image")));
+            this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTongQuan.ImageKey = "(none)";
             this.btnTongQuan.Location = new System.Drawing.Point(5, 67);
             this.btnTongQuan.Name = "btnTongQuan";
             this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
@@ -285,6 +299,7 @@
             this.btnNhanSu.FlatAppearance.BorderSize = 0;
             this.btnNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanSu.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanSu.Image")));
             this.btnNhanSu.Location = new System.Drawing.Point(4, 120);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.Size = new System.Drawing.Size(111, 53);
@@ -301,6 +316,16 @@
             this.panelSlide.Size = new System.Drawing.Size(4, 53);
             this.panelSlide.TabIndex = 1;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(116, 71);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -316,6 +341,7 @@
             this.panelTop.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.panelLeft.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -340,6 +366,7 @@
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.PictureBox picHinh;
         private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 
