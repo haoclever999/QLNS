@@ -64,7 +64,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaSo = new System.Windows.Forms.TextBox();
+            this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbThongTin.SuspendLayout();
             this.gbGioiTinh.SuspendLayout();
@@ -162,7 +162,7 @@
             this.gbThongTin.Controls.Add(this.label8);
             this.gbThongTin.Controls.Add(this.label5);
             this.gbThongTin.Controls.Add(this.label1);
-            this.gbThongTin.Controls.Add(this.txtMaSo);
+            this.gbThongTin.Controls.Add(this.txtMaNV);
             this.gbThongTin.Controls.Add(this.label2);
             this.gbThongTin.Location = new System.Drawing.Point(10, 3);
             this.gbThongTin.Name = "gbThongTin";
@@ -393,13 +393,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Giới tính";
             // 
-            // txtMaSo
+            // txtMaNV
             // 
-            this.txtMaSo.Location = new System.Drawing.Point(118, 34);
-            this.txtMaSo.MaxLength = 5;
-            this.txtMaSo.Name = "txtMaSo";
-            this.txtMaSo.Size = new System.Drawing.Size(135, 26);
-            this.txtMaSo.TabIndex = 0;
+            this.txtMaNV.Location = new System.Drawing.Point(118, 34);
+            this.txtMaNV.MaxLength = 5;
+            this.txtMaNV.Name = "txtMaNV";
+            this.txtMaNV.Size = new System.Drawing.Size(135, 26);
+            this.txtMaNV.TabIndex = 0;
             // 
             // label2
             // 
@@ -407,9 +407,9 @@
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Location = new System.Drawing.Point(34, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 19);
+            this.label2.Size = new System.Drawing.Size(57, 19);
             this.label2.TabIndex = 0;
-            this.label2.Text = "Mã số";
+            this.label2.Text = "Mã NV";
             // 
             // frmNhanSu
             // 
@@ -423,6 +423,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNhanSu";
             this.Text = "frmNhanSu";
+            this.Load += new System.EventHandler(this.frmNhanSu_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
             this.gbGioiTinh.ResumeLayout(false);
@@ -467,7 +468,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaSo;
+        private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label2;
     }
 }

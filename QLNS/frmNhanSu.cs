@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Data.SqlClient;
 
 namespace QLNS
 {
@@ -17,6 +18,9 @@ namespace QLNS
         {
             InitializeComponent();
         }
+        SQLDatabase sql = new SQLDatabase();
+        SqlConnection conn;
+        SqlCommand cmd;
         private void LamMoi()
         {
             foreach (Control ctr in this.gbThongTin.Controls)
@@ -28,7 +32,7 @@ namespace QLNS
             }
             radNam.Checked = false;
             radNu.Checked = false;
-            txtMaSo.Focus();
+            txtMaNV.Focus();
         }
         private Boolean KTThongTin()
         {
@@ -73,10 +77,10 @@ namespace QLNS
                 }
             }
             //Kiểm tra mã số không bỏ trống
-            if (txtMaSo.Text.Trim() == "")
+            if (txtMaNV.Text.Trim() == "")
             {
                 MessageBox.Show("Mã số nhân viên không được trống", "THÔNG BÁO");
-                txtMaSo.Focus();
+                txtMaNV.Focus();
                 return false;
             }
             //Kiểm tra giới tính không chọn
@@ -109,14 +113,42 @@ namespace QLNS
             }
             return true;
         }
+        public void loadListView()
+        {
+            sql.KetNoi();
+            cmd = new SqlCommand("select * from NhanVien", conn);
+            SqlDataReader read = cmd.ExecuteReader();
+            lsvDSNV.Items.Clear();
+            while(read.Read())
+            {
+
+            }
+            cmd.Dispose();
+        }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
-
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string gioitinh = "";
+            if (radNam.Checked == true)
+                gioitinh = "Nam";
+            if (radNu.Checked == true)
+                gioitinh = "Nữ";
+            //Các thông tin cần thêm
+            string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + "',N'" + txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "',N'" + cmbChucVu.Text + "',N'" + cmbPhongBan.Text + "')";
+            if ((!sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien")) && (!sql.kttrungkhoa(txtEmail.Text, "select Email from NhanVien")) && (!sql.kttrungkhoa(txtSDT.Text, "select SDT from NhanVien")) && (!sql.kttrungkhoa(txtCMND.Text, "select CMND from NhanVien")))
+            {
+                if(KTThongTin())
+                {
+                    sql.KetNoi();
+                    sql.ThucThiKetNoi(insert);
+                    lsvDSNV.Refresh();
+                    //lsvDSNV.Items.Add()
+                }
+            }
 
         }
 
@@ -126,6 +158,11 @@ namespace QLNS
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmNhanSu_Load(object sender, EventArgs e)
         {
 
         }
