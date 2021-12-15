@@ -17,11 +17,11 @@ namespace QLNS
         DataTable table = new DataTable();
         public void KetNoi()
         {
-            if (conn.State == ConnectionState.Open)
-                conn.Close();
+            conn.ConnectionString = connect;//còn lỗi
+            //conn = new SqlConnection(connect);
             conn.Open();
         }
-        void NgatKetNoi()
+        public void NgatKetNoi()
         {
             conn.Close();
         }

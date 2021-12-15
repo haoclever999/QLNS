@@ -132,12 +132,12 @@
             // ChucVu
             // 
             this.ChucVu.Text = "Chức vụ";
-            this.ChucVu.Width = 80;
+            this.ChucVu.Width = 78;
             // 
             // PhongBan
             // 
             this.PhongBan.Text = "Phòng ban";
-            this.PhongBan.Width = 80;
+            this.PhongBan.Width = 78;
             // 
             // gbThongTin
             // 

@@ -17,6 +17,7 @@ namespace QLNS
         public frmNhanSu()
         {
             InitializeComponent();
+            sql.KetNoi();
         }
         SQLDatabase sql = new SQLDatabase();
         SqlConnection conn;
@@ -117,14 +118,23 @@ namespace QLNS
         {
             sql.KetNoi();
             cmd = new SqlCommand("select * from NhanVien", conn);
-            SqlDataReader read = cmd.ExecuteReader();
+            SqlDataReader reader = cmd.ExecuteReader();
             lsvDSNV.Items.Clear();
-            
-            /*while(read.Read())
+            while(reader.Read())
             {
-                string[] ds = new string[10];
-                //ds[0] = 
-            }*/
+                ListViewItem lv = new ListViewItem(reader.GetInt32(0).ToString());
+                lv.SubItems.Add(reader.GetInt32(1).ToString());
+                lv.SubItems.Add(reader.GetInt32(2).ToString());
+                lv.SubItems.Add(reader.GetInt32(3).ToString());
+                lv.SubItems.Add(reader.GetInt32(4).ToString());
+                lv.SubItems.Add(reader.GetInt32(5).ToString());
+                lv.SubItems.Add(reader.GetInt32(6).ToString());
+                lv.SubItems.Add(reader.GetInt32(7).ToString());
+                lv.SubItems.Add(reader.GetInt32(8).ToString());
+                lv.SubItems.Add(reader.GetInt32(9).ToString());
+                lsvDSNV.Items.Add(lv);
+            }
+            sql.NgatKetNoi();
             cmd.Dispose();
         }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,6 +144,7 @@ namespace QLNS
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            sql.KetNoi();
             string gioitinh = "";
             if (radNam.Checked == true)
                 gioitinh = "Nam";
@@ -148,10 +159,9 @@ namespace QLNS
                     sql.KetNoi();
                     sql.ThucThiKetNoi(insert);
                     lsvDSNV.Refresh();
-                    //lsvDSNV.Items.Add()
+                    loadListView();
                 }
             }
-
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -166,7 +176,7 @@ namespace QLNS
 
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
-
+            loadListView();
         }
     }
 }
