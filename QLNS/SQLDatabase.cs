@@ -17,8 +17,7 @@ namespace QLNS
         DataTable table = new DataTable();
         public void KetNoi()
         {
-            conn.ConnectionString = connect;//còn lỗi
-            //conn = new SqlConnection(connect);
+            conn = new SqlConnection(connect);
             conn.Open();
         }
         public void NgatKetNoi()

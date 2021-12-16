@@ -64,11 +64,11 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("UTM Americana EB", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label1.Location = new System.Drawing.Point(232, 105);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(152, 24);
+            this.label1.Size = new System.Drawing.Size(145, 22);
             this.label1.TabIndex = 9;
             this.label1.Text = "Tên đăng nhập";
             // 
@@ -77,7 +77,7 @@
             this.btnThoat.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnThoat.BackColor = System.Drawing.Color.LimeGreen;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThoat.Font = new System.Drawing.Font("UTM Americana EB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThoat.ForeColor = System.Drawing.Color.Black;
             this.btnThoat.Location = new System.Drawing.Point(449, 196);
             this.btnThoat.Name = "btnThoat";
@@ -92,11 +92,11 @@
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("UTM Americana EB", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.label2.Location = new System.Drawing.Point(258, 149);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 24);
+            this.label2.Size = new System.Drawing.Size(91, 22);
             this.label2.TabIndex = 11;
             this.label2.Text = "Mật khẩu";
             // 
@@ -115,7 +115,7 @@
             this.btnDangNhap.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnDangNhap.BackColor = System.Drawing.Color.LimeGreen;
             this.btnDangNhap.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDangNhap.Font = new System.Drawing.Font("UTM Americana EB", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDangNhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDangNhap.ForeColor = System.Drawing.Color.Black;
             this.btnDangNhap.Location = new System.Drawing.Point(285, 196);
             this.btnDangNhap.Name = "btnDangNhap";
@@ -127,10 +127,12 @@
             // 
             // frmDangNhap
             // 
+            this.AcceptButton = this.btnDangNhap;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.CancelButton = this.btnThoat;
             this.ClientSize = new System.Drawing.Size(598, 324);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.txtTenDangNhap);
@@ -140,8 +142,10 @@
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.btnDangNhap);
             this.Name = "frmDangNhap";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmDangNhap_FormClosing);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmDangNhap_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

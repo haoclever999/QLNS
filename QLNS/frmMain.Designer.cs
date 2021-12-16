@@ -31,12 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTop = new System.Windows.Forms.Panel();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.cbHoTen = new System.Windows.Forms.CheckBox();
-            this.cbMaSo = new System.Windows.Forms.CheckBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
-            this.picHinh = new System.Windows.Forms.PictureBox();
-            this.lblUserName = new System.Windows.Forms.Label();
             this.panelCentral = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -50,7 +44,6 @@
             this.panelSlide = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,83 +55,18 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(955, 543);
+            this.panel1.Size = new System.Drawing.Size(1094, 543);
             this.panel1.TabIndex = 12;
             // 
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.Transparent;
-            this.panelTop.Controls.Add(this.txtTimKiem);
-            this.panelTop.Controls.Add(this.cbHoTen);
-            this.panelTop.Controls.Add(this.cbMaSo);
-            this.panelTop.Controls.Add(this.btnTimKiem);
-            this.panelTop.Controls.Add(this.picHinh);
-            this.panelTop.Controls.Add(this.lblUserName);
             this.panelTop.Controls.Add(this.panelCentral);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelTop.Location = new System.Drawing.Point(115, 0);
+            this.panelTop.Location = new System.Drawing.Point(112, 0);
             this.panelTop.Name = "panelTop";
-            this.panelTop.Size = new System.Drawing.Size(840, 543);
+            this.panelTop.Size = new System.Drawing.Size(982, 543);
             this.panelTop.TabIndex = 12;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtTimKiem.Location = new System.Drawing.Point(601, 12);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(155, 26);
-            this.txtTimKiem.TabIndex = 14;
-            // 
-            // cbHoTen
-            // 
-            this.cbHoTen.AutoSize = true;
-            this.cbHoTen.Location = new System.Drawing.Point(444, 14);
-            this.cbHoTen.Name = "cbHoTen";
-            this.cbHoTen.Size = new System.Drawing.Size(69, 23);
-            this.cbHoTen.TabIndex = 13;
-            this.cbHoTen.Text = "Họ tên";
-            this.cbHoTen.UseVisualStyleBackColor = true;
-            // 
-            // cbMaSo
-            // 
-            this.cbMaSo.AutoSize = true;
-            this.cbMaSo.Location = new System.Drawing.Point(528, 14);
-            this.cbMaSo.Name = "cbMaSo";
-            this.cbMaSo.Size = new System.Drawing.Size(67, 23);
-            this.cbMaSo.TabIndex = 13;
-            this.cbMaSo.Text = "Mã số";
-            this.cbMaSo.UseVisualStyleBackColor = true;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.BackColor = System.Drawing.Color.LimeGreen;
-            this.btnTimKiem.FlatAppearance.BorderSize = 0;
-            this.btnTimKiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTimKiem.Image = ((System.Drawing.Image)(resources.GetObject("btnTimKiem.Image")));
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(762, 9);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(66, 29);
-            this.btnTimKiem.TabIndex = 12;
-            this.btnTimKiem.Text = "Tìm";
-            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiem.UseVisualStyleBackColor = false;
-            // 
-            // picHinh
-            // 
-            this.picHinh.Location = new System.Drawing.Point(0, 0);
-            this.picHinh.Name = "picHinh";
-            this.picHinh.Size = new System.Drawing.Size(47, 49);
-            this.picHinh.TabIndex = 11;
-            this.picHinh.TabStop = false;
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(53, 17);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(0, 19);
-            this.lblUserName.TabIndex = 10;
             // 
             // panelCentral
             // 
@@ -149,9 +77,9 @@
             this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
             this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCentral.Location = new System.Drawing.Point(0, 49);
+            this.panelCentral.Location = new System.Drawing.Point(0, 38);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(840, 494);
+            this.panelCentral.Size = new System.Drawing.Size(982, 505);
             this.panelCentral.TabIndex = 9;
             // 
             // panelLeft
@@ -193,9 +121,9 @@
             this.btnCaiDat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCaiDat.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCaiDat.Image = ((System.Drawing.Image)(resources.GetObject("btnCaiDat.Image")));
-            this.btnCaiDat.Location = new System.Drawing.Point(2, 487);
+            this.btnCaiDat.Location = new System.Drawing.Point(4, 490);
             this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.Size = new System.Drawing.Size(111, 53);
+            this.btnCaiDat.Size = new System.Drawing.Size(109, 53);
             this.btnCaiDat.TabIndex = 1;
             this.btnCaiDat.Text = "Cài đặt";
             this.btnCaiDat.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -288,7 +216,6 @@
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
-            this.btnTongQuan.Image = ((System.Drawing.Image)(resources.GetObject("btnTongQuan.Image")));
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTongQuan.ImageKey = "(none)";
             this.btnTongQuan.Location = new System.Drawing.Point(5, 67);
@@ -317,6 +244,7 @@
             this.btnNhanSu.Text = "Nhân sự";
             this.btnNhanSu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnNhanSu.UseVisualStyleBackColor = false;
+            this.btnNhanSu.Click += new System.EventHandler(this.btnNhanSu_Click);
             // 
             // panelSlide
             // 
@@ -330,17 +258,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(955, 543);
+            this.ClientSize = new System.Drawing.Size(1094, 543);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân sự";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
-            this.panelTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
@@ -361,12 +288,6 @@
         private System.Windows.Forms.Button btnTongQuan;
         private System.Windows.Forms.Button btnNhanSu;
         private System.Windows.Forms.Panel panelSlide;
-        private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.CheckBox cbHoTen;
-        private System.Windows.Forms.CheckBox cbMaSo;
-        private System.Windows.Forms.Button btnTimKiem;
-        private System.Windows.Forms.PictureBox picHinh;
-        private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

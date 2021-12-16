@@ -17,11 +17,12 @@ namespace QLNS
         public frmNhanSu()
         {
             InitializeComponent();
-            sql.KetNoi();
         }
-        SQLDatabase sql = new SQLDatabase();
+
         SqlConnection conn;
         SqlCommand cmd;
+        SQLDatabase sql;
+      
         private void LamMoi()
         {
             foreach (Control ctr in this.gbThongTin.Controls)
@@ -116,26 +117,66 @@ namespace QLNS
         }
         public void loadListView()
         {
+            //sql.KetNoi();
+            string query = "select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB";
+
+            dtgvTest.DataSource = DataProvider.Instance.ExcuteQuery(query);
+
+
+
+
+            //lsvDSNV.Items.Clear();
+            //while(reader.Read())
+            //{
+            //    string[] st = new string[10];
+            //    st[0] = reader[0].ToString();
+            //    st[1] = reader[1].ToString();
+            //    st[2] = reader[2].ToString();
+            //    st[3] = reader[3].ToString();
+            //    st[4] = reader[4].ToString();
+            //    st[5] = reader[5].ToString();
+            //    st[6] = reader[6].ToString();
+            //    st[7] = reader[7].ToString();
+            //    st[8] = reader[8].ToString();
+            //    st[9] = reader[9].ToString();
+            //    ListViewItem lv = new ListViewItem(st);
+            //    lsvDSNV.Items.Add(lv);
+            //}
+
+            //cmd.Dispose();
+        }
+        void LoadNhanSu()
+        {
+            //cmd = new SqlCommand("select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB", conn);
+
+        }
+
+        void SetHeaderText()
+        {
+            dtgvTest.Columns["MaNV"].HeaderText = "Mã nhân viên";
+            dtgvTest.Columns["HoTenNV"].HeaderText = "Họ tên";
+            dtgvTest.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dtgvTest.Columns["CMND"].HeaderText = "CMND";
+            dtgvTest.Columns["SDT"].HeaderText = "SDT";
+            dtgvTest.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dtgvTest.Columns["Email"].HeaderText = "Email";
+            dtgvTest.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dtgvTest.Columns["TenPB"].HeaderText = "Tên phòng ban";
+            dtgvTest.Columns["TenCV"].HeaderText = "Tên chức vụ";
+
+        }
+
+
+        public void loadComboBox()
+        {
             sql.KetNoi();
-            cmd = new SqlCommand("select * from NhanVien", conn);
+            cmd = new SqlCommand("select * from ChucVu", conn);
             SqlDataReader reader = cmd.ExecuteReader();
-            lsvDSNV.Items.Clear();
             while(reader.Read())
             {
-                ListViewItem lv = new ListViewItem(reader.GetInt32(0).ToString());
-                lv.SubItems.Add(reader.GetInt32(1).ToString());
-                lv.SubItems.Add(reader.GetInt32(2).ToString());
-                lv.SubItems.Add(reader.GetInt32(3).ToString());
-                lv.SubItems.Add(reader.GetInt32(4).ToString());
-                lv.SubItems.Add(reader.GetInt32(5).ToString());
-                lv.SubItems.Add(reader.GetInt32(6).ToString());
-                lv.SubItems.Add(reader.GetInt32(7).ToString());
-                lv.SubItems.Add(reader.GetInt32(8).ToString());
-                lv.SubItems.Add(reader.GetInt32(9).ToString());
-                lsvDSNV.Items.Add(lv);
+                cmbChucVu.Items.Add(reader["TenCV"]);
+                cmbChucVu.ValueMember = reader["MaCV"].ToString();
             }
-            sql.NgatKetNoi();
-            cmd.Dispose();
         }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -160,23 +201,47 @@ namespace QLNS
                     sql.ThucThiKetNoi(insert);
                     lsvDSNV.Refresh();
                     loadListView();
+                    MessageBox.Show("Thêm thành công");
                 }
             }
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
-
+            string gioitinh = "";
+            if (radNam.Checked == true)
+                gioitinh = "Nam";
+            if (radNu.Checked == true)
+                gioitinh = "Nữ";
+            //+ txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "',N'" + cmbChucVu.Text + "',N'" + cmbPhongBan.Text + "')";
+            string update = "update NhanVien set HoTenNV = N'" + txtHoTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',CMND = N'" + txtCMND.Text + "',SDT = N'" + txtSDT.Text + "',GioiTinh = N'" + gioitinh + "',Email = N'" + txtEmail.Text + "',NgaySinh = N'" + dtpNgaySinh.Text + "'where MaNV = N'" +txtMaNV.Text + "'";
+            if (sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien"))
+            {
+                sql.ThucThiKetNoi(update);
+                lsvDSNV.Refresh();
+                loadListView();
+                MessageBox.Show("Sửa thành công");
+            }
         }
-
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            string delete = "delete from NhanVien where MaNV = '" + txtMaNV.Text + "'";
+            if (MessageBox.Show("Bạn có muốn xóa không", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                sql.ThucThiKetNoi(delete);
+                loadListView();
+                MessageBox.Show("Đã xóa dữ liệu");
+            }
+            if (!sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien"))
+                MessageBox.Show("Nhân viên này chưa có dữ liệu, không thể xóa");
         }
-
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
+            
             loadListView();
+            //sql.KetNoi();
+            //loadListView();
+            //loadComboBox();
+            SetHeaderText();
         }
     }
 }

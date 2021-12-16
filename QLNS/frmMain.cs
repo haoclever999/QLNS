@@ -28,23 +28,6 @@ namespace QLNS
                     return f;
             return null;
         }
-        private void btnNhanSu_Click(object sender, EventArgs e)
-        {
-            Form frm = this.KTForm(typeof(frmMain));
-            if (frm != null)
-                frm.Activate();
-            else
-            {
-                DiChuyenPanel(btnTongQuan);
-                frmNhanSu f1 = new frmNhanSu();
-                f1.TopLevel = false;
-                f1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-                f1.Dock = DockStyle.Fill;
-                f1.Show();
-                panelCentral.Controls.Clear();
-                panelCentral.Controls.Add(f1);
-            }
-        }
 
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
@@ -57,7 +40,23 @@ namespace QLNS
                 DiChuyenPanel(btnTongQuan);
             }
         }
-
+        private void btnNhanSu_Click(object sender, EventArgs e)
+        {
+            Form frm = this.KTForm(typeof(frmNhanSu));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                DiChuyenPanel(btnNhanSu);
+                frmNhanSu f1 = new frmNhanSu();
+                f1.TopLevel = false;
+                f1.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                f1.Dock = DockStyle.Fill;
+                f1.Show();
+                panelCentral.Controls.Clear();
+                panelCentral.Controls.Add(f1);
+            }
+        }
         private void btnLuong_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmLuong));
@@ -102,5 +101,7 @@ namespace QLNS
             if (traloi == DialogResult.OK)
                 Application.Exit();
         }
+
+        
     }
 }

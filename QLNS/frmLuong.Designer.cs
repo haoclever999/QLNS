@@ -74,7 +74,9 @@
             this.btnCapNhat = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnInLuong = new System.Windows.Forms.Button();
+            this.dtgvTest = new System.Windows.Forms.DataGridView();
             this.gbThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).BeginInit();
             this.SuspendLayout();
             // 
             // gbThongTin
@@ -342,7 +344,7 @@
             this.lsvDSLuong.HideSelection = false;
             this.lsvDSLuong.Location = new System.Drawing.Point(20, 196);
             this.lsvDSLuong.Name = "lsvDSLuong";
-            this.lsvDSLuong.Size = new System.Drawing.Size(793, 226);
+            this.lsvDSLuong.Size = new System.Drawing.Size(793, 59);
             this.lsvDSLuong.TabIndex = 3;
             this.lsvDSLuong.UseCompatibleStateImageBehavior = false;
             this.lsvDSLuong.View = System.Windows.Forms.View.Details;
@@ -434,7 +436,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(450, 442);
+            this.btnCapNhat.Location = new System.Drawing.Point(457, 442);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(95, 40);
             this.btnCapNhat.TabIndex = 14;
@@ -444,9 +446,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(571, 442);
+            this.btnXoa.Location = new System.Drawing.Point(578, 442);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(84, 30);
+            this.btnXoa.Size = new System.Drawing.Size(84, 40);
             this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = true;
@@ -456,17 +458,26 @@
             // 
             this.btnInLuong.Location = new System.Drawing.Point(688, 442);
             this.btnInLuong.Name = "btnInLuong";
-            this.btnInLuong.Size = new System.Drawing.Size(104, 30);
+            this.btnInLuong.Size = new System.Drawing.Size(104, 40);
             this.btnInLuong.TabIndex = 16;
             this.btnInLuong.Text = "In bảng lương";
             this.btnInLuong.UseVisualStyleBackColor = true;
             this.btnInLuong.Click += new System.EventHandler(this.btnInLuong_Click);
+            // 
+            // dtgvTest
+            // 
+            this.dtgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvTest.Location = new System.Drawing.Point(20, 277);
+            this.dtgvTest.Name = "dtgvTest";
+            this.dtgvTest.Size = new System.Drawing.Size(793, 127);
+            this.dtgvTest.TabIndex = 17;
             // 
             // frmLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(840, 494);
+            this.Controls.Add(this.dtgvTest);
             this.Controls.Add(this.btnInLuong);
             this.Controls.Add(this.btnTinhLuong);
             this.Controls.Add(this.btnCapNhat);
@@ -483,6 +494,7 @@
             this.Load += new System.EventHandler(this.frmLuong_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -535,5 +547,6 @@
         private System.Windows.Forms.ColumnHeader clhNgayCong;
         private System.Windows.Forms.ColumnHeader clhTienLuong;
         private System.Windows.Forms.ColumnHeader clhGhiChu;
+        private System.Windows.Forms.DataGridView dtgvTest;
     }
 }

@@ -15,6 +15,7 @@ namespace QLNS
         public frmDangNhap()
         {
             InitializeComponent();
+           
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)
@@ -62,6 +63,14 @@ namespace QLNS
         private void frmDangNhap_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void frmDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap_Click(sender, e);
+            }
         }
     }
 }
