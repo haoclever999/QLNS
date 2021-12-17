@@ -42,10 +42,13 @@
             this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
+            this.picHinh = new System.Windows.Forms.PictureBox();
+            this.lblUser = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelTop.SuspendLayout();
             this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +64,8 @@
             // panelTop
             // 
             this.panelTop.BackColor = System.Drawing.Color.Transparent;
+            this.panelTop.Controls.Add(this.lblUser);
+            this.panelTop.Controls.Add(this.picHinh);
             this.panelTop.Controls.Add(this.panelCentral);
             this.panelTop.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelTop.Location = new System.Drawing.Point(112, 0);
@@ -254,6 +259,23 @@
             this.panelSlide.Size = new System.Drawing.Size(4, 53);
             this.panelSlide.TabIndex = 1;
             // 
+            // picHinh
+            // 
+            this.picHinh.Location = new System.Drawing.Point(1, 1);
+            this.picHinh.Name = "picHinh";
+            this.picHinh.Size = new System.Drawing.Size(48, 37);
+            this.picHinh.TabIndex = 10;
+            this.picHinh.TabStop = false;
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(55, 9);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(38, 19);
+            this.lblUser.TabIndex = 11;
+            this.lblUser.Text = "User";
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -268,8 +290,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panelTop.ResumeLayout(false);
+            this.panelTop.PerformLayout();
             this.panelLeft.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -289,6 +313,8 @@
         private System.Windows.Forms.Button btnNhanSu;
         private System.Windows.Forms.Panel panelSlide;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblUser;
+        private System.Windows.Forms.PictureBox picHinh;
     }
 }
 

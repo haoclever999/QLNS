@@ -117,53 +117,34 @@ namespace QLNS
         }
         public void loadListView()
         {
-            //sql.KetNoi();
             string query = "select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB";
 
-            dtgvTest.DataSource = DataProvider.Instance.ExcuteQuery(query);
-
-
-
-
-            //lsvDSNV.Items.Clear();
-            //while(reader.Read())
-            //{
-            //    string[] st = new string[10];
-            //    st[0] = reader[0].ToString();
-            //    st[1] = reader[1].ToString();
-            //    st[2] = reader[2].ToString();
-            //    st[3] = reader[3].ToString();
-            //    st[4] = reader[4].ToString();
-            //    st[5] = reader[5].ToString();
-            //    st[6] = reader[6].ToString();
-            //    st[7] = reader[7].ToString();
-            //    st[8] = reader[8].ToString();
-            //    st[9] = reader[9].ToString();
-            //    ListViewItem lv = new ListViewItem(st);
-            //    lsvDSNV.Items.Add(lv);
-            //}
-
-            //cmd.Dispose();
+            dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
-        void LoadNhanSu()
-        {
-            //cmd = new SqlCommand("select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB", conn);
-
-        }
-
         void SetHeaderText()
         {
-            dtgvTest.Columns["MaNV"].HeaderText = "Mã nhân viên";
-            dtgvTest.Columns["HoTenNV"].HeaderText = "Họ tên";
-            dtgvTest.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dtgvTest.Columns["CMND"].HeaderText = "CMND";
-            dtgvTest.Columns["SDT"].HeaderText = "SDT";
-            dtgvTest.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dtgvTest.Columns["Email"].HeaderText = "Email";
-            dtgvTest.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dtgvTest.Columns["TenPB"].HeaderText = "Tên phòng ban";
-            dtgvTest.Columns["TenCV"].HeaderText = "Tên chức vụ";
-
+            //đặt tên cột
+            dtgvDSNV.Columns["MaNV"].HeaderText = "Mã NV";
+            dtgvDSNV.Columns["HoTenNV"].HeaderText = "Họ tên";
+            dtgvDSNV.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dtgvDSNV.Columns["CMND"].HeaderText = "CMND";
+            dtgvDSNV.Columns["SDT"].HeaderText = "SDT";
+            dtgvDSNV.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dtgvDSNV.Columns["Email"].HeaderText = "Email";
+            dtgvDSNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dtgvDSNV.Columns["TenPB"].HeaderText = "Phòng ban";
+            dtgvDSNV.Columns["TenCV"].HeaderText = "Chức vụ";
+            //đặt chiều rộng cột
+            dtgvDSNV.Columns["MaNV"].Width = 80;
+            dtgvDSNV.Columns["HoTenNV"].Width = 150;
+            dtgvDSNV.Columns["DiaChi"].Width = 120;
+            dtgvDSNV.Columns["CMND"].Width = 120;
+            dtgvDSNV.Columns["SDT"].Width = 120;
+            dtgvDSNV.Columns["GioiTinh"].Width = 110;
+            dtgvDSNV.Columns["Email"].Width = 150;
+            dtgvDSNV.Columns["NgaySinh"].Width = 120;
+            dtgvDSNV.Columns["TenPB"].Width = 120;
+            dtgvDSNV.Columns["TenCV"].Width = 100;
         }
 
 
@@ -199,7 +180,7 @@ namespace QLNS
                 {
                     sql.KetNoi();
                     sql.ThucThiKetNoi(insert);
-                    lsvDSNV.Refresh();
+                    //lsvDSNV.Refresh();
                     loadListView();
                     MessageBox.Show("Thêm thành công");
                 }
@@ -217,7 +198,7 @@ namespace QLNS
             if (sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien"))
             {
                 sql.ThucThiKetNoi(update);
-                lsvDSNV.Refresh();
+                //lsvDSNV.Refresh();
                 loadListView();
                 MessageBox.Show("Sửa thành công");
             }
@@ -242,6 +223,11 @@ namespace QLNS
             //loadListView();
             //loadComboBox();
             SetHeaderText();
+        }
+
+        private void dtgvDSNV_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
