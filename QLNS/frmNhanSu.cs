@@ -115,10 +115,9 @@ namespace QLNS
             }
             return true;
         }
-        public void loadListView()
+        public void loadDataGirdView()
         {
             string query = "select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB";
-
             dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
         void SetHeaderText()
@@ -146,18 +145,14 @@ namespace QLNS
             dtgvDSNV.Columns["TenPB"].Width = 120;
             dtgvDSNV.Columns["TenCV"].Width = 100;
         }
-
-
-        public void loadComboBox()
+        void loadComboBox()
         {
-            sql.KetNoi();
-            cmd = new SqlCommand("select * from ChucVu", conn);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while(reader.Read())
-            {
-                cmbChucVu.Items.Add(reader["TenCV"]);
-                cmbChucVu.ValueMember = reader["MaCV"].ToString();
-            }
+            string query1 = "select TenCV from ChucVu";
+            string query2 = "select TenPB from PhongBan";
+            cmbChucVu.DataSource = DataProvider.Instance.ExcuteQuery(query1);
+            cmbPhongBan.DataSource = DataProvider.Instance.ExcuteQuery(query2);
+            cmbChucVu.DisplayMember = "TenCV";
+            cmbPhongBan.DisplayMember = "TenPB";
         }
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -166,22 +161,20 @@ namespace QLNS
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            sql.KetNoi();
             string gioitinh = "";
             if (radNam.Checked == true)
                 gioitinh = "Nam";
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
-            //Các thông tin cần thêm
-            string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + "',N'" + txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "',N'" + cmbChucVu.Text + "',N'" + cmbPhongBan.Text + "')";
-            if ((!sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien")) && (!sql.kttrungkhoa(txtEmail.Text, "select Email from NhanVien")) && (!sql.kttrungkhoa(txtSDT.Text, "select SDT from NhanVien")) && (!sql.kttrungkhoa(txtCMND.Text, "select CMND from NhanVien")))
+            string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + "',N'" + txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "')";
+            //Còn chức vụ và phòng ban
+            if ((DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) && (DataProvider.Instance.ExcuteQuery("select Email from NhanVien").ToString() != txtEmail.Text) && (DataProvider.Instance.ExcuteQuery("select SDT from NhanVien").ToString() != txtSDT.Text) && (DataProvider.Instance.ExcuteQuery("select CMND from NhanVien").ToString() != txtCMND.Text))
             {
                 if(KTThongTin())
                 {
-                    sql.KetNoi();
-                    sql.ThucThiKetNoi(insert);
-                    //lsvDSNV.Refresh();
-                    loadListView();
+                    DataProvider.Instance.ExcuteNonQuery(insert);
+                    dtgvDSNV.Refresh();
+                    loadDataGirdView();
                     MessageBox.Show("Thêm thành công");
                 }
             }
@@ -193,35 +186,46 @@ namespace QLNS
                 gioitinh = "Nam";
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
-            //+ txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "',N'" + cmbChucVu.Text + "',N'" + cmbPhongBan.Text + "')";
             string update = "update NhanVien set HoTenNV = N'" + txtHoTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',CMND = N'" + txtCMND.Text + "',SDT = N'" + txtSDT.Text + "',GioiTinh = N'" + gioitinh + "',Email = N'" + txtEmail.Text + "',NgaySinh = N'" + dtpNgaySinh.Text + "'where MaNV = N'" +txtMaNV.Text + "'";
-            if (sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien"))
+            if (btnSua.Text == "Sửa")
             {
-                sql.ThucThiKetNoi(update);
-                //lsvDSNV.Refresh();
-                loadListView();
-                MessageBox.Show("Sửa thành công");
+                btnSua.Text = "Cập nhật";
+                txtMaNV.Enabled = false;
             }
+            else
+            {
+                btnSua.Text = "Sửa";
+                txtMaNV.Enabled = true;
+                if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
+                {
+                    if (KTThongTin())
+                    {
+                        DataProvider.Instance.ExcuteNonQuery(update);
+                        dtgvDSNV.Refresh();
+                        loadDataGirdView();
+                        MessageBox.Show("Sửa thành công");
+                    }
+                }
+            }
+            
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string delete = "delete from NhanVien where MaNV = '" + txtMaNV.Text + "'";
             if (MessageBox.Show("Bạn có muốn xóa không", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                sql.ThucThiKetNoi(delete);
-                loadListView();
+                DataProvider.Instance.ExcuteNonQuery(delete);
+                dtgvDSNV.Refresh();
+                loadDataGirdView();
                 MessageBox.Show("Đã xóa dữ liệu");
             }
-            if (!sql.kttrungkhoa(txtMaNV.Text, "select MaNV from NhanVien"))
+            if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) 
                 MessageBox.Show("Nhân viên này chưa có dữ liệu, không thể xóa");
         }
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
-            
-            loadListView();
-            //sql.KetNoi();
-            //loadListView();
-            //loadComboBox();
+            loadComboBox();
+            loadDataGirdView();
             SetHeaderText();
         }
 
@@ -229,5 +233,6 @@ namespace QLNS
         {
 
         }
+        //nút Button còn lỗi
     }
 }

@@ -30,6 +30,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLuong));
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.gbChon = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.cmbPB = new System.Windows.Forms.ComboBox();
             this.cmbCV = new System.Windows.Forms.ComboBox();
             this.txtThuong = new System.Windows.Forms.TextBox();
@@ -55,7 +58,6 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTongLuong = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.lsvDSLuong = new System.Windows.Forms.ListView();
             this.clhMaNV = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clhHoTen = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -75,16 +77,19 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnInLuong = new System.Windows.Forms.Button();
             this.dtgvTest = new System.Windows.Forms.DataGridView();
-            this.gbChon = new System.Windows.Forms.GroupBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
+            this.gbTongLuong = new System.Windows.Forms.GroupBox();
             this.gbThongTin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).BeginInit();
             this.gbChon.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).BeginInit();
+            this.gbTongLuong.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Controls.Add(this.btnInLuong);
+            this.gbThongTin.Controls.Add(this.btnCapNhat);
+            this.gbThongTin.Controls.Add(this.gbTongLuong);
+            this.gbThongTin.Controls.Add(this.btnXoa);
             this.gbThongTin.Controls.Add(this.gbChon);
             this.gbThongTin.Controls.Add(this.cmbPB);
             this.gbThongTin.Controls.Add(this.cmbCV);
@@ -112,10 +117,39 @@
             this.gbThongTin.Controls.Add(this.label1);
             this.gbThongTin.Location = new System.Drawing.Point(2, 5);
             this.gbThongTin.Name = "gbThongTin";
-            this.gbThongTin.Size = new System.Drawing.Size(968, 225);
+            this.gbThongTin.Size = new System.Drawing.Size(968, 202);
             this.gbThongTin.TabIndex = 2;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin";
+            // 
+            // gbChon
+            // 
+            this.gbChon.BackColor = System.Drawing.Color.Transparent;
+            this.gbChon.Controls.Add(this.txtTimKiem);
+            this.gbChon.Controls.Add(this.btnTim);
+            this.gbChon.Location = new System.Drawing.Point(16, 134);
+            this.gbChon.Name = "gbChon";
+            this.gbChon.Size = new System.Drawing.Size(306, 62);
+            this.gbChon.TabIndex = 8;
+            this.gbChon.TabStop = false;
+            this.gbChon.Text = "Tìm kiếm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(194, 26);
+            this.txtTimKiem.TabIndex = 17;
+            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(206, 12);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(94, 40);
+            this.btnTim.TabIndex = 18;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // cmbPB
             // 
@@ -314,20 +348,10 @@
             // 
             // txtTongLuong
             // 
-            this.txtTongLuong.Enabled = false;
-            this.txtTongLuong.Location = new System.Drawing.Point(101, 446);
+            this.txtTongLuong.Location = new System.Drawing.Point(8, 24);
             this.txtTongLuong.Name = "txtTongLuong";
-            this.txtTongLuong.Size = new System.Drawing.Size(185, 26);
+            this.txtTongLuong.Size = new System.Drawing.Size(171, 26);
             this.txtTongLuong.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 449);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 19);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tổng lương";
             // 
             // lsvDSLuong
             // 
@@ -430,7 +454,7 @@
             // btnTinhLuong
             // 
             this.btnTinhLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnTinhLuong.Image")));
-            this.btnTinhLuong.Location = new System.Drawing.Point(324, 442);
+            this.btnTinhLuong.Location = new System.Drawing.Point(185, 16);
             this.btnTinhLuong.Name = "btnTinhLuong";
             this.btnTinhLuong.Size = new System.Drawing.Size(108, 40);
             this.btnTinhLuong.TabIndex = 15;
@@ -441,7 +465,7 @@
             // 
             // btnCapNhat
             // 
-            this.btnCapNhat.Location = new System.Drawing.Point(457, 442);
+            this.btnCapNhat.Location = new System.Drawing.Point(650, 150);
             this.btnCapNhat.Name = "btnCapNhat";
             this.btnCapNhat.Size = new System.Drawing.Size(95, 40);
             this.btnCapNhat.TabIndex = 14;
@@ -451,7 +475,7 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(578, 442);
+            this.btnXoa.Location = new System.Drawing.Point(763, 150);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(84, 40);
             this.btnXoa.TabIndex = 13;
@@ -461,7 +485,7 @@
             // 
             // btnInLuong
             // 
-            this.btnInLuong.Location = new System.Drawing.Point(688, 442);
+            this.btnInLuong.Location = new System.Drawing.Point(858, 150);
             this.btnInLuong.Name = "btnInLuong";
             this.btnInLuong.Size = new System.Drawing.Size(104, 40);
             this.btnInLuong.TabIndex = 16;
@@ -472,53 +496,30 @@
             // dtgvTest
             // 
             this.dtgvTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvTest.Location = new System.Drawing.Point(20, 236);
+            this.dtgvTest.Location = new System.Drawing.Point(20, 213);
             this.dtgvTest.Name = "dtgvTest";
-            this.dtgvTest.Size = new System.Drawing.Size(950, 168);
+            this.dtgvTest.Size = new System.Drawing.Size(950, 290);
             this.dtgvTest.TabIndex = 17;
             // 
-            // gbChon
+            // gbTongLuong
             // 
-            this.gbChon.BackColor = System.Drawing.Color.Transparent;
-            this.gbChon.Controls.Add(this.txtTimKiem);
-            this.gbChon.Controls.Add(this.btnTim);
-            this.gbChon.Location = new System.Drawing.Point(42, 146);
-            this.gbChon.Name = "gbChon";
-            this.gbChon.Size = new System.Drawing.Size(345, 52);
-            this.gbChon.TabIndex = 8;
-            this.gbChon.TabStop = false;
-            this.gbChon.Text = "Tìm kiếm";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(230, 26);
-            this.txtTimKiem.TabIndex = 17;
-            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(264, 16);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 31);
-            this.btnTim.TabIndex = 18;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
+            this.gbTongLuong.BackColor = System.Drawing.Color.Transparent;
+            this.gbTongLuong.Controls.Add(this.btnTinhLuong);
+            this.gbTongLuong.Controls.Add(this.txtTongLuong);
+            this.gbTongLuong.Location = new System.Drawing.Point(328, 134);
+            this.gbTongLuong.Name = "gbTongLuong";
+            this.gbTongLuong.Size = new System.Drawing.Size(303, 62);
+            this.gbTongLuong.TabIndex = 8;
+            this.gbTongLuong.TabStop = false;
+            this.gbTongLuong.Text = "Tổng lương";
             // 
             // frmLuong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(982, 505);
-            this.Controls.Add(this.btnInLuong);
-            this.Controls.Add(this.btnTinhLuong);
-            this.Controls.Add(this.btnCapNhat);
-            this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.lsvDSLuong);
-            this.Controls.Add(this.txtTongLuong);
             this.Controls.Add(this.gbThongTin);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.dtgvTest);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -528,11 +529,12 @@
             this.Load += new System.EventHandler(this.frmLuong_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).EndInit();
             this.gbChon.ResumeLayout(false);
             this.gbChon.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvTest)).EndInit();
+            this.gbTongLuong.ResumeLayout(false);
+            this.gbTongLuong.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -547,7 +549,6 @@
         private System.Windows.Forms.TextBox txtTongLuong;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox txtKiLuat;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.TextBox txtGhiChu;
         private System.Windows.Forms.Label label7;
@@ -587,5 +588,6 @@
         private System.Windows.Forms.GroupBox gbChon;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.GroupBox gbTongLuong;
     }
 }

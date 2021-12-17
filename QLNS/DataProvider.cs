@@ -11,7 +11,7 @@ namespace QLNS
     public class DataProvider
     {
         private static DataProvider instance;
-
+        SqlCommand command;
         public static DataProvider Instance
         {
             get { if (instance == null) instance = new DataProvider(); return instance; }
@@ -21,13 +21,13 @@ namespace QLNS
 
         private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QLNSu;Integrated Security=True";
 
-        public DataTable ExcuteQuery(string query, object[] parameter = null)
+        public DataTable ExcuteQuery(string query, object[] parameter = null) //Trả về giá trị được cung cấp bởi CSDL thông qua lệnh select
         {
             DataTable data = new DataTable();
-            using (SqlConnection connection = new SqlConnection(connectionSTR))
+            using (SqlConnection connection = new SqlConnection(connectionSTR))//sử dụng using thì kết nối sẽ tự động đóng lại ở cuối khối using, không cần gọi Close()
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
+                command = new SqlCommand(query, connection);
                 if (parameter != null)
                 {
                     string[] listpara = query.Split(' ');
@@ -47,7 +47,7 @@ namespace QLNS
             }
             return data;
         }
-        public int ExcuteNonQuery(string query, object[] parameter = null)
+        public int ExcuteNonQuery(string query, object[] parameter = null) //Truy vấn update, delete, insert, trả về hàng được thực thi
         {
             int data = 0;
 
@@ -55,7 +55,7 @@ namespace QLNS
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                command = new SqlCommand(query, connection);
 
                 if (parameter != null)
                 {
@@ -75,14 +75,14 @@ namespace QLNS
             }
             return data;
         }
-        public object ExcuteScalar(string query, object[] parameter = null)
+        public object ExcuteScalar(string query, object[] parameter = null) //Trả về giá trị hàng đầu tiên và cột đầu tiên của kq
         {
             object data = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
                 connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
+                command = new SqlCommand(query, connection);
                 if (parameter != null)
                 {
                     string[] listpara = query.Split(' ');
@@ -100,7 +100,7 @@ namespace QLNS
             }
             return data;
         }
-        public int GetIntValue(string query, object[] parameter = null)
+        public int GetIntValue(string query, object[] parameter = null)//lấy giá trị int, trả về 1 số duy nhất
         {
             int result = 0;
 
@@ -108,7 +108,7 @@ namespace QLNS
             {
                 connection.Open();
 
-                SqlCommand command = new SqlCommand(query, connection);
+                command = new SqlCommand(query, connection);
 
                 if (parameter != null)
                 {

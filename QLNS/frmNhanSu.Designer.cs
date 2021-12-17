@@ -33,6 +33,9 @@
             this.picHinh = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.gbChon = new System.Windows.Forms.GroupBox();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbGioiTinh = new System.Windows.Forms.GroupBox();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
@@ -57,22 +60,15 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.gbChon = new System.Windows.Forms.GroupBox();
-            this.radHoTen = new System.Windows.Forms.RadioButton();
-            this.radMaNV = new System.Windows.Forms.RadioButton();
             this.gbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
+            this.gbChon.SuspendLayout();
             this.gbGioiTinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).BeginInit();
-            this.gbChon.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbThongTin
             // 
-            this.gbThongTin.Controls.Add(this.radHoTen);
-            this.gbThongTin.Controls.Add(this.radMaNV);
             this.gbThongTin.Controls.Add(this.picHinh);
             this.gbThongTin.Controls.Add(this.btnSua);
             this.gbThongTin.Controls.Add(this.btnThem);
@@ -116,9 +112,9 @@
             // btnSua
             // 
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(810, 161);
+            this.btnSua.Location = new System.Drawing.Point(777, 159);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(72, 36);
+            this.btnSua.Size = new System.Drawing.Size(98, 36);
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -128,7 +124,7 @@
             // btnThem
             // 
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(725, 161);
+            this.btnThem.Location = new System.Drawing.Point(680, 159);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(79, 36);
             this.btnThem.TabIndex = 13;
@@ -136,6 +132,35 @@
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // gbChon
+            // 
+            this.gbChon.BackColor = System.Drawing.Color.Transparent;
+            this.gbChon.Controls.Add(this.txtTimKiem);
+            this.gbChon.Controls.Add(this.btnTim);
+            this.gbChon.Location = new System.Drawing.Point(359, 145);
+            this.gbChon.Name = "gbChon";
+            this.gbChon.Size = new System.Drawing.Size(266, 52);
+            this.gbChon.TabIndex = 3;
+            this.gbChon.TabStop = false;
+            this.gbChon.Text = "Tìm kiếm";
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(168, 26);
+            this.txtTimKiem.TabIndex = 17;
+            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Location = new System.Drawing.Point(180, 17);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 31);
+            this.btnTim.TabIndex = 18;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // gbGioiTinh
             // 
@@ -182,7 +207,7 @@
             // btnXoa
             // 
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(888, 161);
+            this.btnXoa.Location = new System.Drawing.Point(890, 161);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(72, 36);
             this.btnXoa.TabIndex = 15;
@@ -365,59 +390,6 @@
             this.dtgvDSNV.TabIndex = 19;
             this.dtgvDSNV.Click += new System.EventHandler(this.dtgvDSNV_Click);
             // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(230, 26);
-            this.txtTimKiem.TabIndex = 17;
-            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Location = new System.Drawing.Point(264, 16);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 31);
-            this.btnTim.TabIndex = 18;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // gbChon
-            // 
-            this.gbChon.BackColor = System.Drawing.Color.Transparent;
-            this.gbChon.Controls.Add(this.txtTimKiem);
-            this.gbChon.Controls.Add(this.btnTim);
-            this.gbChon.Location = new System.Drawing.Point(359, 145);
-            this.gbChon.Name = "gbChon";
-            this.gbChon.Size = new System.Drawing.Size(345, 52);
-            this.gbChon.TabIndex = 3;
-            this.gbChon.TabStop = false;
-            this.gbChon.Text = "Tìm kiếm";
-            // 
-            // radHoTen
-            // 
-            this.radHoTen.AutoSize = true;
-            this.radHoTen.BackColor = System.Drawing.Color.Transparent;
-            this.radHoTen.Location = new System.Drawing.Point(76, 174);
-            this.radHoTen.Name = "radHoTen";
-            this.radHoTen.Size = new System.Drawing.Size(68, 23);
-            this.radHoTen.TabIndex = 4;
-            this.radHoTen.TabStop = true;
-            this.radHoTen.Text = "HoTen";
-            this.radHoTen.UseVisualStyleBackColor = false;
-            // 
-            // radMaNV
-            // 
-            this.radMaNV.AutoSize = true;
-            this.radMaNV.BackColor = System.Drawing.Color.Transparent;
-            this.radMaNV.Location = new System.Drawing.Point(-1, 174);
-            this.radMaNV.Name = "radMaNV";
-            this.radMaNV.Size = new System.Drawing.Size(71, 23);
-            this.radMaNV.TabIndex = 3;
-            this.radMaNV.TabStop = true;
-            this.radMaNV.Text = "MaNV";
-            this.radMaNV.UseVisualStyleBackColor = false;
-            // 
             // frmNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -433,11 +405,11 @@
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
+            this.gbChon.ResumeLayout(false);
+            this.gbChon.PerformLayout();
             this.gbGioiTinh.ResumeLayout(false);
             this.gbGioiTinh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).EndInit();
-            this.gbChon.ResumeLayout(false);
-            this.gbChon.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -473,8 +445,6 @@
         private System.Windows.Forms.PictureBox picHinh;
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.RadioButton radHoTen;
-        private System.Windows.Forms.RadioButton radMaNV;
         private System.Windows.Forms.GroupBox gbChon;
     }
 }
