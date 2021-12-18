@@ -36,11 +36,11 @@ namespace QLNS
                 frm.Activate();
             else
             {
-                panelCentral.Controls.Clear();
+                //panelCentral.Controls.Clear();
                 DiChuyenPanel(btnTongQuan);
             }
         }
-        private void btnNhanSu_Click(object sender, EventArgs e)
+        /*private void btnNhanSu_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmNhanSu));
             if (frm != null)
@@ -88,12 +88,7 @@ namespace QLNS
         private void btnNghiPhep_Click(object sender, EventArgs e)
         {
 
-        }
-
-        private void btnCaiDat_Click(object sender, EventArgs e)
-        {
-
-        }
+        }*/
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -101,7 +96,5 @@ namespace QLNS
             if (traloi == DialogResult.OK)
                 Application.Exit();
         }
-
-        
     }
 }
