@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLuong));
             this.gbThongTin = new System.Windows.Forms.GroupBox();
             this.btnInLuong = new System.Windows.Forms.Button();
             this.btnCapNhat = new System.Windows.Forms.Button();
@@ -156,7 +155,6 @@
             // 
             // btnTinhLuong
             // 
-            this.btnTinhLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnTinhLuong.Image")));
             this.btnTinhLuong.Location = new System.Drawing.Point(185, 16);
             this.btnTinhLuong.Name = "btnTinhLuong";
             this.btnTinhLuong.Size = new System.Drawing.Size(108, 40);

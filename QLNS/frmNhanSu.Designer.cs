@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhanSu));
             this.gbThongTin = new System.Windows.Forms.GroupBox();
             this.picHinh = new System.Windows.Forms.PictureBox();
             this.btnSua = new System.Windows.Forms.Button();
@@ -111,8 +110,7 @@
             // 
             // btnSua
             // 
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.Location = new System.Drawing.Point(777, 159);
+            this.btnSua.Location = new System.Drawing.Point(757, 160);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(98, 36);
             this.btnSua.TabIndex = 14;
@@ -123,10 +121,9 @@
             // 
             // btnThem
             // 
-            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
-            this.btnThem.Location = new System.Drawing.Point(680, 159);
+            this.btnThem.Location = new System.Drawing.Point(655, 159);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(79, 36);
+            this.btnThem.Size = new System.Drawing.Size(96, 36);
             this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -206,10 +203,9 @@
             // 
             // btnXoa
             // 
-            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
-            this.btnXoa.Location = new System.Drawing.Point(890, 161);
+            this.btnXoa.Location = new System.Drawing.Point(861, 161);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(72, 36);
+            this.btnXoa.Size = new System.Drawing.Size(84, 36);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

@@ -40,13 +40,13 @@
             this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panelCentral = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -103,7 +103,6 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 71);
@@ -120,7 +119,6 @@
             this.btnNghiPhep.FlatAppearance.BorderSize = 0;
             this.btnNghiPhep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNghiPhep.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNghiPhep.Image = ((System.Drawing.Image)(resources.GetObject("btnNghiPhep.Image")));
             this.btnNghiPhep.Location = new System.Drawing.Point(4, 337);
             this.btnNghiPhep.Name = "btnNghiPhep";
             this.btnNghiPhep.Size = new System.Drawing.Size(111, 53);
@@ -138,7 +136,6 @@
             this.btnHopDong.FlatAppearance.BorderSize = 0;
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnHopDong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHopDong.Image = ((System.Drawing.Image)(resources.GetObject("btnHopDong.Image")));
             this.btnHopDong.Location = new System.Drawing.Point(4, 284);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(111, 53);
@@ -174,7 +171,6 @@
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuong.Image = ((System.Drawing.Image)(resources.GetObject("btnLuong.Image")));
             this.btnLuong.Location = new System.Drawing.Point(4, 178);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.Size = new System.Drawing.Size(111, 53);
@@ -212,7 +208,6 @@
             this.btnNhanSu.FlatAppearance.BorderSize = 0;
             this.btnNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNhanSu.Image = ((System.Drawing.Image)(resources.GetObject("btnNhanSu.Image")));
             this.btnNhanSu.Location = new System.Drawing.Point(4, 125);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.Size = new System.Drawing.Size(111, 53);
@@ -228,6 +223,18 @@
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(4, 53);
             this.panelSlide.TabIndex = 30;
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.White;
+            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
+            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCentral.Location = new System.Drawing.Point(0, 24);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(977, 519);
+            this.panelCentral.TabIndex = 26;
             // 
             // menuMain
             // 
@@ -248,44 +255,32 @@
             this.đổiMậtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // quảnLýTàiKhoảnToolStripMenuItem
             // 
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.White;
-            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
-            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCentral.Location = new System.Drawing.Point(0, 24);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(977, 519);
-            this.panelCentral.TabIndex = 26;
             // 
             // frmMain
             // 
