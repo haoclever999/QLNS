@@ -172,5 +172,14 @@
   <ItemGroup>
     <None Include="Hinh\add %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\calculator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\updated.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\printer-5836.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

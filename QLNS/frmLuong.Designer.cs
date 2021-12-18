@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.gbThongTin = new System.Windows.Forms.GroupBox();
-            this.btnInLuong = new System.Windows.Forms.Button();
-            this.btnCapNhat = new System.Windows.Forms.Button();
             this.gbTongLuong = new System.Windows.Forms.GroupBox();
-            this.btnTinhLuong = new System.Windows.Forms.Button();
             this.txtTongLuong = new System.Windows.Forms.TextBox();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.gbChon = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
@@ -77,6 +73,10 @@
             this.clhTienLuong = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.clhGhiChu = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.dtgvDSLuong = new System.Windows.Forms.DataGridView();
+            this.btnInLuong = new System.Windows.Forms.Button();
+            this.btnCapNhat = new System.Windows.Forms.Button();
+            this.btnTinhLuong = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
             this.gbTongLuong.SuspendLayout();
             this.gbChon.SuspendLayout();
@@ -121,26 +121,6 @@
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin";
             // 
-            // btnInLuong
-            // 
-            this.btnInLuong.Location = new System.Drawing.Point(858, 150);
-            this.btnInLuong.Name = "btnInLuong";
-            this.btnInLuong.Size = new System.Drawing.Size(104, 40);
-            this.btnInLuong.TabIndex = 16;
-            this.btnInLuong.Text = "In bảng lương";
-            this.btnInLuong.UseVisualStyleBackColor = true;
-            this.btnInLuong.Click += new System.EventHandler(this.btnInLuong_Click);
-            // 
-            // btnCapNhat
-            // 
-            this.btnCapNhat.Location = new System.Drawing.Point(650, 150);
-            this.btnCapNhat.Name = "btnCapNhat";
-            this.btnCapNhat.Size = new System.Drawing.Size(95, 40);
-            this.btnCapNhat.TabIndex = 14;
-            this.btnCapNhat.Text = "Cập nhật";
-            this.btnCapNhat.UseVisualStyleBackColor = true;
-            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
-            // 
             // gbTongLuong
             // 
             this.gbTongLuong.BackColor = System.Drawing.Color.Transparent;
@@ -153,33 +133,12 @@
             this.gbTongLuong.TabStop = false;
             this.gbTongLuong.Text = "Tổng lương";
             // 
-            // btnTinhLuong
-            // 
-            this.btnTinhLuong.Location = new System.Drawing.Point(185, 16);
-            this.btnTinhLuong.Name = "btnTinhLuong";
-            this.btnTinhLuong.Size = new System.Drawing.Size(108, 40);
-            this.btnTinhLuong.TabIndex = 15;
-            this.btnTinhLuong.Text = "Tính lương";
-            this.btnTinhLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnTinhLuong.UseVisualStyleBackColor = true;
-            this.btnTinhLuong.Click += new System.EventHandler(this.btnTinhLuong_Click);
-            // 
             // txtTongLuong
             // 
             this.txtTongLuong.Location = new System.Drawing.Point(8, 24);
             this.txtTongLuong.Name = "txtTongLuong";
             this.txtTongLuong.Size = new System.Drawing.Size(171, 26);
             this.txtTongLuong.TabIndex = 6;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(763, 150);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(84, 40);
-            this.btnXoa.TabIndex = 13;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // gbChon
             // 
@@ -195,19 +154,22 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 23);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(194, 26);
+            this.txtTimKiem.Size = new System.Drawing.Size(214, 26);
             this.txtTimKiem.TabIndex = 17;
             this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
             // 
             // btnTim
             // 
-            this.btnTim.Location = new System.Drawing.Point(206, 12);
+            this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(226, 16);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(94, 40);
+            this.btnTim.Size = new System.Drawing.Size(74, 40);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = true;
             // 
             // cmbPhongBan
@@ -510,6 +472,58 @@
             this.dtgvDSLuong.Name = "dtgvDSLuong";
             this.dtgvDSLuong.Size = new System.Drawing.Size(950, 290);
             this.dtgvDSLuong.TabIndex = 17;
+            // 
+            // btnInLuong
+            // 
+            this.btnInLuong.Image = global::QLNS.Properties.Resources.printer_5836;
+            this.btnInLuong.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInLuong.Location = new System.Drawing.Point(835, 150);
+            this.btnInLuong.Name = "btnInLuong";
+            this.btnInLuong.Size = new System.Drawing.Size(127, 40);
+            this.btnInLuong.TabIndex = 16;
+            this.btnInLuong.Text = "In bảng lương";
+            this.btnInLuong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnInLuong.UseVisualStyleBackColor = true;
+            this.btnInLuong.Click += new System.EventHandler(this.btnInLuong_Click);
+            // 
+            // btnCapNhat
+            // 
+            this.btnCapNhat.Image = global::QLNS.Properties.Resources.updated;
+            this.btnCapNhat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCapNhat.Location = new System.Drawing.Point(640, 150);
+            this.btnCapNhat.Name = "btnCapNhat";
+            this.btnCapNhat.Size = new System.Drawing.Size(99, 40);
+            this.btnCapNhat.TabIndex = 14;
+            this.btnCapNhat.Text = "Cập nhật";
+            this.btnCapNhat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCapNhat.UseVisualStyleBackColor = true;
+            this.btnCapNhat.Click += new System.EventHandler(this.btnCapNhat_Click);
+            // 
+            // btnTinhLuong
+            // 
+            this.btnTinhLuong.Image = global::QLNS.Properties.Resources.calculator;
+            this.btnTinhLuong.Location = new System.Drawing.Point(185, 16);
+            this.btnTinhLuong.Name = "btnTinhLuong";
+            this.btnTinhLuong.Size = new System.Drawing.Size(112, 40);
+            this.btnTinhLuong.TabIndex = 15;
+            this.btnTinhLuong.Text = "Tính lương";
+            this.btnTinhLuong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTinhLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnTinhLuong.UseVisualStyleBackColor = true;
+            this.btnTinhLuong.Click += new System.EventHandler(this.btnTinhLuong_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_104201;
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoa.Location = new System.Drawing.Point(753, 150);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(69, 40);
+            this.btnXoa.TabIndex = 13;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // frmLuong
             // 

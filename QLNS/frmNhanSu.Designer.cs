@@ -340,7 +340,7 @@
             // 
             this.picHinh.Location = new System.Drawing.Point(7, 31);
             this.picHinh.Name = "picHinh";
-            this.picHinh.Size = new System.Drawing.Size(117, 129);
+            this.picHinh.Size = new System.Drawing.Size(117, 164);
             this.picHinh.TabIndex = 16;
             this.picHinh.TabStop = false;
             // 

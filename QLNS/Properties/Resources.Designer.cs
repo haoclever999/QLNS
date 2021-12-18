@@ -74,6 +74,17 @@ namespace QLNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _189_1894796_cathay_life_việt_nam_mở_3_văn_phòng_kinh_doanh_mới_cathay_removebg_preview1 {
+            get {
+                object obj = ResourceManager.GetObject("189-1894796_cathay-life-việt-nam-mở-3-văn-phòng-kinh-doanh-mới-cathay-removebg-pr" +
+                        "eview1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add__1_ {
             get {
                 object obj = ResourceManager.GetObject("add (1)", resourceCulture);
@@ -87,6 +98,16 @@ namespace QLNS.Properties {
         internal static System.Drawing.Bitmap adjust {
             get {
                 object obj = ResourceManager.GetObject("adjust", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap calculator {
+            get {
+                object obj = ResourceManager.GetObject("calculator", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -127,6 +148,16 @@ namespace QLNS.Properties {
         internal static System.Drawing.Bitmap garbage_bin_10420 {
             get {
                 object obj = ResourceManager.GetObject("garbage-bin-10420", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap garbage_bin_104201 {
+            get {
+                object obj = ResourceManager.GetObject("garbage-bin-104201", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -184,9 +215,29 @@ namespace QLNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap printer_5836 {
+            get {
+                object obj = ResourceManager.GetObject("printer-5836", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap switch_off {
             get {
                 object obj = ResourceManager.GetObject("switch-off", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap updated {
+            get {
+                object obj = ResourceManager.GetObject("updated", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

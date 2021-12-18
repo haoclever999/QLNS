@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lblUser = new System.Windows.Forms.Label();
+            this.btnTongQuan = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
             this.menuMain = new System.Windows.Forms.MenuStrip();
             this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,6 @@
             this.btnHopDong = new System.Windows.Forms.Button();
             this.btnTuyenDung = new System.Windows.Forms.Button();
             this.btnLuong = new System.Windows.Forms.Button();
-            this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.panelCentral = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -94,6 +94,27 @@
             this.lblUser.Size = new System.Drawing.Size(38, 19);
             this.lblUser.TabIndex = 33;
             this.lblUser.Text = "User";
+            // 
+            // btnTongQuan
+            // 
+            this.btnTongQuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTongQuan.BackColor = System.Drawing.Color.Transparent;
+            this.btnTongQuan.FlatAppearance.BorderSize = 0;
+            this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
+            this.btnTongQuan.Image = global::QLNS.Properties.Resources.Cty1;
+            this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTongQuan.ImageKey = "(none)";
+            this.btnTongQuan.Location = new System.Drawing.Point(5, 72);
+            this.btnTongQuan.Name = "btnTongQuan";
+            this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
+            this.btnTongQuan.TabIndex = 28;
+            this.btnTongQuan.Text = "Tổng quan";
+            this.btnTongQuan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTongQuan.UseVisualStyleBackColor = false;
             // 
             // panelSlide
             // 
@@ -171,6 +192,7 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Image = global::QLNS.Properties.Resources._189_1894796_cathay_life_việt_nam_mở_3_văn_phòng_kinh_doanh_mới_cathay_removebg_preview1;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 71);
@@ -255,26 +277,6 @@
             this.btnLuong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuong.UseVisualStyleBackColor = false;
-            // 
-            // btnTongQuan
-            // 
-            this.btnTongQuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnTongQuan.BackColor = System.Drawing.Color.Transparent;
-            this.btnTongQuan.FlatAppearance.BorderSize = 0;
-            this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
-            this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTongQuan.ImageKey = "(none)";
-            this.btnTongQuan.Location = new System.Drawing.Point(5, 72);
-            this.btnTongQuan.Name = "btnTongQuan";
-            this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
-            this.btnTongQuan.TabIndex = 28;
-            this.btnTongQuan.Text = "Tổng quan";
-            this.btnTongQuan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTongQuan.UseVisualStyleBackColor = false;
             // 
             // btnNhanSu
             // 
