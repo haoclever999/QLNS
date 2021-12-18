@@ -118,6 +118,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="frmTuyenDung.resx">
       <DependentUpon>frmTuyenDung.cs</DependentUpon>
@@ -134,6 +135,42 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\Cty.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\189-1894796_cathay-life-việt-nam-mở-3-văn-phòng-kinh-doanh-mới-cathay-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\icons8-people-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\coin-dollar-2534.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\icons8-signing-a-document-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\switch-off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\log-out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\Itweek-Knob-Toolbar-Knob-Search.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\Itweek-Knob-Toolbar-Knob-Add.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\adjust.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\garbage-bin-10420.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\add %281%29.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
