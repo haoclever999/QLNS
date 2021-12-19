@@ -69,7 +69,7 @@ namespace QLNS
         private void btnThem_Click(object sender, EventArgs e)
         {
             string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + ")";
-            //Còn chức vụ và phòng ban
+           
             if ((DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text))
             {
                 if (KTThongTin())
@@ -81,6 +81,21 @@ namespace QLNS
                 }
             }
         }
-        
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + ")";
+            
+            if ((DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text))
+            {
+                if (KTThongTin())
+                {
+                    DataProvider.Instance.ExcuteNonQuery(insert);
+                    dtgvDSNV.Refresh();
+                    loadDataGirdView();
+                    MessageBox.Show("Thêm thành công");
+                }
+            }
+        }
     }
 }
