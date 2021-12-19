@@ -55,19 +55,22 @@
             // 
             // btnSua
             // 
-            this.btnSua.Location = new System.Drawing.Point(809, 80);
+            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
+            this.btnSua.Location = new System.Drawing.Point(804, 76);
             this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(98, 36);
+            this.btnSua.Size = new System.Drawing.Size(98, 45);
             this.btnSua.TabIndex = 14;
             this.btnSua.Text = "Sửa";
             this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnXoa
             // 
-            this.btnXoa.Location = new System.Drawing.Point(809, 128);
+            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_104201;
+            this.btnXoa.Location = new System.Drawing.Point(804, 127);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(98, 36);
+            this.btnXoa.Size = new System.Drawing.Size(98, 42);
             this.btnXoa.TabIndex = 15;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -114,9 +117,10 @@
             // 
             // btnThem
             // 
-            this.btnThem.Location = new System.Drawing.Point(809, 29);
+            this.btnThem.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Add;
+            this.btnThem.Location = new System.Drawing.Point(804, 25);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(98, 36);
+            this.btnThem.Size = new System.Drawing.Size(98, 45);
             this.btnThem.TabIndex = 13;
             this.btnThem.Text = "Thêm";
             this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;

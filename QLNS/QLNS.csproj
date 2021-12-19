@@ -181,5 +181,11 @@
   <ItemGroup>
     <None Include="Hinh\printer-5836.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\enter %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\logout %281%29.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
