@@ -57,14 +57,6 @@ namespace QLNS
             dtgvDSNV.Columns["SoNgayNghi"].HeaderText = "Số ngày nghỉ";
             dtgvDSNV.Columns["LyDo"].HeaderText = "Lý do";
             dtgvDSNV.Columns["NgayPhep"].HeaderText = "Ngày nghỉ";
-
-            //đặt chiều rộng cột
-            dtgvDSNV.Columns["MaNV"].Width = 80;
-            dtgvDSNV.Columns["HoTenNV"].Width = 150;
-            dtgvDSNV.Columns["SoNgayNghi"].Width = 80;
-            dtgvDSNV.Columns["LyDo"].Width = 150;
-            dtgvDSNV.Columns["NgayPhep"].Width = 100;
-
         }
         private void btnThem_Click(object sender, EventArgs e)
         {

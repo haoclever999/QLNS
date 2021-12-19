@@ -141,7 +141,7 @@
             this.gbChon.Controls.Add(this.radMaNV);
             this.gbChon.Controls.Add(this.txtTimKiem);
             this.gbChon.Controls.Add(this.btnTim);
-            this.gbChon.Location = new System.Drawing.Point(359, 141);
+            this.gbChon.Location = new System.Drawing.Point(359, 143);
             this.gbChon.Name = "gbChon";
             this.gbChon.Size = new System.Drawing.Size(267, 77);
             this.gbChon.TabIndex = 3;
