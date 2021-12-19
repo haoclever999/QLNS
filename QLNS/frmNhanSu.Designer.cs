@@ -33,6 +33,8 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.gbChon = new System.Windows.Forms.GroupBox();
+            this.radHoTen = new System.Windows.Forms.RadioButton();
+            this.radMaNV = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
             this.gbGioiTinh = new System.Windows.Forms.GroupBox();
@@ -59,8 +61,6 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
-            this.radMaNV = new System.Windows.Forms.RadioButton();
-            this.radHoTen = new System.Windows.Forms.RadioButton();
             this.gbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.gbChon.SuspendLayout();
@@ -97,7 +97,7 @@
             this.gbThongTin.Controls.Add(this.label2);
             this.gbThongTin.Location = new System.Drawing.Point(10, 3);
             this.gbThongTin.Name = "gbThongTin";
-            this.gbThongTin.Size = new System.Drawing.Size(968, 238);
+            this.gbThongTin.Size = new System.Drawing.Size(968, 226);
             this.gbThongTin.TabIndex = 18;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Nhập thông tin";
@@ -147,6 +147,30 @@
             this.gbChon.TabIndex = 3;
             this.gbChon.TabStop = false;
             this.gbChon.Text = "Tìm kiếm";
+            // 
+            // radHoTen
+            // 
+            this.radHoTen.AutoSize = true;
+            this.radHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.radHoTen.Location = new System.Drawing.Point(94, 48);
+            this.radHoTen.Name = "radHoTen";
+            this.radHoTen.Size = new System.Drawing.Size(68, 23);
+            this.radHoTen.TabIndex = 4;
+            this.radHoTen.TabStop = true;
+            this.radHoTen.Text = "Họ tên";
+            this.radHoTen.UseVisualStyleBackColor = false;
+            // 
+            // radMaNV
+            // 
+            this.radMaNV.AutoSize = true;
+            this.radMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.radMaNV.Location = new System.Drawing.Point(13, 48);
+            this.radMaNV.Name = "radMaNV";
+            this.radMaNV.Size = new System.Drawing.Size(75, 23);
+            this.radMaNV.TabIndex = 3;
+            this.radMaNV.TabStop = true;
+            this.radMaNV.Text = "Mã NV";
+            this.radMaNV.UseVisualStyleBackColor = false;
             // 
             // txtTimKiem
             // 
@@ -392,36 +416,12 @@
             this.dtgvDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtgvDSNV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSNV.Location = new System.Drawing.Point(10, 268);
+            this.dtgvDSNV.Location = new System.Drawing.Point(10, 235);
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSNV.Size = new System.Drawing.Size(968, 225);
+            this.dtgvDSNV.Size = new System.Drawing.Size(968, 258);
             this.dtgvDSNV.TabIndex = 19;
             this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
-            // 
-            // radMaNV
-            // 
-            this.radMaNV.AutoSize = true;
-            this.radMaNV.BackColor = System.Drawing.Color.Transparent;
-            this.radMaNV.Location = new System.Drawing.Point(13, 48);
-            this.radMaNV.Name = "radMaNV";
-            this.radMaNV.Size = new System.Drawing.Size(75, 23);
-            this.radMaNV.TabIndex = 3;
-            this.radMaNV.TabStop = true;
-            this.radMaNV.Text = "Mã NV";
-            this.radMaNV.UseVisualStyleBackColor = false;
-            // 
-            // radHoTen
-            // 
-            this.radHoTen.AutoSize = true;
-            this.radHoTen.BackColor = System.Drawing.Color.Transparent;
-            this.radHoTen.Location = new System.Drawing.Point(94, 48);
-            this.radHoTen.Name = "radHoTen";
-            this.radHoTen.Size = new System.Drawing.Size(68, 23);
-            this.radHoTen.TabIndex = 4;
-            this.radHoTen.TabStop = true;
-            this.radHoTen.Text = "Họ tên";
-            this.radHoTen.UseVisualStyleBackColor = false;
             // 
             // frmNhanSu
             // 

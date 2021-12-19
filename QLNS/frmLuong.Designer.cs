@@ -35,9 +35,6 @@
             this.btnTongLuong = new System.Windows.Forms.Button();
             this.txtTongLuong = new System.Windows.Forms.TextBox();
             this.btnXoa = new System.Windows.Forms.Button();
-            this.gbChon = new System.Windows.Forms.GroupBox();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTim = new System.Windows.Forms.Button();
             this.cmbPhongBan = new System.Windows.Forms.ComboBox();
             this.cmbChucVu = new System.Windows.Forms.ComboBox();
             this.txtThuong = new System.Windows.Forms.TextBox();
@@ -63,19 +60,24 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvDSLuong = new System.Windows.Forms.DataGridView();
+            this.gbChon = new System.Windows.Forms.GroupBox();
+            this.radHoTen = new System.Windows.Forms.RadioButton();
+            this.radMaNV = new System.Windows.Forms.RadioButton();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
             this.gbTongLuong.SuspendLayout();
-            this.gbChon.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSLuong)).BeginInit();
+            this.gbChon.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Controls.Add(this.gbChon);
             this.gbThongTin.Controls.Add(this.btnInLuong);
             this.gbThongTin.Controls.Add(this.btnCapNhat);
             this.gbThongTin.Controls.Add(this.gbTongLuong);
             this.gbThongTin.Controls.Add(this.btnXoa);
-            this.gbThongTin.Controls.Add(this.gbChon);
             this.gbThongTin.Controls.Add(this.cmbPhongBan);
             this.gbThongTin.Controls.Add(this.cmbChucVu);
             this.gbThongTin.Controls.Add(this.txtThuong);
@@ -102,7 +104,7 @@
             this.gbThongTin.Controls.Add(this.label1);
             this.gbThongTin.Location = new System.Drawing.Point(2, 5);
             this.gbThongTin.Name = "gbThongTin";
-            this.gbThongTin.Size = new System.Drawing.Size(968, 202);
+            this.gbThongTin.Size = new System.Drawing.Size(968, 219);
             this.gbThongTin.TabIndex = 2;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Thông tin";
@@ -138,7 +140,7 @@
             this.gbTongLuong.BackColor = System.Drawing.Color.Transparent;
             this.gbTongLuong.Controls.Add(this.btnTongLuong);
             this.gbTongLuong.Controls.Add(this.txtTongLuong);
-            this.gbTongLuong.Location = new System.Drawing.Point(328, 134);
+            this.gbTongLuong.Location = new System.Drawing.Point(331, 134);
             this.gbTongLuong.Name = "gbTongLuong";
             this.gbTongLuong.Size = new System.Drawing.Size(303, 62);
             this.gbTongLuong.TabIndex = 8;
@@ -178,38 +180,6 @@
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // gbChon
-            // 
-            this.gbChon.BackColor = System.Drawing.Color.Transparent;
-            this.gbChon.Controls.Add(this.txtTimKiem);
-            this.gbChon.Controls.Add(this.btnTim);
-            this.gbChon.Location = new System.Drawing.Point(16, 134);
-            this.gbChon.Name = "gbChon";
-            this.gbChon.Size = new System.Drawing.Size(306, 62);
-            this.gbChon.TabIndex = 8;
-            this.gbChon.TabStop = false;
-            this.gbChon.Text = "Tìm kiếm";
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Location = new System.Drawing.Point(6, 23);
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(214, 26);
-            this.txtTimKiem.TabIndex = 17;
-            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
-            // 
-            // btnTim
-            // 
-            this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(226, 16);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(74, 40);
-            this.btnTim.TabIndex = 18;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // cmbPhongBan
             // 
@@ -412,11 +382,69 @@
             // dtgvDSLuong
             // 
             this.dtgvDSLuong.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSLuong.Location = new System.Drawing.Point(20, 213);
+            this.dtgvDSLuong.Location = new System.Drawing.Point(20, 222);
             this.dtgvDSLuong.Name = "dtgvDSLuong";
-            this.dtgvDSLuong.Size = new System.Drawing.Size(950, 290);
+            this.dtgvDSLuong.Size = new System.Drawing.Size(950, 281);
             this.dtgvDSLuong.TabIndex = 17;
             this.dtgvDSLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSLuong_CellClick);
+            // 
+            // gbChon
+            // 
+            this.gbChon.BackColor = System.Drawing.Color.Transparent;
+            this.gbChon.Controls.Add(this.radHoTen);
+            this.gbChon.Controls.Add(this.radMaNV);
+            this.gbChon.Controls.Add(this.txtTimKiem);
+            this.gbChon.Controls.Add(this.btnTim);
+            this.gbChon.Location = new System.Drawing.Point(18, 134);
+            this.gbChon.Name = "gbChon";
+            this.gbChon.Size = new System.Drawing.Size(267, 77);
+            this.gbChon.TabIndex = 17;
+            this.gbChon.TabStop = false;
+            this.gbChon.Text = "Tìm kiếm";
+            // 
+            // radHoTen
+            // 
+            this.radHoTen.AutoSize = true;
+            this.radHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.radHoTen.Location = new System.Drawing.Point(94, 48);
+            this.radHoTen.Name = "radHoTen";
+            this.radHoTen.Size = new System.Drawing.Size(68, 23);
+            this.radHoTen.TabIndex = 4;
+            this.radHoTen.TabStop = true;
+            this.radHoTen.Text = "Họ tên";
+            this.radHoTen.UseVisualStyleBackColor = false;
+            // 
+            // radMaNV
+            // 
+            this.radMaNV.AutoSize = true;
+            this.radMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.radMaNV.Location = new System.Drawing.Point(13, 48);
+            this.radMaNV.Name = "radMaNV";
+            this.radMaNV.Size = new System.Drawing.Size(75, 23);
+            this.radMaNV.TabIndex = 3;
+            this.radMaNV.TabStop = true;
+            this.radMaNV.Text = "Mã NV";
+            this.radMaNV.UseVisualStyleBackColor = false;
+            // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Location = new System.Drawing.Point(6, 20);
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(168, 26);
+            this.txtTimKiem.TabIndex = 17;
+            this.txtTimKiem.Text = "Nhập thông tin tìm kiếm";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(186, 25);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 43);
+            this.btnTim.TabIndex = 18;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // frmLuong
             // 
@@ -435,9 +463,9 @@
             this.gbThongTin.PerformLayout();
             this.gbTongLuong.ResumeLayout(false);
             this.gbTongLuong.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSLuong)).EndInit();
             this.gbChon.ResumeLayout(false);
             this.gbChon.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvDSLuong)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -475,9 +503,11 @@
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Button btnInLuong;
         private System.Windows.Forms.DataGridView dtgvDSLuong;
+        private System.Windows.Forms.GroupBox gbTongLuong;
         private System.Windows.Forms.GroupBox gbChon;
+        private System.Windows.Forms.RadioButton radHoTen;
+        private System.Windows.Forms.RadioButton radMaNV;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTim;
-        private System.Windows.Forms.GroupBox gbTongLuong;
     }
 }

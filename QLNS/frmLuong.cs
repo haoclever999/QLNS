@@ -86,6 +86,7 @@ namespace QLNS
             dtgvDSLuong.Columns["NgayCong"].HeaderText = "Ngày công";
             dtgvDSLuong.Columns["TienLuong"].HeaderText = "Tiền Lương";
             dtgvDSLuong.Columns["GhiChu"].HeaderText = "Ghi chú";
+            //dtgvDSLuong.Rows. = TinhLuong().ToString();
         }
         void loadComboBox()
         {
@@ -110,7 +111,11 @@ namespace QLNS
         }
         private void btnTongLuong_Click(object sender, EventArgs e)
         {
-
+            int tong = 0;
+            foreach(DataGridViewRow row in dtgvDSLuong.Rows)
+            {
+                //tong = tong + row.Cells["TienLuong"].Value;
+            }
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
