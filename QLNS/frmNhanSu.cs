@@ -229,9 +229,23 @@ namespace QLNS
             SetHeaderText();
         }
 
-        private void dtgvDSNV_Click(object sender, EventArgs e)
+        private void dtgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //đổ dữ liệu lên textbox, combobox
+            int i = e.RowIndex;
+            /*
+            dtgvDSNV.Columns["MaNV"].HeaderText = "Mã NV";
+            dtgvDSNV.Columns["HoTenNV"].HeaderText = "Họ tên";
+            dtgvDSNV.Columns["DiaChi"].HeaderText = "Địa chỉ";
+            dtgvDSNV.Columns["CMND"].HeaderText = "CMND";
+            dtgvDSNV.Columns["SDT"].HeaderText = "SDT";
+            dtgvDSNV.Columns["GioiTinh"].HeaderText = "Giới tính";
+            dtgvDSNV.Columns["Email"].HeaderText = "Email";
+            dtgvDSNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
+            dtgvDSNV.Columns["TenPB"].HeaderText = "Phòng ban";
+            dtgvDSNV.Columns["TenCV"].HeaderText = "Chức vụ";
+             */
+            //txtMaNV.Text = dtgvDSNV.Rows["MaNV"].Cells[0].Value.ToString();
         }
         //nút Button còn lỗi
     }

@@ -29,12 +29,17 @@
         private void InitializeComponent()
         {
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.picHinh = new System.Windows.Forms.PictureBox();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnThem = new System.Windows.Forms.Button();
             this.gbChon = new System.Windows.Forms.GroupBox();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTim = new System.Windows.Forms.Button();
             this.gbGioiTinh = new System.Windows.Forms.GroupBox();
             this.radNu = new System.Windows.Forms.RadioButton();
             this.radNam = new System.Windows.Forms.RadioButton();
             this.txtCMND = new System.Windows.Forms.TextBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.txtHoTen = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtEmail = new System.Windows.Forms.TextBox();
@@ -54,16 +59,11 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
-            this.picHinh = new System.Windows.Forms.PictureBox();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnTim = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.gbChon.SuspendLayout();
             this.gbGioiTinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.SuspendLayout();
             // 
             // gbThongTin
@@ -100,6 +100,38 @@
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Nhập thông tin";
             // 
+            // picHinh
+            // 
+            this.picHinh.Location = new System.Drawing.Point(7, 31);
+            this.picHinh.Name = "picHinh";
+            this.picHinh.Size = new System.Drawing.Size(117, 164);
+            this.picHinh.TabIndex = 16;
+            this.picHinh.TabStop = false;
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
+            this.btnSua.Location = new System.Drawing.Point(766, 152);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(84, 43);
+            this.btnSua.TabIndex = 14;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Add;
+            this.btnThem.Location = new System.Drawing.Point(650, 153);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(88, 42);
+            this.btnThem.TabIndex = 13;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
             // gbChon
             // 
             this.gbChon.BackColor = System.Drawing.Color.Transparent;
@@ -119,6 +151,18 @@
             this.txtTimKiem.Size = new System.Drawing.Size(168, 26);
             this.txtTimKiem.TabIndex = 17;
             this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
+            // 
+            // btnTim
+            // 
+            this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
+            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTim.Location = new System.Drawing.Point(183, 12);
+            this.btnTim.Name = "btnTim";
+            this.btnTim.Size = new System.Drawing.Size(75, 43);
+            this.btnTim.TabIndex = 18;
+            this.btnTim.Text = "Tìm";
+            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTim.UseVisualStyleBackColor = true;
             // 
             // gbGioiTinh
             // 
@@ -161,6 +205,18 @@
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(135, 26);
             this.txtCMND.TabIndex = 6;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
+            this.btnXoa.Location = new System.Drawing.Point(868, 153);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(77, 44);
+            this.btnXoa.TabIndex = 15;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtHoTen
             // 
@@ -334,63 +390,7 @@
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(968, 274);
             this.dtgvDSNV.TabIndex = 19;
-            this.dtgvDSNV.Click += new System.EventHandler(this.dtgvDSNV_Click);
-            // 
-            // picHinh
-            // 
-            this.picHinh.Location = new System.Drawing.Point(7, 31);
-            this.picHinh.Name = "picHinh";
-            this.picHinh.Size = new System.Drawing.Size(117, 164);
-            this.picHinh.TabIndex = 16;
-            this.picHinh.TabStop = false;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
-            this.btnSua.Location = new System.Drawing.Point(766, 152);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(84, 43);
-            this.btnSua.TabIndex = 14;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // btnThem
-            // 
-            this.btnThem.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Add;
-            this.btnThem.Location = new System.Drawing.Point(650, 153);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(88, 42);
-            this.btnThem.TabIndex = 13;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnTim
-            // 
-            this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
-            this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(183, 12);
-            this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(75, 43);
-            this.btnTim.TabIndex = 18;
-            this.btnTim.Text = "Tìm";
-            this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTim.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
-            this.btnXoa.Location = new System.Drawing.Point(868, 153);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(77, 44);
-            this.btnXoa.TabIndex = 15;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
+            this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
             // frmNhanSu
             // 
@@ -406,12 +406,12 @@
             this.Load += new System.EventHandler(this.frmNhanSu_Load);
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.gbChon.ResumeLayout(false);
             this.gbChon.PerformLayout();
             this.gbGioiTinh.ResumeLayout(false);
             this.gbGioiTinh.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.ResumeLayout(false);
 
         }

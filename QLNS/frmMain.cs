@@ -16,6 +16,43 @@ namespace QLNS
         {
             InitializeComponent();
         }
+        static bool isMax;
+        static Point old_loc, default_loc;
+        static Size old_size, default_size;
+        public static void SetIntial(Form frm)
+        {
+            old_loc = frm.Location;
+            old_size = frm.Size;
+            default_loc = frm.Location;
+            default_size = frm.Size;
+        }
+        public static void Maximize(Form frm)
+        {
+            if (isMax == false)//chưa maximized
+            {
+                old_loc = new Point(frm.Location.X, frm.Location.Y);
+                old_size = new Size(frm.Size.Width, frm.Size.Height);
+                int x = SystemInformation.WorkingArea.Width;
+                int y = SystemInformation.WorkingArea.Height;
+                frm.WindowState = FormWindowState.Normal;
+                frm.Location = new Point(0, 0);
+                frm.Size = new Size(x, y);
+                isMax = true;
+            }
+            else //đang Maximized
+            {
+                frm.Location = old_loc;
+                frm.Size = old_size;
+                isMax = false;
+            }
+        }
+        public static void Minimize(Form frm)
+        {
+            if (frm.WindowState == FormWindowState.Minimized)
+                frm.WindowState = FormWindowState.Normal;
+            else if (frm.WindowState == FormWindowState.Normal)
+                frm.WindowState = FormWindowState.Minimized;
+        }
         private void DiChuyenPanel(Button btn)
         {
             panelSlide.Top = btn.Top;
@@ -28,6 +65,15 @@ namespace QLNS
                     return f;
             return null;
         }
+        
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult traloi = MessageBox.Show("Bạn có muốn đóng chương trình", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
+            else if (traloi == DialogResult.Cancel)
+                e.Cancel = true;
+        }
 
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
@@ -36,11 +82,12 @@ namespace QLNS
                 frm.Activate();
             else
             {
-                //panelCentral.Controls.Clear();
+                panelCentral.Controls.Clear();
                 DiChuyenPanel(btnTongQuan);
             }
         }
-        /*private void btnNhanSu_Click(object sender, EventArgs e)
+
+        private void btnNhanSu_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmNhanSu));
             if (frm != null)
@@ -57,6 +104,7 @@ namespace QLNS
                 panelCentral.Controls.Add(f1);
             }
         }
+
         private void btnLuong_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmLuong));
@@ -75,11 +123,6 @@ namespace QLNS
             }
         }
 
-        private void btnTuyenDung_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnHopDong_Click(object sender, EventArgs e)
         {
 
@@ -88,13 +131,36 @@ namespace QLNS
         private void btnNghiPhep_Click(object sender, EventArgs e)
         {
 
-        }*/
+        }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DialogResult traloi = MessageBox.Show("Bạn có muốn đóng chương trình", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK)
-                Application.Exit();
+
+        }
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            Minimize(this);
+        }
+
+        private void frmMain_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            Maximize(this);
         }
     }
 }
