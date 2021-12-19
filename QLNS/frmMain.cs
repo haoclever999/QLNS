@@ -40,7 +40,7 @@ namespace QLNS
                 DiChuyenPanel(btnTongQuan);
             }
         }
-        /*private void btnNhanSu_Click(object sender, EventArgs e)
+        private void btnNhanSu_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmNhanSu));
             if (frm != null)
@@ -88,7 +88,7 @@ namespace QLNS
         private void btnNghiPhep_Click(object sender, EventArgs e)
         {
 
-        }*/
+        }
 
         private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -96,5 +96,15 @@ namespace QLNS
             if (traloi == DialogResult.OK)
                 Application.Exit();
         }
+  
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Bạn có muốn đăng xuất?", "THÔNG BÁO");
+            frmDangNhap fdn = new frmDangNhap();
+            this.Hide();
+            fdn.ShowDialog();
+        }
     }
+
 }
+
