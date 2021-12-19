@@ -75,25 +75,17 @@ namespace QLNS
             //đặt tên cột
             dtgvDSLuong.Columns["MaNV"].HeaderText = "Mã NV";
             dtgvDSLuong.Columns["HoTenNV"].HeaderText = "Họ tên";
-            dtgvDSLuong.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dtgvDSLuong.Columns["CMND"].HeaderText = "CMND";
-            dtgvDSLuong.Columns["SDT"].HeaderText = "SDT";
-            dtgvDSLuong.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dtgvDSLuong.Columns["Email"].HeaderText = "Email";
-            dtgvDSLuong.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dtgvDSLuong.Columns["TenPB"].HeaderText = "Phòng ban";
             dtgvDSLuong.Columns["TenCV"].HeaderText = "Chức vụ";
-            //đặt chiều rộng cột
-            dtgvDSLuong.Columns["MaNV"].Width = 80;
-            dtgvDSLuong.Columns["HoTenNV"].Width = 150;
-            dtgvDSLuong.Columns["DiaChi"].Width = 120;
-            dtgvDSLuong.Columns["CMND"].Width = 120;
-            dtgvDSLuong.Columns["SDT"].Width = 120;
-            dtgvDSLuong.Columns["GioiTinh"].Width = 110;
-            dtgvDSLuong.Columns["Email"].Width = 150;
-            dtgvDSLuong.Columns["NgaySinh"].Width = 120;
-            dtgvDSLuong.Columns["TenPB"].Width = 120;
-            dtgvDSLuong.Columns["TenCV"].Width = 100;
+            dtgvDSLuong.Columns["TenPB"].HeaderText = "Phòng ban";
+            dtgvDSLuong.Columns["Thuong"].HeaderText = "Thưởng";
+            dtgvDSLuong.Columns["PhuCap"].HeaderText = "Phụ cấp";
+            dtgvDSLuong.Columns["LuongCB"].HeaderText = "Lương cơ bản";
+            dtgvDSLuong.Columns["SoGioTangCa"].HeaderText = "Số giờ tăng ca";
+            dtgvDSLuong.Columns["HSL"].HeaderText = "Hệ số lương";
+            dtgvDSLuong.Columns["KiLuat"].HeaderText = "Kỉ Luật";
+            dtgvDSLuong.Columns["NgayCong"].HeaderText = "Ngày công";
+            dtgvDSLuong.Columns["TienLuong"].HeaderText = "Tiền Lương";
+            dtgvDSLuong.Columns["GhiChu"].HeaderText = "Ghi chú";
         }
         void loadComboBox()
         {
@@ -104,8 +96,19 @@ namespace QLNS
             cmbChucVu.DisplayMember = "TenCV";
             cmbPhongBan.DisplayMember = "TenPB";
         }
-
-        private void btnTinhLuong_Click(object sender, EventArgs e)
+        private int TinhLuong()
+        {
+            int hsl = Int32.Parse(txtHSL.Text);
+            int pc = Int32.Parse(txtPhuCap.Text);
+            int thuong = Int32.Parse(txtThuong.Text);
+            int kiluat = Int32.Parse(txtKiLuat.Text);
+            int lcb = Int32.Parse(txtLCB.Text);
+            int tangca = Int32.Parse(txtSoGioTangCa.Text);
+            int ngaycong = Int32.Parse(txtNgayCong.Text);
+            int luong = (((hsl * lcb + pc) / 26) * ngaycong + (tangca * 40000) + thuong - kiluat);
+            return luong;
+        }
+        private void btnTongLuong_Click(object sender, EventArgs e)
         {
 
         }
@@ -127,12 +130,27 @@ namespace QLNS
 
         private void frmLuong_Load(object sender, EventArgs e)
         {
-
+            loadComboBox();
+            loadDataGirdView();
+            SetHeaderText();
         }
-
-        private void lsvDSLuong_Click(object sender, EventArgs e)
+        private void dtgvDSLuong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            //đổ dữ liệu lên textbox, combobox
+            int i = e.RowIndex;
+            txtMaNV.Text = dtgvDSLuong.Rows[i].Cells["MaNV"].Value.ToString();
+            txtHoTen.Text = dtgvDSLuong.Rows[i].Cells["HoTenNV"].Value.ToString();
+            cmbPhongBan.SelectedValue = dtgvDSLuong.Rows[i].Cells["TenPB"].Value.ToString();
+            cmbChucVu.SelectedValue = dtgvDSLuong.Rows[i].Cells["TenCV"].Value.ToString();
+            txtThuong.Text = dtgvDSLuong.Rows[i].Cells["Thuong"].Value.ToString();
+            txtPhuCap.Text = dtgvDSLuong.Rows[i].Cells["PhuCap"].Value.ToString();
+            txtLCB.Text = dtgvDSLuong.Rows[i].Cells["LuongCB"].Value.ToString();
+            txtSoGioTangCa.Text = dtgvDSLuong.Rows[i].Cells["SoGioTangCa"].Value.ToString();
+            txtHSL.Text = dtgvDSLuong.Rows[i].Cells["HSL"].Value.ToString();
+            txtKiLuat.Text = dtgvDSLuong.Rows[i].Cells["KiLuat"].Value.ToString();
+            txtNgayCong.Text = dtgvDSLuong.Rows[i].Cells["NgayCong"].Value.ToString();
+            txtGhiChu.Text = dtgvDSLuong.Rows[i].Cells["GhiChu"].Value.ToString();
         }
+
     }
 }

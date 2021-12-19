@@ -59,6 +59,8 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
+            this.radMaNV = new System.Windows.Forms.RadioButton();
+            this.radHoTen = new System.Windows.Forms.RadioButton();
             this.gbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.gbChon.SuspendLayout();
@@ -95,7 +97,7 @@
             this.gbThongTin.Controls.Add(this.label2);
             this.gbThongTin.Location = new System.Drawing.Point(10, 3);
             this.gbThongTin.Name = "gbThongTin";
-            this.gbThongTin.Size = new System.Drawing.Size(968, 210);
+            this.gbThongTin.Size = new System.Drawing.Size(968, 238);
             this.gbThongTin.TabIndex = 18;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Nhập thông tin";
@@ -135,11 +137,13 @@
             // gbChon
             // 
             this.gbChon.BackColor = System.Drawing.Color.Transparent;
+            this.gbChon.Controls.Add(this.radHoTen);
+            this.gbChon.Controls.Add(this.radMaNV);
             this.gbChon.Controls.Add(this.txtTimKiem);
             this.gbChon.Controls.Add(this.btnTim);
             this.gbChon.Location = new System.Drawing.Point(359, 141);
             this.gbChon.Name = "gbChon";
-            this.gbChon.Size = new System.Drawing.Size(267, 60);
+            this.gbChon.Size = new System.Drawing.Size(267, 77);
             this.gbChon.TabIndex = 3;
             this.gbChon.TabStop = false;
             this.gbChon.Text = "Tìm kiếm";
@@ -150,19 +154,20 @@
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(168, 26);
             this.txtTimKiem.TabIndex = 17;
-            this.txtTimKiem.Text = "Nhập mã NV hoặc họ tên";
+            this.txtTimKiem.Text = "Nhập thông tin tìm kiếm";
             // 
             // btnTim
             // 
             this.btnTim.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Search;
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(183, 12);
+            this.btnTim.Location = new System.Drawing.Point(186, 25);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(75, 43);
             this.btnTim.TabIndex = 18;
             this.btnTim.Text = "Tìm";
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = true;
+            this.btnTim.Click += new System.EventHandler(this.btnTim_Click);
             // 
             // gbGioiTinh
             // 
@@ -202,9 +207,11 @@
             // txtCMND
             // 
             this.txtCMND.Location = new System.Drawing.Point(217, 113);
+            this.txtCMND.MaxLength = 12;
             this.txtCMND.Name = "txtCMND";
             this.txtCMND.Size = new System.Drawing.Size(135, 26);
             this.txtCMND.TabIndex = 6;
+            this.txtCMND.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCMND_KeyPress);
             // 
             // btnXoa
             // 
@@ -385,12 +392,36 @@
             this.dtgvDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtgvDSNV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSNV.Location = new System.Drawing.Point(10, 219);
+            this.dtgvDSNV.Location = new System.Drawing.Point(10, 268);
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSNV.Size = new System.Drawing.Size(968, 274);
+            this.dtgvDSNV.Size = new System.Drawing.Size(968, 225);
             this.dtgvDSNV.TabIndex = 19;
             this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
+            // 
+            // radMaNV
+            // 
+            this.radMaNV.AutoSize = true;
+            this.radMaNV.BackColor = System.Drawing.Color.Transparent;
+            this.radMaNV.Location = new System.Drawing.Point(13, 48);
+            this.radMaNV.Name = "radMaNV";
+            this.radMaNV.Size = new System.Drawing.Size(75, 23);
+            this.radMaNV.TabIndex = 3;
+            this.radMaNV.TabStop = true;
+            this.radMaNV.Text = "Mã NV";
+            this.radMaNV.UseVisualStyleBackColor = false;
+            // 
+            // radHoTen
+            // 
+            this.radHoTen.AutoSize = true;
+            this.radHoTen.BackColor = System.Drawing.Color.Transparent;
+            this.radHoTen.Location = new System.Drawing.Point(94, 48);
+            this.radHoTen.Name = "radHoTen";
+            this.radHoTen.Size = new System.Drawing.Size(68, 23);
+            this.radHoTen.TabIndex = 4;
+            this.radHoTen.TabStop = true;
+            this.radHoTen.Text = "Họ tên";
+            this.radHoTen.UseVisualStyleBackColor = false;
             // 
             // frmNhanSu
             // 
@@ -448,5 +479,7 @@
         private System.Windows.Forms.Button btnTim;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.GroupBox gbChon;
+        private System.Windows.Forms.RadioButton radHoTen;
+        private System.Windows.Forms.RadioButton radMaNV;
     }
 }

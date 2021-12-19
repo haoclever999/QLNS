@@ -133,17 +133,6 @@ namespace QLNS
             dtgvDSNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
             dtgvDSNV.Columns["TenPB"].HeaderText = "Phòng ban";
             dtgvDSNV.Columns["TenCV"].HeaderText = "Chức vụ";
-            //đặt chiều rộng cột
-            dtgvDSNV.Columns["MaNV"].Width = 80;
-            dtgvDSNV.Columns["HoTenNV"].Width = 150;
-            dtgvDSNV.Columns["DiaChi"].Width = 120;
-            dtgvDSNV.Columns["CMND"].Width = 120;
-            dtgvDSNV.Columns["SDT"].Width = 120;
-            dtgvDSNV.Columns["GioiTinh"].Width = 110;
-            dtgvDSNV.Columns["Email"].Width = 150;
-            dtgvDSNV.Columns["NgaySinh"].Width = 120;
-            dtgvDSNV.Columns["TenPB"].Width = 120;
-            dtgvDSNV.Columns["TenCV"].Width = 100;
         }
         void loadComboBox()
         {
@@ -228,25 +217,51 @@ namespace QLNS
             loadDataGirdView();
             SetHeaderText();
         }
-
         private void dtgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //đổ dữ liệu lên textbox, combobox
             int i = e.RowIndex;
-            /*
-            dtgvDSNV.Columns["MaNV"].HeaderText = "Mã NV";
-            dtgvDSNV.Columns["HoTenNV"].HeaderText = "Họ tên";
-            dtgvDSNV.Columns["DiaChi"].HeaderText = "Địa chỉ";
-            dtgvDSNV.Columns["CMND"].HeaderText = "CMND";
-            dtgvDSNV.Columns["SDT"].HeaderText = "SDT";
-            dtgvDSNV.Columns["GioiTinh"].HeaderText = "Giới tính";
-            dtgvDSNV.Columns["Email"].HeaderText = "Email";
-            dtgvDSNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dtgvDSNV.Columns["TenPB"].HeaderText = "Phòng ban";
-            dtgvDSNV.Columns["TenCV"].HeaderText = "Chức vụ";
-             */
-            //txtMaNV.Text = dtgvDSNV.Rows["MaNV"].Cells[0].Value.ToString();
+            txtMaNV.Text = dtgvDSNV.Rows[i].Cells["MaNV"].Value.ToString();
+            txtHoTen.Text = dtgvDSNV.Rows[i].Cells["HoTenNV"].Value.ToString();
+            txtDiaChi.Text = dtgvDSNV.Rows[i].Cells["DiaChi"].Value.ToString();
+            txtCMND.Text = dtgvDSNV.Rows[i].Cells["CMND"].Value.ToString();
+            txtSDT.Text = dtgvDSNV.Rows[i].Cells["SDT"].Value.ToString();
+            if (dtgvDSNV.Rows[i].Cells["GioiTinh"].Value.ToString() == "Nam")
+                radNam.Checked = true;
+            else
+                radNu.Checked = true;
+            txtEmail.Text = dtgvDSNV.Rows[i].Cells["Email"].Value.ToString();
+            dtpNgaySinh.Text = dtgvDSNV.Rows[i].Cells["NgaySinh"].Value.ToString();
+            cmbPhongBan.SelectedValue = dtgvDSNV.Rows[i].Cells["TenPB"].Value.ToString();
+            cmbChucVu.SelectedValue = dtgvDSNV.Rows[i].Cells["TenCV"].Value.ToString();
         }
-        //nút Button còn lỗi
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if ((txtTimKiem.Text == "") || (txtTimKiem.Text == "Nhập thông tin tìm kiếm"))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm", "THÔNG BÁO");
+            }
+            else
+            {
+                if (radMaNV.Checked == true)
+                {
+                    string query = "select * from NhanVien where MaCV=N'" + txtTimKiem.Text + "'";
+                    dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
+                }
+                else if (radHoTen.Checked == true)
+                {
+                    string query = "select * from NhanVien where HoTenNV=N'" + txtTimKiem.Text + "'";
+                    dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
+                }
+                else
+                    MessageBox.Show("Không tìm thấy thông tin", "THÔNG BÁO");
+            }
+        }
+        private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        //nút Button thêm sửa xóa còn lỗi
     }
 }

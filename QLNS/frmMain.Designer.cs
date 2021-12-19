@@ -36,6 +36,10 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNghiPhep = new System.Windows.Forms.Button();
             this.btnHopDong = new System.Windows.Forms.Button();
+<<<<<<< HEAD
+=======
+            this.btnTuyenDung = new System.Windows.Forms.Button();
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             this.btnLuong = new System.Windows.Forms.Button();
             this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
@@ -93,6 +97,16 @@
             this.btnDangXuat.Size = new System.Drawing.Size(58, 38);
             this.btnDangXuat.TabIndex = 0;
             this.btnDangXuat.UseVisualStyleBackColor = false;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
+            // lblUser
+            // 
+            this.lblUser.AutoSize = true;
+            this.lblUser.Location = new System.Drawing.Point(32, 471);
+            this.lblUser.Name = "lblUser";
+            this.lblUser.Size = new System.Drawing.Size(38, 19);
+            this.lblUser.TabIndex = 33;
+            this.lblUser.Text = "User";
             // 
             // lblUser
             // 
@@ -193,6 +207,26 @@
             this.btnTongQuan.UseVisualStyleBackColor = false;
             this.btnTongQuan.Click += new System.EventHandler(this.btnTongQuan_Click);
             // 
+            // btnTongQuan
+            // 
+            this.btnTongQuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTongQuan.BackColor = System.Drawing.Color.Transparent;
+            this.btnTongQuan.FlatAppearance.BorderSize = 0;
+            this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
+            this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnTongQuan.ImageKey = "(none)";
+            this.btnTongQuan.Location = new System.Drawing.Point(5, 72);
+            this.btnTongQuan.Name = "btnTongQuan";
+            this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
+            this.btnTongQuan.TabIndex = 28;
+            this.btnTongQuan.Text = "Tổng quan";
+            this.btnTongQuan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnTongQuan.UseVisualStyleBackColor = false;
+            // 
             // btnNhanSu
             // 
             this.btnNhanSu.BackColor = System.Drawing.Color.Transparent;
@@ -219,6 +253,14 @@
             this.panelSlide.Size = new System.Drawing.Size(4, 53);
             this.panelSlide.TabIndex = 30;
             // 
+            // panelSlide
+            // 
+            this.panelSlide.BackColor = System.Drawing.Color.DarkGreen;
+            this.panelSlide.Location = new System.Drawing.Point(2, 71);
+            this.panelSlide.Name = "panelSlide";
+            this.panelSlide.Size = new System.Drawing.Size(4, 53);
+            this.panelSlide.TabIndex = 30;
+            // 
             // panelCentral
             // 
             this.panelCentral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -236,13 +278,20 @@
             // menuMain
             // 
             this.menuMain.BackColor = System.Drawing.Color.Transparent;
+<<<<<<< HEAD
             this.menuMain.Dock = System.Windows.Forms.DockStyle.None;
+=======
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tàiKhoảnToolStripMenuItem,
             this.trợGiúpToolStripMenuItem});
             this.menuMain.Location = new System.Drawing.Point(0, 0);
             this.menuMain.Name = "menuMain";
+<<<<<<< HEAD
             this.menuMain.Size = new System.Drawing.Size(139, 24);
+=======
+            this.menuMain.Size = new System.Drawing.Size(977, 24);
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             this.menuMain.TabIndex = 25;
             this.menuMain.Text = "menuStrip1";
             // 
@@ -253,7 +302,11 @@
             this.đổiMậtKhẩuToolStripMenuItem,
             this.đăngXuấtToolStripMenuItem});
             this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
+<<<<<<< HEAD
             this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+=======
+            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
             // 
             // quảnLýTàiKhoảnToolStripMenuItem
@@ -261,28 +314,42 @@
             this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
             this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
+<<<<<<< HEAD
             this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
+=======
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             // 
             // đổiMậtKhẩuToolStripMenuItem
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
             this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
+<<<<<<< HEAD
             this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
+=======
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+<<<<<<< HEAD
             this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
+=======
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             // 
             // trợGiúpToolStripMenuItem
             // 
             this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
+<<<<<<< HEAD
             this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
             this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
             this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
+=======
+            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
+            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
+>>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             // 
             // frmMain
             // 
