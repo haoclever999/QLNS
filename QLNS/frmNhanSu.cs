@@ -176,26 +176,18 @@ namespace QLNS
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
             string update = "update NhanVien set HoTenNV = N'" + txtHoTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',CMND = N'" + txtCMND.Text + "',SDT = N'" + txtSDT.Text + "',GioiTinh = N'" + gioitinh + "',Email = N'" + txtEmail.Text + "',NgaySinh = N'" + dtpNgaySinh.Text + "'where MaNV = N'" +txtMaNV.Text + "'";
-            if (btnSua.Text == "Sửa")
+            
+            if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
             {
-                btnSua.Text = "Cập nhật";
-                txtMaNV.Enabled = false;
-            }
-            else
-            {
-                btnSua.Text = "Sửa";
-                txtMaNV.Enabled = true;
-                if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
+                if (KTThongTin())
                 {
-                    if (KTThongTin())
-                    {
-                        DataProvider.Instance.ExcuteNonQuery(update);
-                        dtgvDSNV.Refresh();
-                        loadDataGirdView();
-                        MessageBox.Show("Sửa thành công");
-                    }
+                    DataProvider.Instance.ExcuteNonQuery(update);
+                    dtgvDSNV.Refresh();
+                    loadDataGirdView();
+                    MessageBox.Show("Sửa thành công");
                 }
             }
+            
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {

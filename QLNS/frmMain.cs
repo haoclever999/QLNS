@@ -160,22 +160,28 @@ namespace QLNS
 
         private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmUser f5 = new frmUser();
+            this.Hide();
+            f5.Show();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            // f6 = new frmUser();
+            this.Hide();
+           //f6.Show();
         }
 
         private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            btnDangXuat_Click(sender, e);
         }
 
         private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmUser f5 = new frmUser();
+            this.Hide();
+            f5.Show();
         }
 
         private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
