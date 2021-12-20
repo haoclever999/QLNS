@@ -12,6 +12,7 @@ namespace QLNS
 {
     public partial class frmDoiMk : Form
     {
+        
         public frmDoiMk()
         {
             InitializeComponent();

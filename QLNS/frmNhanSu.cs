@@ -19,10 +19,11 @@ namespace QLNS
             InitializeComponent();
         }
 
-        SqlConnection conn;
+        //SqlConnection conn;
         SqlCommand cmd;
         SQLDatabase sql;
-      
+        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=NhanSu;Integrated Security=True");
+
         private void LamMoi()
         {
             foreach (Control ctr in this.gbThongTin.Controls)

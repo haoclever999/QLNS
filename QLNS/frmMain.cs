@@ -67,7 +67,7 @@ namespace QLNS
         }
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
-            Form frm = this.KTForm(typeof(Main));
+            Form frm = this.KTForm(typeof(frmMain));
             if (frm != null)
                 frm.Activate();
             else
@@ -152,13 +152,13 @@ namespace QLNS
         private void menuQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             frmUser f5 = new frmUser();
-            this.Hide();
             f5.Show();
         }
 
         private void menuDoiMatKhau_Click(object sender, EventArgs e)
         {
-
+            frmDoiMk mk = new frmDoiMk();
+            mk.ShowDialog();
         }
 
         private void menuDangXuat_Click(object sender, EventArgs e)
@@ -188,7 +188,20 @@ namespace QLNS
 
         private void menuTroGiup_Click(object sender, EventArgs e)
         {
-
+            Form frm = this.KTForm(typeof(frmTroGiup));
+            if (frm != null)
+                frm.Activate();
+            else
+            {
+                DiChuyenPanel(btnNghiPhep);
+                frmTroGiup f4 = new frmTroGiup();
+                f4.TopLevel = false;
+                f4.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                f4.Dock = DockStyle.Fill;
+                f4.Show();
+                panelCentral.Controls.Clear();
+                panelCentral.Controls.Add(f4);
+            }
         }
 
         private void btnDangXuat_Click(object sender, EventArgs e)

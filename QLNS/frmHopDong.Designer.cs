@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.grbThongTin = new System.Windows.Forms.GroupBox();
+            this.cboNV = new System.Windows.Forms.ComboBox();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dtNgayBD = new System.Windows.Forms.DateTimePicker();
@@ -36,33 +37,27 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtHanHD = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtTenNV = new System.Windows.Forms.TextBox();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.cbThuViec = new System.Windows.Forms.CheckBox();
-            this.cbChinhThuc = new System.Windows.Forms.CheckBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.grbThongTin.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).BeginInit();
             this.SuspendLayout();
             // 
             // grbThongTin
             // 
-            this.grbThongTin.Controls.Add(this.btnSua);
-            this.grbThongTin.Controls.Add(this.txtTenNV);
-            this.grbThongTin.Controls.Add(this.btnThem);
-            this.grbThongTin.Controls.Add(this.txtMaNV);
             this.grbThongTin.Controls.Add(this.btnXoa);
+            this.grbThongTin.Controls.Add(this.btnSua);
+            this.grbThongTin.Controls.Add(this.btnThem);
+            this.grbThongTin.Controls.Add(this.cboNV);
+            this.grbThongTin.Controls.Add(this.txtMaNV);
             this.grbThongTin.Controls.Add(this.label4);
             this.grbThongTin.Controls.Add(this.dtNgayBD);
             this.grbThongTin.Controls.Add(this.label1);
             this.grbThongTin.Controls.Add(this.label2);
             this.grbThongTin.Controls.Add(this.txtHanHD);
             this.grbThongTin.Controls.Add(this.label8);
-            this.grbThongTin.Controls.Add(this.groupBox1);
             this.grbThongTin.ForeColor = System.Drawing.Color.Black;
             this.grbThongTin.Location = new System.Drawing.Point(20, 12);
             this.grbThongTin.Name = "grbThongTin";
@@ -71,9 +66,19 @@
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Nhập thông tin";
             // 
+            // cboNV
+            // 
+            this.cboNV.FormattingEnabled = true;
+            this.cboNV.Location = new System.Drawing.Point(167, 80);
+            this.cboNV.Name = "cboNV";
+            this.cboNV.Size = new System.Drawing.Size(382, 27);
+            this.cboNV.TabIndex = 29;
+            this.cboNV.SelectedIndexChanged += new System.EventHandler(this.cboNV_SelectedIndexChanged);
+            // 
             // txtMaNV
             // 
             this.txtMaNV.BackColor = System.Drawing.SystemColors.Window;
+            this.txtMaNV.Enabled = false;
             this.txtMaNV.Location = new System.Drawing.Point(167, 31);
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(382, 26);
@@ -134,75 +139,6 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "Ngày bắt đầu";
             // 
-            // txtTenNV
-            // 
-            this.txtTenNV.BackColor = System.Drawing.SystemColors.Window;
-            this.txtTenNV.Location = new System.Drawing.Point(167, 76);
-            this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(382, 26);
-            this.txtTenNV.TabIndex = 21;
-            // 
-            // btnSua
-            // 
-            this.btnSua.Location = new System.Drawing.Point(790, 98);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(98, 36);
-            this.btnSua.TabIndex = 25;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            // 
-            // btnThem
-            // 
-            this.btnThem.Location = new System.Drawing.Point(790, 34);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(98, 36);
-            this.btnThem.TabIndex = 24;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnThem.UseVisualStyleBackColor = true;
-            // 
-            // btnXoa
-            // 
-            this.btnXoa.Location = new System.Drawing.Point(790, 157);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(98, 36);
-            this.btnXoa.TabIndex = 26;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            // 
-            // cbThuViec
-            // 
-            this.cbThuViec.AutoSize = true;
-            this.cbThuViec.Location = new System.Drawing.Point(41, 51);
-            this.cbThuViec.Name = "cbThuViec";
-            this.cbThuViec.Size = new System.Drawing.Size(81, 23);
-            this.cbThuViec.TabIndex = 27;
-            this.cbThuViec.Text = "Thử việc";
-            this.cbThuViec.UseVisualStyleBackColor = true;
-            // 
-            // cbChinhThuc
-            // 
-            this.cbChinhThuc.AutoSize = true;
-            this.cbChinhThuc.Location = new System.Drawing.Point(41, 101);
-            this.cbChinhThuc.Name = "cbChinhThuc";
-            this.cbChinhThuc.Size = new System.Drawing.Size(94, 23);
-            this.cbChinhThuc.TabIndex = 27;
-            this.cbChinhThuc.Text = "Chính thức";
-            this.cbChinhThuc.UseVisualStyleBackColor = true;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.cbChinhThuc);
-            this.groupBox1.Controls.Add(this.cbThuViec);
-            this.groupBox1.Location = new System.Drawing.Point(583, 29);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(171, 164);
-            this.groupBox1.TabIndex = 28;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Loại hợp đồng";
-            // 
             // dtgvDSNV
             // 
             this.dtgvDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
@@ -213,6 +149,42 @@
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(938, 274);
             this.dtgvDSNV.TabIndex = 26;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Add;
+            this.btnThem.Location = new System.Drawing.Point(666, 31);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(102, 42);
+            this.btnThem.TabIndex = 30;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
+            this.btnSua.Location = new System.Drawing.Point(666, 89);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(102, 43);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
+            this.btnXoa.Location = new System.Drawing.Point(666, 149);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(102, 44);
+            this.btnXoa.TabIndex = 32;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // frmHopDong
             // 
@@ -225,10 +197,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmHopDong";
+            this.Load += new System.EventHandler(this.frmHopDong_Load);
             this.grbThongTin.ResumeLayout(false);
             this.grbThongTin.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).EndInit();
             this.ResumeLayout(false);
 
@@ -244,13 +215,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtHanHD;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txtTenNV;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnXoa;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox cbChinhThuc;
-        private System.Windows.Forms.CheckBox cbThuViec;
         private System.Windows.Forms.DataGridView dtgvDSNV;
+        private System.Windows.Forms.ComboBox cboNV;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.Button btnXoa;
     }
 }

@@ -35,10 +35,10 @@
             this.txtMKMoi = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.txtMKCu = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -119,6 +119,22 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Mật khẩu mới";
             // 
+            // txtTaiKhoan
+            // 
+            this.txtTaiKhoan.Location = new System.Drawing.Point(151, 35);
+            this.txtTaiKhoan.Name = "txtTaiKhoan";
+            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 26);
+            this.txtTaiKhoan.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(43, 38);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 19);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Tài khoản";
+            // 
             // txtMKCu
             // 
             this.txtMKCu.Location = new System.Drawing.Point(151, 87);
@@ -135,22 +151,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Mật khẩu cũ";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(43, 38);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 19);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tài khoản";
-            // 
-            // txtTaiKhoan
-            // 
-            this.txtTaiKhoan.Location = new System.Drawing.Point(151, 35);
-            this.txtTaiKhoan.Name = "txtTaiKhoan";
-            this.txtTaiKhoan.Size = new System.Drawing.Size(212, 26);
-            this.txtTaiKhoan.TabIndex = 3;
-            // 
             // frmDoiMk
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -158,6 +158,7 @@
             this.ClientSize = new System.Drawing.Size(538, 304);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDoiMk";
             this.Text = "Đổi mật khẩu";

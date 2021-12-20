@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace QLNS
 {
@@ -16,5 +17,168 @@ namespace QLNS
         {
             InitializeComponent();
         }
+        DataSet ds = new DataSet("dsQLHD");
+        SqlCommand cmd;
+        SqlDataAdapter daNhanVien;
+        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=NhanSu;Integrated Security=True");
+        private void ResetTT()
+        {
+            //Trả thông tin nhập về trống như ban đầu
+            txtHanHD.Text = "";
+            cboNV.ResetText();
+            dtNgayBD.ResetText();
+            txtHanHD.Focus();
+        }
+        private void Connectionsql()
+        {
+            //Mở kết nối
+            conn.Open();
+            //lấy dữ liệu trong bản Hợp đồng
+            String SQL = "select n.*, c.HoTenNV from HopDong n, NhanVien c where n.manv = c.manv";
+            //Bắt đầu truy vấn
+            SqlCommand com = new SqlCommand(SQL, conn);
+            com.CommandType = CommandType.Text;
+            //Chuyển dữ liệu về
+            SqlDataAdapter data = new SqlDataAdapter(com);
+            //Tạo một kho ảo để lưu trữ dữ liệu
+            DataTable dt = new DataTable();
+            //Đổ dữ liệu vào kho
+            data.Fill(dt);
+            //Đóng kết nối
+            conn.Close();
+            //Đổ dữ liệu vào datagridview
+            dtgvDSNV.DataSource = dt;
+            //Reset thông tin trên hàng nhập
+            txtMaNV.Enabled = false;
+            ResetTT();
+        }
+        private Boolean KiemTraTT()
+        {
+            //Kiểm tra ngày ký hợp đồng hợp lệ
+            if (dtNgayBD.Value > DateTime.Now)
+            {
+                ResetTT();
+                MessageBox.Show("Ngày ký hợp đồng không hợp lệ!", "Thông báo");
+                return false;
+            }
+            //Kiểm tra hạn hợp đồng không bỏ trống
+            if (txtHanHD.Text.Trim() == "")
+            {
+                ResetTT();
+                MessageBox.Show("Không được để trống hạn hợp đồng nhân viên!", "Thông báo");
+                return false;
+            }
+
+            return true;
+        }
+        private Boolean KiemTraMaNV()
+        {
+            conn.Open();
+            //Kiểm tra xem mã nhân viên này đã có hợp đồng chưa 
+            if (txtMaNV.Text.Trim() != "")
+            {
+                string sql = "Select Count(*) From HopDong Where MaNV ='" + txtMaNV.Text + "'";
+                cmd = new SqlCommand(sql, conn);
+                int val = (int)cmd.ExecuteScalar();
+                if (val > 0)
+                {
+                    conn.Close();
+                    //Nếu có return false
+                    return false;
+                }
+            }
+            conn.Close();
+            //Nếu chưa return true
+            return true;
+        }
+       
+
+        private void frmHopDong_Load(object sender, EventArgs e)
+        {
+            Connectionsql();
+            // Dữ liệu combobox nhân viên
+            string sQueryNhanVien = @"select * from NhanVien";
+            daNhanVien = new SqlDataAdapter(sQueryNhanVien, conn);
+            daNhanVien.Fill(ds, "tblNhanVien");
+            cboNV.DataSource = ds.Tables["tblNhanVien"];
+            cboNV.DisplayMember = "HoTenNV";
+            cboNV.ValueMember = "MaNV";
+            txtMaNV.Text = cboNV.SelectedValue.ToString();
+        }
+
+        private void cboNV_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            //Khi thay đổi combobox tên NV thì textbox mã NV thay đổi theo
+            txtMaNV.Text = cboNV.SelectedValue.ToString();
+        }
+
+        
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (KiemTraMaNV() == true)
+                MessageBox.Show("Nhân viên này chưa có hợp đồng, không thể xóa!", "Thông báo");
+            else
+            {
+                //Câu lệnh xóa
+                string sql = "delete from HopDong ";
+                sql += "where MaNV = '" + txtMaNV.Text + "'";
+                //Thực thi lệnh
+                conn.Open();
+                var cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                conn.Close();
+                Connectionsql();
+            }
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            if (KiemTraTT() == true)
+                if (KiemTraMaNV() == false)
+                    MessageBox.Show("Nhân viên này đã có hợp đồng!", "Thông báo");
+                else
+                {
+                    //Lưu biến tạm thời
+                    string nbd = dtNgayBD.Value.ToString("yyyy/MM/dd");
+                    //Các thông tin nhân viên cần thêm
+                    string sql = "insert into HopDong(MaNV,NgayBD,HanHD) values (";
+                    sql += "'" + txtMaNV.Text + "'";
+                    sql += ",'" + nbd + "'";
+                    sql += "," + txtHanHD.Text + ")";
+                    //Thực thi lệnh
+                    conn.Open();
+                    var cmd = new SqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    Connectionsql();
+                }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
+            if (KiemTraTT() == true)
+                if (KiemTraMaNV() == true)
+                    MessageBox.Show("Nhân viên này chưa có hợp đồng, không thể sửa, hãy thêm hợp đồng!", "Thông báo");
+                else
+                {
+                    //Lưu biến tạm thời
+                    string nbd = dtNgayBD.Value.ToString("yyyy/MM/dd");
+                    //Các thông tin nhân viên cần thêm
+                    string sql = "Update HopDong SET ";
+                    sql += "NgayBD = '" + nbd + "'";
+                    sql += ", HanHD = " + txtHanHD.Text;
+                    sql += " Where MaNV = '" + txtMaNV.Text + "'";
+                    //Thực thi lệnh
+                    conn.Open();
+                    var cmd = new SqlCommand(sql, conn);
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                    Connectionsql();
+                }
+        }
+
+       
     }
 }

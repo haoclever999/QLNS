@@ -10,7 +10,7 @@ namespace QLNS
 {
     class SQLDatabase
     {
-        string connect = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True";
+        string connect = @"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True";
         SqlConnection conn;
         SqlCommand cmd;
         SqlDataAdapter da;
