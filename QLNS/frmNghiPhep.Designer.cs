@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpNgayNghi = new System.Windows.Forms.DateTimePicker();
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbThongTin = new System.Windows.Forms.GroupBox();
@@ -117,6 +117,7 @@
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvDSNV.Size = new System.Drawing.Size(945, 309);
             this.dtgvDSNV.TabIndex = 25;
+            this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
             // numSoNgayNghi
             // 
@@ -159,14 +160,14 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Số ngày nghỉ";
             // 
-            // dateTimePicker1
+            // dtpNgayNghi
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 80);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(205, 26);
-            this.dateTimePicker1.TabIndex = 18;
-            this.dateTimePicker1.Value = new System.DateTime(2021, 12, 18, 0, 0, 0, 0);
+            this.dtpNgayNghi.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpNgayNghi.Location = new System.Drawing.Point(146, 80);
+            this.dtpNgayNghi.Name = "dtpNgayNghi";
+            this.dtpNgayNghi.Size = new System.Drawing.Size(205, 26);
+            this.dtpNgayNghi.TabIndex = 18;
+            this.dtpNgayNghi.Value = new System.DateTime(2021, 12, 18, 0, 0, 0, 0);
             // 
             // txtMaNV
             // 
@@ -194,7 +195,7 @@
             this.gbThongTin.Controls.Add(this.label5);
             this.gbThongTin.Controls.Add(this.label4);
             this.gbThongTin.Controls.Add(this.label1);
-            this.gbThongTin.Controls.Add(this.dateTimePicker1);
+            this.gbThongTin.Controls.Add(this.dtpNgayNghi);
             this.gbThongTin.Controls.Add(this.btnSua);
             this.gbThongTin.Controls.Add(this.btnThem);
             this.gbThongTin.Controls.Add(this.btnXoa);
@@ -278,6 +279,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNghiPhep";
+            this.Load += new System.EventHandler(this.frmNghiPhep_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSNV)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numSoNgayNghi)).EndInit();
             this.gbThongTin.ResumeLayout(false);
@@ -302,7 +304,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpNgayNghi;
         private System.Windows.Forms.TextBox txtMaNV;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gbThongTin;

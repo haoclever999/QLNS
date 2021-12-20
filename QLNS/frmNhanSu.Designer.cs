@@ -101,6 +101,7 @@
             this.gbThongTin.TabIndex = 18;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Nhập thông tin";
+            this.gbThongTin.Enter += new System.EventHandler(this.gbThongTin_Enter);
             // 
             // picHinh
             // 
@@ -416,10 +417,10 @@
             this.dtgvDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtgvDSNV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSNV.Location = new System.Drawing.Point(10, 235);
+            this.dtgvDSNV.Location = new System.Drawing.Point(12, 235);
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSNV.Size = new System.Drawing.Size(968, 258);
+            this.dtgvDSNV.Size = new System.Drawing.Size(958, 258);
             this.dtgvDSNV.TabIndex = 19;
             this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
