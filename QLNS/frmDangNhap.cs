@@ -35,14 +35,14 @@ namespace QLNS
                 if ((txtTenDangNhap.Text == "admin") && (txtMatKhau.Text == "admin"))
                 {
                     MessageBox.Show("Đăng nhập thành công", "THÔNG BÁO");
-                    frmMain f1 = new frmMain();
+                    Main f1 = new Main();
                     this.Hide();
                     f1.ShowDialog();
                 }
                 else if((txtTenDangNhap.Text == "user") && (txtMatKhau.Text == "user"))
                 {
                     MessageBox.Show("Đăng nhập thành công", "THÔNG BÁO");
-                    frmMain f1 = new frmMain();
+                    Main f1 = new Main();
                     this.Hide();
                     f1.ShowDialog();
                 }

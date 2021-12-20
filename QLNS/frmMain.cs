@@ -65,19 +65,9 @@ namespace QLNS
                     return f;
             return null;
         }
-        
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            DialogResult traloi = MessageBox.Show("Bạn có muốn đóng chương trình", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK)
-                Application.Exit();
-            else if (traloi == DialogResult.Cancel)
-                e.Cancel = true;
-        }
-
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
-            Form frm = this.KTForm(typeof(frmMain));
+            Form frm = this.KTForm(typeof(Main));
             if (frm != null)
                 frm.Activate();
             else
@@ -86,6 +76,7 @@ namespace QLNS
                 DiChuyenPanel(btnTongQuan);
             }
         }
+
         private void btnNhanSu_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmNhanSu));
@@ -158,30 +149,36 @@ namespace QLNS
             }
         }
 
-        private void quảnLýTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuQuanLyTaiKhoan_Click(object sender, EventArgs e)
         {
             frmUser f5 = new frmUser();
             this.Hide();
             f5.Show();
         }
 
-        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuDoiMatKhau_Click(object sender, EventArgs e)
         {
-            // f6 = new frmUser();
-            this.Hide();
-           //f6.Show();
+
         }
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        private void menuDangXuat_Click(object sender, EventArgs e)
         {
             btnDangXuat_Click(sender, e);
+
         }
 
-        private void trợGiúpToolStripMenuItem_Click(object sender, EventArgs e)
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
         {
-            frmUser f5 = new frmUser();
-            this.Hide();
-            f5.Show();
+            DialogResult traloi = MessageBox.Show("Bạn có muốn đóng chương trình", "THÔNG BÁO", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
+            else if (traloi == DialogResult.Cancel)
+                e.Cancel = true;
+        }
+
+        private void frmMain_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            Maximize(this);
         }
 
         private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
@@ -189,11 +186,11 @@ namespace QLNS
             Minimize(this);
         }
 
-        private void frmMain_MaximumSizeChanged(object sender, EventArgs e)
+        private void menuTroGiup_Click(object sender, EventArgs e)
         {
-            Maximize(this);
+
         }
-  
+
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Bạn có muốn đăng xuất?", "THÔNG BÁO");
@@ -202,6 +199,4 @@ namespace QLNS
             fdn.ShowDialog();
         }
     }
-
 }
-

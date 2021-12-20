@@ -29,110 +29,86 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.panelLeft = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.lblUser = new System.Windows.Forms.Label();
             this.picHinh = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNghiPhep = new System.Windows.Forms.Button();
             this.btnHopDong = new System.Windows.Forms.Button();
-<<<<<<< HEAD
-=======
-            this.btnTuyenDung = new System.Windows.Forms.Button();
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
             this.btnLuong = new System.Windows.Forms.Button();
             this.btnTongQuan = new System.Windows.Forms.Button();
             this.btnNhanSu = new System.Windows.Forms.Button();
             this.panelSlide = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.menuMain = new System.Windows.Forms.MenuStrip();
-            this.tàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.quảnLýTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.trợGiúpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTroGiup = new System.Windows.Forms.ToolStripMenuItem();
+            this.panelLeft.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.menuMain.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // splitContainer1
+            // panelLeft
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.btnDangXuat);
-            this.splitContainer1.Panel1.Controls.Add(this.lblUser);
-            this.splitContainer1.Panel1.Controls.Add(this.picHinh);
-            this.splitContainer1.Panel1.Controls.Add(this.pictureBox1);
-            this.splitContainer1.Panel1.Controls.Add(this.btnNghiPhep);
-            this.splitContainer1.Panel1.Controls.Add(this.btnHopDong);
-            this.splitContainer1.Panel1.Controls.Add(this.btnLuong);
-            this.splitContainer1.Panel1.Controls.Add(this.btnTongQuan);
-            this.splitContainer1.Panel1.Controls.Add(this.btnNhanSu);
-            this.splitContainer1.Panel1.Controls.Add(this.panelSlide);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.panelCentral);
-            this.splitContainer1.Panel2.Controls.Add(this.menuMain);
-            this.splitContainer1.Size = new System.Drawing.Size(1094, 543);
-            this.splitContainer1.SplitterDistance = 117;
-            this.splitContainer1.SplitterWidth = 1;
-            this.splitContainer1.TabIndex = 0;
+            this.panelLeft.Controls.Add(this.btnDangXuat);
+            this.panelLeft.Controls.Add(this.lblUser);
+            this.panelLeft.Controls.Add(this.picHinh);
+            this.panelLeft.Controls.Add(this.pictureBox1);
+            this.panelLeft.Controls.Add(this.btnNghiPhep);
+            this.panelLeft.Controls.Add(this.btnHopDong);
+            this.panelLeft.Controls.Add(this.btnLuong);
+            this.panelLeft.Controls.Add(this.btnTongQuan);
+            this.panelLeft.Controls.Add(this.btnNhanSu);
+            this.panelLeft.Controls.Add(this.panelSlide);
+            this.panelLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelLeft.Location = new System.Drawing.Point(0, 0);
+            this.panelLeft.Name = "panelLeft";
+            this.panelLeft.Size = new System.Drawing.Size(116, 543);
+            this.panelLeft.TabIndex = 0;
             // 
             // btnDangXuat
             // 
             this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
             this.btnDangXuat.Image = global::QLNS.Properties.Resources.log_out;
-            this.btnDangXuat.Location = new System.Drawing.Point(25, 502);
+            this.btnDangXuat.Location = new System.Drawing.Point(25, 503);
             this.btnDangXuat.Name = "btnDangXuat";
             this.btnDangXuat.Size = new System.Drawing.Size(58, 38);
-            this.btnDangXuat.TabIndex = 0;
+            this.btnDangXuat.TabIndex = 34;
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
             // 
             // lblUser
             // 
             this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(32, 471);
+            this.lblUser.Location = new System.Drawing.Point(32, 472);
             this.lblUser.Name = "lblUser";
             this.lblUser.Size = new System.Drawing.Size(38, 19);
-            this.lblUser.TabIndex = 33;
-            this.lblUser.Text = "User";
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(32, 471);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(38, 19);
-            this.lblUser.TabIndex = 33;
+            this.lblUser.TabIndex = 43;
             this.lblUser.Text = "User";
             // 
             // picHinh
             // 
-            this.picHinh.Location = new System.Drawing.Point(12, 396);
+            this.picHinh.Location = new System.Drawing.Point(12, 397);
             this.picHinh.Name = "picHinh";
             this.picHinh.Size = new System.Drawing.Size(94, 72);
-            this.picHinh.TabIndex = 32;
+            this.picHinh.TabIndex = 42;
             this.picHinh.TabStop = false;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::QLNS.Properties.Resources._189_1894796_cathay_life_việt_nam_mở_3_văn_phòng_kinh_doanh_mới_cathay_removebg_preview1;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(0, 1);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(116, 71);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabIndex = 41;
             this.pictureBox1.TabStop = false;
             // 
             // btnNghiPhep
@@ -143,10 +119,10 @@
             this.btnNghiPhep.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNghiPhep.Image = global::QLNS.Properties.Resources.switch_off;
             this.btnNghiPhep.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNghiPhep.Location = new System.Drawing.Point(4, 284);
+            this.btnNghiPhep.Location = new System.Drawing.Point(4, 285);
             this.btnNghiPhep.Name = "btnNghiPhep";
             this.btnNghiPhep.Size = new System.Drawing.Size(111, 53);
-            this.btnNghiPhep.TabIndex = 24;
+            this.btnNghiPhep.TabIndex = 35;
             this.btnNghiPhep.Text = "Nghỉ phép";
             this.btnNghiPhep.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNghiPhep.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -161,10 +137,10 @@
             this.btnHopDong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHopDong.Image = global::QLNS.Properties.Resources.icons8_signing_a_document_48;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHopDong.Location = new System.Drawing.Point(4, 231);
+            this.btnHopDong.Location = new System.Drawing.Point(4, 232);
             this.btnHopDong.Name = "btnHopDong";
             this.btnHopDong.Size = new System.Drawing.Size(111, 53);
-            this.btnHopDong.TabIndex = 25;
+            this.btnHopDong.TabIndex = 36;
             this.btnHopDong.Text = "Hợp đồng";
             this.btnHopDong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnHopDong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -179,33 +155,15 @@
             this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLuong.Image = global::QLNS.Properties.Resources.coin_dollar_2534;
             this.btnLuong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnLuong.Location = new System.Drawing.Point(4, 178);
+            this.btnLuong.Location = new System.Drawing.Point(4, 179);
             this.btnLuong.Name = "btnLuong";
             this.btnLuong.Size = new System.Drawing.Size(111, 53);
-            this.btnLuong.TabIndex = 27;
+            this.btnLuong.TabIndex = 37;
             this.btnLuong.Text = "Lương";
             this.btnLuong.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLuong.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnLuong.UseVisualStyleBackColor = false;
             this.btnLuong.Click += new System.EventHandler(this.btnLuong_Click);
-            // 
-            // btnTongQuan
-            // 
-            this.btnTongQuan.BackColor = System.Drawing.Color.Transparent;
-            this.btnTongQuan.FlatAppearance.BorderSize = 0;
-            this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
-            this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnTongQuan.ImageKey = "(none)";
-            this.btnTongQuan.Location = new System.Drawing.Point(5, 72);
-            this.btnTongQuan.Name = "btnTongQuan";
-            this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
-            this.btnTongQuan.TabIndex = 28;
-            this.btnTongQuan.Text = "Tổng quan";
-            this.btnTongQuan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnTongQuan.UseVisualStyleBackColor = false;
-            this.btnTongQuan.Click += new System.EventHandler(this.btnTongQuan_Click);
             // 
             // btnTongQuan
             // 
@@ -219,13 +177,14 @@
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTongQuan.ImageKey = "(none)";
-            this.btnTongQuan.Location = new System.Drawing.Point(5, 72);
+            this.btnTongQuan.Location = new System.Drawing.Point(5, 73);
             this.btnTongQuan.Name = "btnTongQuan";
             this.btnTongQuan.Size = new System.Drawing.Size(111, 53);
-            this.btnTongQuan.TabIndex = 28;
+            this.btnTongQuan.TabIndex = 38;
             this.btnTongQuan.Text = "Tổng quan";
             this.btnTongQuan.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnTongQuan.UseVisualStyleBackColor = false;
+            this.btnTongQuan.Click += new System.EventHandler(this.btnTongQuan_Click);
             // 
             // btnNhanSu
             // 
@@ -235,10 +194,10 @@
             this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNhanSu.Image = global::QLNS.Properties.Resources.icons8_people_64;
             this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnNhanSu.Location = new System.Drawing.Point(4, 125);
+            this.btnNhanSu.Location = new System.Drawing.Point(4, 126);
             this.btnNhanSu.Name = "btnNhanSu";
             this.btnNhanSu.Size = new System.Drawing.Size(111, 53);
-            this.btnNhanSu.TabIndex = 29;
+            this.btnNhanSu.TabIndex = 39;
             this.btnNhanSu.Text = "Nhân sự";
             this.btnNhanSu.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnNhanSu.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
@@ -248,139 +207,117 @@
             // panelSlide
             // 
             this.panelSlide.BackColor = System.Drawing.Color.DarkGreen;
-            this.panelSlide.Location = new System.Drawing.Point(2, 71);
+            this.panelSlide.Location = new System.Drawing.Point(2, 72);
             this.panelSlide.Name = "panelSlide";
             this.panelSlide.Size = new System.Drawing.Size(4, 53);
-            this.panelSlide.TabIndex = 30;
+            this.panelSlide.TabIndex = 40;
             // 
-            // panelSlide
+            // panel1
             // 
-            this.panelSlide.BackColor = System.Drawing.Color.DarkGreen;
-            this.panelSlide.Location = new System.Drawing.Point(2, 71);
-            this.panelSlide.Name = "panelSlide";
-            this.panelSlide.Size = new System.Drawing.Size(4, 53);
-            this.panelSlide.TabIndex = 30;
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.panelCentral);
+            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Location = new System.Drawing.Point(116, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(978, 543);
+            this.panel1.TabIndex = 1;
             // 
             // panelCentral
             // 
-            this.panelCentral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelCentral.BackColor = System.Drawing.Color.White;
             this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
             this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panelCentral.Location = new System.Drawing.Point(0, 24);
             this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(979, 519);
-            this.panelCentral.TabIndex = 26;
+            this.panelCentral.Size = new System.Drawing.Size(978, 519);
+            this.panelCentral.TabIndex = 27;
             // 
-            // menuMain
+            // menuStrip1
             // 
-            this.menuMain.BackColor = System.Drawing.Color.Transparent;
-<<<<<<< HEAD
-            this.menuMain.Dock = System.Windows.Forms.DockStyle.None;
-=======
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
-            this.menuMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tàiKhoảnToolStripMenuItem,
-            this.trợGiúpToolStripMenuItem});
-            this.menuMain.Location = new System.Drawing.Point(0, 0);
-            this.menuMain.Name = "menuMain";
-<<<<<<< HEAD
-            this.menuMain.Size = new System.Drawing.Size(139, 24);
-=======
-            this.menuMain.Size = new System.Drawing.Size(977, 24);
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
-            this.menuMain.TabIndex = 25;
-            this.menuMain.Text = "menuStrip1";
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuTaiKhoan,
+            this.menuTroGiup});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(978, 24);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // tàiKhoảnToolStripMenuItem
+            // menuTaiKhoan
             // 
-            this.tàiKhoảnToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.quảnLýTàiKhoảnToolStripMenuItem,
-            this.đổiMậtKhẩuToolStripMenuItem,
-            this.đăngXuấtToolStripMenuItem});
-            this.tàiKhoảnToolStripMenuItem.Name = "tàiKhoảnToolStripMenuItem";
-<<<<<<< HEAD
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-=======
-            this.tàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
-            this.tàiKhoảnToolStripMenuItem.Text = "Tài khoản";
+            this.menuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuQuanLyTaiKhoan,
+            this.menuDoiMatKhau,
+            this.menuDangXuat});
+            this.menuTaiKhoan.Name = "menuTaiKhoan";
+            this.menuTaiKhoan.Size = new System.Drawing.Size(69, 20);
+            this.menuTaiKhoan.Text = "Tài khoản";
             // 
-            // quảnLýTàiKhoảnToolStripMenuItem
+            // menuQuanLyTaiKhoan
             // 
-            this.quảnLýTàiKhoảnToolStripMenuItem.Name = "quảnLýTàiKhoảnToolStripMenuItem";
-            this.quảnLýTàiKhoảnToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.quảnLýTàiKhoảnToolStripMenuItem.Text = "Quản lý tài khoản";
-<<<<<<< HEAD
-            this.quảnLýTàiKhoảnToolStripMenuItem.Click += new System.EventHandler(this.quảnLýTàiKhoảnToolStripMenuItem_Click);
-=======
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
+            this.menuQuanLyTaiKhoan.Name = "menuQuanLyTaiKhoan";
+            this.menuQuanLyTaiKhoan.Size = new System.Drawing.Size(167, 22);
+            this.menuQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.menuQuanLyTaiKhoan.Click += new System.EventHandler(this.menuQuanLyTaiKhoan_Click);
             // 
-            // đổiMậtKhẩuToolStripMenuItem
+            // menuDoiMatKhau
             // 
-            this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi mật khẩu";
-<<<<<<< HEAD
-            this.đổiMậtKhẩuToolStripMenuItem.Click += new System.EventHandler(this.đổiMậtKhẩuToolStripMenuItem_Click);
-=======
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
+            this.menuDoiMatKhau.Name = "menuDoiMatKhau";
+            this.menuDoiMatKhau.Size = new System.Drawing.Size(167, 22);
+            this.menuDoiMatKhau.Text = "Đổi mật khẩu";
+            this.menuDoiMatKhau.Click += new System.EventHandler(this.menuDoiMatKhau_Click);
             // 
-            // đăngXuấtToolStripMenuItem
+            // menuDangXuat
             // 
-            this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
-            this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
-<<<<<<< HEAD
-            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
-=======
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
+            this.menuDangXuat.Name = "menuDangXuat";
+            this.menuDangXuat.Size = new System.Drawing.Size(167, 22);
+            this.menuDangXuat.Text = "Đăng xuất";
+            this.menuDangXuat.Click += new System.EventHandler(this.menuDangXuat_Click);
             // 
-            // trợGiúpToolStripMenuItem
+            // menuTroGiup
             // 
-            this.trợGiúpToolStripMenuItem.Name = "trợGiúpToolStripMenuItem";
-<<<<<<< HEAD
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
-            this.trợGiúpToolStripMenuItem.Click += new System.EventHandler(this.trợGiúpToolStripMenuItem_Click);
-=======
-            this.trợGiúpToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.trợGiúpToolStripMenuItem.Text = "Trợ giúp";
->>>>>>> da0b5c96f1ef9a3cf8b952ec369922e457d5de1d
+            this.menuTroGiup.Name = "menuTroGiup";
+            this.menuTroGiup.Size = new System.Drawing.Size(62, 20);
+            this.menuTroGiup.Text = "Trợ giúp";
+            this.menuTroGiup.Click += new System.EventHandler(this.menuTroGiup_Click);
             // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 543);
-            this.Controls.Add(this.splitContainer1);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lý nhân sự";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.MaximumSizeChanged += new System.EventHandler(this.frmMain_MaximumSizeChanged);
+            this.MinimumSizeChanged += new System.EventHandler(this.frmMain_MinimumSizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel1.PerformLayout();
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            this.splitContainer1.Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
+            this.panelLeft.ResumeLayout(false);
+            this.panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.menuMain.ResumeLayout(false);
-            this.menuMain.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panelLeft;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem menuTaiKhoan;
+        private System.Windows.Forms.ToolStripMenuItem menuTroGiup;
+        private System.Windows.Forms.Button btnDangXuat;
         private System.Windows.Forms.Label lblUser;
         private System.Windows.Forms.PictureBox picHinh;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -390,14 +327,9 @@
         private System.Windows.Forms.Button btnTongQuan;
         private System.Windows.Forms.Button btnNhanSu;
         private System.Windows.Forms.Panel panelSlide;
-        private System.Windows.Forms.MenuStrip menuMain;
-        private System.Windows.Forms.ToolStripMenuItem tàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem quảnLýTàiKhoảnToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem trợGiúpToolStripMenuItem;
         private System.Windows.Forms.Panel panelCentral;
-        private System.Windows.Forms.Button btnDangXuat;
+        private System.Windows.Forms.ToolStripMenuItem menuQuanLyTaiKhoan;
+        private System.Windows.Forms.ToolStripMenuItem menuDoiMatKhau;
+        private System.Windows.Forms.ToolStripMenuItem menuDangXuat;
     }
 }
-
