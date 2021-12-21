@@ -54,6 +54,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.txtTienLuong = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtLCB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtHoTen = new System.Windows.Forms.TextBox();
@@ -61,8 +63,6 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvDSLuong = new System.Windows.Forms.DataGridView();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtTienLuong = new System.Windows.Forms.TextBox();
             this.gbThongTin.SuspendLayout();
             this.gbChon.SuspendLayout();
             this.gbTongLuong.SuspendLayout();
@@ -237,7 +237,6 @@
             // 
             // cmbPhongBan
             // 
-            this.cmbPhongBan.Enabled = false;
             this.cmbPhongBan.FormattingEnabled = true;
             this.cmbPhongBan.Location = new System.Drawing.Point(336, 24);
             this.cmbPhongBan.Name = "cmbPhongBan";
@@ -352,6 +351,23 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Chức vụ";
             // 
+            // txtTienLuong
+            // 
+            this.txtTienLuong.Enabled = false;
+            this.txtTienLuong.Location = new System.Drawing.Point(803, 26);
+            this.txtTienLuong.Name = "txtTienLuong";
+            this.txtTienLuong.Size = new System.Drawing.Size(159, 26);
+            this.txtTienLuong.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(725, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tiền lương";
+            // 
             // txtLCB
             // 
             this.txtLCB.Location = new System.Drawing.Point(586, 26);
@@ -410,23 +426,6 @@
             this.dtgvDSLuong.Size = new System.Drawing.Size(950, 281);
             this.dtgvDSLuong.TabIndex = 17;
             this.dtgvDSLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSLuong_CellClick);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(725, 29);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(72, 19);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tiền lương";
-            // 
-            // txtTienLuong
-            // 
-            this.txtTienLuong.Enabled = false;
-            this.txtTienLuong.Location = new System.Drawing.Point(803, 26);
-            this.txtTienLuong.Name = "txtTienLuong";
-            this.txtTienLuong.Size = new System.Drawing.Size(159, 26);
-            this.txtTienLuong.TabIndex = 2;
             // 
             // frmLuong
             // 

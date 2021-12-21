@@ -66,17 +66,18 @@ namespace QLNS
         void SetHeaderText()
         {
             //đặt tên cột
-            dtgvDSLuong.Columns["MaNV"].HeaderText = "Mã NV";
+            //dtgvDSLuong.Columns["MaLuong"].HeaderText = "Mã lương";
+            dtgvDSLuong.Columns["LuongCB"].HeaderText = "Lương cơ bản";
+            dtgvDSLuong.Columns["HSL"].HeaderText = "Hệ số lương";
+            dtgvDSLuong.Columns["PhuCap"].HeaderText = "Phụ cấp";
             dtgvDSLuong.Columns["HoTenNV"].HeaderText = "Họ tên";
             dtgvDSLuong.Columns["TenCV"].HeaderText = "Chức vụ";
             dtgvDSLuong.Columns["TenPB"].HeaderText = "Phòng ban";
             dtgvDSLuong.Columns["Thuong"].HeaderText = "Thưởng";
-            dtgvDSLuong.Columns["PhuCap"].HeaderText = "Phụ cấp";
-            dtgvDSLuong.Columns["LuongCB"].HeaderText = "Lương cơ bản";
-            dtgvDSLuong.Columns["HSL"].HeaderText = "Hệ số lương";
             dtgvDSLuong.Columns["KiLuat"].HeaderText = "Kỉ Luật";
-            dtgvDSLuong.Columns["TienLuong"].HeaderText = "Tiền Lương";
             dtgvDSLuong.Columns["GhiChu"].HeaderText = "Ghi chú";
+           // dtgvDSLuong.Columns["TienLuong"].HeaderText = "Tiền Lương";
+            dtgvDSLuong.Columns["MaNV"].HeaderText = "Mã NV";
             //dtgvDSLuong.Rows. = TinhLuong().ToString();
         }
         void loadComboBox()
@@ -100,11 +101,11 @@ namespace QLNS
         }
         private void btnTongLuong_Click(object sender, EventArgs e)
         {
-            int tong = 0;
+            /*int tong = 0;
             foreach(DataGridViewRow row in dtgvDSLuong.Rows)
             {
                 //tong = tong + row.Cells["TienLuong"].Value;
-            }
+            }*/
         }
 
         private void btnCapNhat_Click(object sender, EventArgs e)
