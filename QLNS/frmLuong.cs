@@ -56,18 +56,11 @@ namespace QLNS
                 txtHSL.Focus();
                 return false;
             }
-            //Kiểm tra ngày công không bỏ trống
-            if (txtNgayCong.Text.Trim() == "")
-            {
-                MessageBox.Show("Mã số nhân viên không được trống", "THÔNG BÁO");
-                txtNgayCong.Focus();
-                return false;
-            }
             return true;
         }
         public void loadDataGirdView()
         {
-            string query = "select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB";
+            string query = "select nv.MaNV, nv.HoTenNV, cv.TenCV, pb.TenPB, l.Thuong, l.PhuCap, l.LuongCB, l.HSL, l.KiLuat, l.GhiChu from NhanVien nv, ChucVu cv, PhongBan pb, Luong l where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB and nv.MaNV=l.MaNV";
             dtgvDSLuong.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
         void SetHeaderText()
@@ -80,10 +73,8 @@ namespace QLNS
             dtgvDSLuong.Columns["Thuong"].HeaderText = "Thưởng";
             dtgvDSLuong.Columns["PhuCap"].HeaderText = "Phụ cấp";
             dtgvDSLuong.Columns["LuongCB"].HeaderText = "Lương cơ bản";
-            dtgvDSLuong.Columns["SoGioTangCa"].HeaderText = "Số giờ tăng ca";
             dtgvDSLuong.Columns["HSL"].HeaderText = "Hệ số lương";
             dtgvDSLuong.Columns["KiLuat"].HeaderText = "Kỉ Luật";
-            dtgvDSLuong.Columns["NgayCong"].HeaderText = "Ngày công";
             dtgvDSLuong.Columns["TienLuong"].HeaderText = "Tiền Lương";
             dtgvDSLuong.Columns["GhiChu"].HeaderText = "Ghi chú";
             //dtgvDSLuong.Rows. = TinhLuong().ToString();
@@ -104,9 +95,7 @@ namespace QLNS
             int thuong = Int32.Parse(txtThuong.Text);
             int kiluat = Int32.Parse(txtKiLuat.Text);
             int lcb = Int32.Parse(txtLCB.Text);
-            int tangca = Int32.Parse(txtSoGioTangCa.Text);
-            int ngaycong = Int32.Parse(txtNgayCong.Text);
-            int luong = (((hsl * lcb + pc) / 26) * ngaycong + (tangca * 40000) + thuong - kiluat);
+            int luong = (hsl * lcb + pc + thuong - kiluat);
             return luong;
         }
         private void btnTongLuong_Click(object sender, EventArgs e)
@@ -120,7 +109,18 @@ namespace QLNS
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
+            string update = "update Luong set LuongCB = N'" + txtLCB.Text + "',HSL=N'" + txtHSL.Text + "',PhuCap = N'" + txtPhuCap.Text + "',Thuong = N'" + txtThuong.Text + "',KiLuat = N'" + txtKiLuat.Text + "',GhiChu = N'" + txtGhiChu.Text + "'";
 
+            if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
+            {
+                if (KTThongTin())
+                {
+                    DataProvider.Instance.ExcuteNonQuery(update);
+                    dtgvDSLuong.Refresh();
+                    loadDataGirdView();
+                    MessageBox.Show("Sửa thành công");
+                }
+            }
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -150,10 +150,8 @@ namespace QLNS
             txtThuong.Text = dtgvDSLuong.Rows[i].Cells["Thuong"].Value.ToString();
             txtPhuCap.Text = dtgvDSLuong.Rows[i].Cells["PhuCap"].Value.ToString();
             txtLCB.Text = dtgvDSLuong.Rows[i].Cells["LuongCB"].Value.ToString();
-            txtSoGioTangCa.Text = dtgvDSLuong.Rows[i].Cells["SoGioTangCa"].Value.ToString();
             txtHSL.Text = dtgvDSLuong.Rows[i].Cells["HSL"].Value.ToString();
             txtKiLuat.Text = dtgvDSLuong.Rows[i].Cells["KiLuat"].Value.ToString();
-            txtNgayCong.Text = dtgvDSLuong.Rows[i].Cells["NgayCong"].Value.ToString();
             txtGhiChu.Text = dtgvDSLuong.Rows[i].Cells["GhiChu"].Value.ToString();
         }
 
