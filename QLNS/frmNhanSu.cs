@@ -259,6 +259,11 @@ namespace QLNS
         {
 
         }
+
+        private void btnChonHinh_Click(object sender, EventArgs e)
+        {
+
+        }
         //nút Button thêm sửa xóa còn lỗi
     }
 }

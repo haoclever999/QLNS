@@ -109,7 +109,8 @@ namespace QLNS
 
         private void btnCapNhat_Click(object sender, EventArgs e)
         {
-            string update = "update Luong set LuongCB = N'" + txtLCB.Text + "',HSL=N'" + txtHSL.Text + "',PhuCap = N'" + txtPhuCap.Text + "',Thuong = N'" + txtThuong.Text + "',KiLuat = N'" + txtKiLuat.Text + "',GhiChu = N'" + txtGhiChu.Text + "'";
+            int tienluong = TinhLuong();
+            string update = "update Luong set LuongCB = N'" + txtLCB.Text + "',HSL=N'" + txtHSL.Text + "',PhuCap = N'" + txtPhuCap.Text + "',Thuong = N'" + txtThuong.Text + "',KiLuat = N'" + txtKiLuat.Text + "',TienLuong = N'" + tienluong.ToString() + "',GhiChu = N'" + txtGhiChu.Text + "'";
 
             if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
             {

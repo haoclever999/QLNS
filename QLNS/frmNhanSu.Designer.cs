@@ -61,6 +61,7 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvDSNV = new System.Windows.Forms.DataGridView();
+            this.btnChonHinh = new System.Windows.Forms.Button();
             this.gbThongTin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.gbChon.SuspendLayout();
@@ -70,6 +71,7 @@
             // 
             // gbThongTin
             // 
+            this.gbThongTin.Controls.Add(this.btnChonHinh);
             this.gbThongTin.Controls.Add(this.picHinh);
             this.gbThongTin.Controls.Add(this.btnSua);
             this.gbThongTin.Controls.Add(this.btnThem);
@@ -107,7 +109,7 @@
             // 
             this.picHinh.Location = new System.Drawing.Point(7, 31);
             this.picHinh.Name = "picHinh";
-            this.picHinh.Size = new System.Drawing.Size(117, 164);
+            this.picHinh.Size = new System.Drawing.Size(117, 149);
             this.picHinh.TabIndex = 16;
             this.picHinh.TabStop = false;
             // 
@@ -424,6 +426,16 @@
             this.dtgvDSNV.TabIndex = 19;
             this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
+            // btnChonHinh
+            // 
+            this.btnChonHinh.Location = new System.Drawing.Point(20, 188);
+            this.btnChonHinh.Name = "btnChonHinh";
+            this.btnChonHinh.Size = new System.Drawing.Size(95, 29);
+            this.btnChonHinh.TabIndex = 17;
+            this.btnChonHinh.Text = "Chọn hình";
+            this.btnChonHinh.UseVisualStyleBackColor = true;
+            this.btnChonHinh.Click += new System.EventHandler(this.btnChonHinh_Click);
+            // 
             // frmNhanSu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -482,5 +494,6 @@
         private System.Windows.Forms.GroupBox gbChon;
         private System.Windows.Forms.RadioButton radHoTen;
         private System.Windows.Forms.RadioButton radMaNV;
+        private System.Windows.Forms.Button btnChonHinh;
     }
 }

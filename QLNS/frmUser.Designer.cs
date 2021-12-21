@@ -40,9 +40,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dtgvDSTK = new System.Windows.Forms.DataGridView();
+            this.picHinh = new System.Windows.Forms.PictureBox();
+            this.btnChonHinh = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSTK)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             this.SuspendLayout();
             // 
             // btnThem
@@ -60,6 +63,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnChonHinh);
+            this.groupBox1.Controls.Add(this.picHinh);
             this.groupBox1.Controls.Add(this.cmbLoaiTaiKhoan);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnSua);
@@ -71,7 +76,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(510, 191);
+            this.groupBox1.Size = new System.Drawing.Size(510, 226);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thông tin";
@@ -155,7 +160,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dtgvDSTK);
-            this.groupBox2.Location = new System.Drawing.Point(12, 209);
+            this.groupBox2.Location = new System.Drawing.Point(12, 244);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(510, 230);
             this.groupBox2.TabIndex = 2;
@@ -171,11 +176,28 @@
             this.dtgvDSTK.Size = new System.Drawing.Size(497, 198);
             this.dtgvDSTK.TabIndex = 0;
             // 
+            // picHinh
+            // 
+            this.picHinh.Location = new System.Drawing.Point(188, 170);
+            this.picHinh.Name = "picHinh";
+            this.picHinh.Size = new System.Drawing.Size(87, 50);
+            this.picHinh.TabIndex = 5;
+            this.picHinh.TabStop = false;
+            // 
+            // btnChonHinh
+            // 
+            this.btnChonHinh.Location = new System.Drawing.Point(290, 188);
+            this.btnChonHinh.Name = "btnChonHinh";
+            this.btnChonHinh.Size = new System.Drawing.Size(82, 32);
+            this.btnChonHinh.TabIndex = 6;
+            this.btnChonHinh.Text = "Chọn hình";
+            this.btnChonHinh.UseVisualStyleBackColor = true;
+            // 
             // frmUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(534, 451);
+            this.ClientSize = new System.Drawing.Size(599, 486);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -188,6 +210,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvDSTK)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -206,5 +229,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView dtgvDSTK;
+        private System.Windows.Forms.Button btnChonHinh;
+        private System.Windows.Forms.PictureBox picHinh;
     }
 }

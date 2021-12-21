@@ -61,6 +61,8 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dtgvDSLuong = new System.Windows.Forms.DataGridView();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtTienLuong = new System.Windows.Forms.TextBox();
             this.gbThongTin.SuspendLayout();
             this.gbChon.SuspendLayout();
             this.gbTongLuong.SuspendLayout();
@@ -88,6 +90,8 @@
             this.gbThongTin.Controls.Add(this.label6);
             this.gbThongTin.Controls.Add(this.label5);
             this.gbThongTin.Controls.Add(this.label4);
+            this.gbThongTin.Controls.Add(this.txtTienLuong);
+            this.gbThongTin.Controls.Add(this.label8);
             this.gbThongTin.Controls.Add(this.txtLCB);
             this.gbThongTin.Controls.Add(this.label3);
             this.gbThongTin.Controls.Add(this.txtHoTen);
@@ -267,7 +271,7 @@
             // 
             // txtKiLuat
             // 
-            this.txtKiLuat.Location = new System.Drawing.Point(585, 102);
+            this.txtKiLuat.Location = new System.Drawing.Point(585, 101);
             this.txtKiLuat.Name = "txtKiLuat";
             this.txtKiLuat.Size = new System.Drawing.Size(131, 26);
             this.txtKiLuat.TabIndex = 7;
@@ -283,16 +287,16 @@
             // 
             // txtGhiChu
             // 
-            this.txtGhiChu.Location = new System.Drawing.Point(803, 28);
+            this.txtGhiChu.Location = new System.Drawing.Point(803, 63);
             this.txtGhiChu.Multiline = true;
             this.txtGhiChu.Name = "txtGhiChu";
-            this.txtGhiChu.Size = new System.Drawing.Size(159, 96);
+            this.txtGhiChu.Size = new System.Drawing.Size(159, 61);
             this.txtGhiChu.TabIndex = 7;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(727, 32);
+            this.label7.Location = new System.Drawing.Point(737, 68);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 19);
             this.label7.TabIndex = 0;
@@ -324,7 +328,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(486, 66);
+            this.label6.Location = new System.Drawing.Point(486, 68);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 19);
             this.label6.TabIndex = 0;
@@ -350,7 +354,7 @@
             // 
             // txtLCB
             // 
-            this.txtLCB.Location = new System.Drawing.Point(585, 26);
+            this.txtLCB.Location = new System.Drawing.Point(586, 26);
             this.txtLCB.Name = "txtLCB";
             this.txtLCB.Size = new System.Drawing.Size(131, 26);
             this.txtLCB.TabIndex = 2;
@@ -358,7 +362,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(486, 28);
+            this.label3.Location = new System.Drawing.Point(486, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(94, 19);
             this.label3.TabIndex = 0;
@@ -406,6 +410,23 @@
             this.dtgvDSLuong.Size = new System.Drawing.Size(950, 281);
             this.dtgvDSLuong.TabIndex = 17;
             this.dtgvDSLuong.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSLuong_CellClick);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(725, 29);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(72, 19);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tiền lương";
+            // 
+            // txtTienLuong
+            // 
+            this.txtTienLuong.Enabled = false;
+            this.txtTienLuong.Location = new System.Drawing.Point(803, 26);
+            this.txtTienLuong.Name = "txtTienLuong";
+            this.txtTienLuong.Size = new System.Drawing.Size(159, 26);
+            this.txtTienLuong.TabIndex = 2;
             // 
             // frmLuong
             // 
@@ -466,5 +487,7 @@
         private System.Windows.Forms.RadioButton radMaNV;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTim;
+        private System.Windows.Forms.TextBox txtTienLuong;
+        private System.Windows.Forms.Label label8;
     }
 }
