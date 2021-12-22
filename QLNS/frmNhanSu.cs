@@ -22,7 +22,8 @@ namespace QLNS
         //SqlConnection conn;
         /*SqlCommand cmd;
         SQLDatabase sql;*/
-        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
 
         private void LamMoi()
         {

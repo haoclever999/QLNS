@@ -20,7 +20,9 @@ namespace QLNS
         DataSet ds = new DataSet("dsQLNP");
         SqlCommand cmd;
         SqlDataAdapter daNhanVien;
-        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
+
         private void ResetTT()
         {
             //Trả thông tin nhập về trống như ban đầu
@@ -76,12 +78,17 @@ namespace QLNS
         void SetHeaderText()
         {
             //đặt tên cột
-            dgDSNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
-            dgDSNghiPhep.Columns["MaNV"].HeaderText = "Mã NV";
-            dgDSNghiPhep.Columns["HoTenNV"].HeaderText = "Họ tên";
-            dgDSNghiPhep.Columns["SoNgayNghi"].HeaderText = "Số ngày nghỉ";
-            dgDSNghiPhep.Columns["LyDo"].HeaderText = "Lý do";
-            dgDSNghiPhep.Columns["NgayNghi"].HeaderText = "Ngày nghỉ";
+            dgvDSNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
+            dgvDSNghiPhep.Columns["MaNV"].HeaderText = "Mã NV";
+            dgvDSNghiPhep.Columns["HoTenNV"].HeaderText = "Họ tên";
+            dgvDSNghiPhep.Columns["SoNgayNghi"].HeaderText = "Số ngày nghỉ";
+            dgvDSNghiPhep.Columns["LyDo"].HeaderText = "Lý do";
+            dgvDSNghiPhep.Columns["NgayNghi"].HeaderText = "Ngày nghỉ";
+        }
+        public void loadDataGirdView()
+        {
+            string query = "select nv.MaNV, nv.HoTenNV, where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB and nv.MaNV=l.MaNV";
+            dgvDSNghiPhep.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
         private void Connectionsql()
         {
@@ -101,7 +108,7 @@ namespace QLNS
             //Đóng kết nối
             conn.Close();
             //Đổ dữ liệu vào datagridview
-            dgDSNghiPhep.DataSource = dt;
+            dgvDSNghiPhep.DataSource = dt;
             //Reset thông tin trên hàng nhập
             txtMaNV.Enabled = false;
             ResetTT();
@@ -176,12 +183,12 @@ namespace QLNS
         {
             //Trả các dữ liệu của hàng đang chọn lên các textbox nhập
             int i = e.RowIndex;
-            txtMaNghiPhep.Text = dgDSNghiPhep.Rows[i].Cells["MaNghiPhep"].Value.ToString();
-            dtNgayPhep.Text = dgDSNghiPhep.Rows[i].Cells["NgayNghi"].Value.ToString();
-            txtMaNV.Text = dgDSNghiPhep.Rows[i].Cells["MaNV"].Value.ToString();
-            cboNV.Text = dgDSNghiPhep.Rows[i].Cells["HoTenNV"].Value.ToString();
-            txtSoNgayNghi.Text = dgDSNghiPhep.Rows[i].Cells["SoNgayNghi"].Value.ToString();
-            txtLydo.Text = dgDSNghiPhep.Rows[i].Cells["LyDo"].Value.ToString();
+            txtMaNghiPhep.Text = dgvDSNghiPhep.Rows[i].Cells["MaNghiPhep"].Value.ToString();
+            dtNgayPhep.Text = dgvDSNghiPhep.Rows[i].Cells["NgayNghi"].Value.ToString();
+            txtMaNV.Text = dgvDSNghiPhep.Rows[i].Cells["MaNV"].Value.ToString();
+            cboNV.Text = dgvDSNghiPhep.Rows[i].Cells["HoTenNV"].Value.ToString();
+            txtSoNgayNghi.Text = dgvDSNghiPhep.Rows[i].Cells["SoNgayNghi"].Value.ToString();
+            txtLydo.Text = dgvDSNghiPhep.Rows[i].Cells["LyDo"].Value.ToString();
         }
 
         private void cboNV_SelectedIndexChanged(object sender, EventArgs e)

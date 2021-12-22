@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.grbThongTin = new System.Windows.Forms.GroupBox();
-            this.btnXoa = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.cboNV = new System.Windows.Forms.ComboBox();
+            this.btnSua = new System.Windows.Forms.Button();
             this.txtMaNV = new System.Windows.Forms.TextBox();
+            this.btnXoa = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.dtNgayBD = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,30 +67,6 @@
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Nhập thông tin";
             // 
-            // btnXoa
-            // 
-            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
-            this.btnXoa.Location = new System.Drawing.Point(278, 278);
-            this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(102, 44);
-            this.btnXoa.TabIndex = 32;
-            this.btnXoa.Text = "Xóa";
-            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnXoa.UseVisualStyleBackColor = true;
-            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
-            this.btnSua.Location = new System.Drawing.Point(139, 278);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(102, 43);
-            this.btnSua.TabIndex = 31;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
             // btnThem
             // 
             this.btnThem.Image = global::QLNS.Properties.Resources.Itweek_Knob_Toolbar_Knob_Add;
@@ -112,6 +88,18 @@
             this.cboNV.TabIndex = 29;
             this.cboNV.SelectedIndexChanged += new System.EventHandler(this.cboNV_SelectedIndexChanged);
             // 
+            // btnSua
+            // 
+            this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
+            this.btnSua.Location = new System.Drawing.Point(139, 278);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(102, 43);
+            this.btnSua.TabIndex = 31;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // txtMaNV
             // 
             this.txtMaNV.BackColor = System.Drawing.SystemColors.Window;
@@ -120,6 +108,18 @@
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(193, 26);
             this.txtMaNV.TabIndex = 21;
+            // 
+            // btnXoa
+            // 
+            this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
+            this.btnXoa.Location = new System.Drawing.Point(278, 278);
+            this.btnXoa.Name = "btnXoa";
+            this.btnXoa.Size = new System.Drawing.Size(102, 44);
+            this.btnXoa.TabIndex = 32;
+            this.btnXoa.Text = "Xóa";
+            this.btnXoa.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // label4
             // 
@@ -194,7 +194,7 @@
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
             this.label3.Location = new System.Drawing.Point(348, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(293, 31);
+            this.label3.Size = new System.Drawing.Size(294, 31);
             this.label3.TabIndex = 27;
             this.label3.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 

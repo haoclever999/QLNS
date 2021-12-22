@@ -103,6 +103,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLNSuDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLNSuDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="SQLDatabase.cs" />
     <EmbeddedResource Include="frmDangNhap.resx">
       <DependentUpon>frmDangNhap.cs</DependentUpon>
@@ -150,6 +155,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLNSuDataSet.xsc">
+      <DependentUpon>QLNSuDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLNSuDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLNSuDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLNSuDataSet.xss">
+      <DependentUpon>QLNSuDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -207,6 +223,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Hinh\kisspng-cathay-financial-holding-co-ltd-cathay-life-insu-5ae2cb84b8cf52.086449961524812676757.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\x-button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\c41af8sehaf1d3be.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\power-on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\power.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

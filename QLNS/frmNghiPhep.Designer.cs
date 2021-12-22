@@ -33,7 +33,7 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThem = new System.Windows.Forms.Button();
-            this.dgDSNghiPhep = new System.Windows.Forms.DataGridView();
+            this.dgvDSNghiPhep = new System.Windows.Forms.DataGridView();
             this.txtLydo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -42,16 +42,16 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.gbThongTin = new System.Windows.Forms.GroupBox();
+            this.txtSoNgayNghi = new System.Windows.Forms.TextBox();
+            this.cboNV = new System.Windows.Forms.ComboBox();
             this.gbChon = new System.Windows.Forms.GroupBox();
             this.radHoTen = new System.Windows.Forms.RadioButton();
             this.radMaNV = new System.Windows.Forms.RadioButton();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.btnTim = new System.Windows.Forms.Button();
-            this.cboNV = new System.Windows.Forms.ComboBox();
-            this.txtSoNgayNghi = new System.Windows.Forms.TextBox();
             this.lbl1 = new System.Windows.Forms.Label();
             this.txtMaNghiPhep = new System.Windows.Forms.TextBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSNghiPhep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSNghiPhep)).BeginInit();
             this.gbThongTin.SuspendLayout();
             this.gbChon.SuspendLayout();
             this.SuspendLayout();
@@ -102,17 +102,17 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // dgDSNghiPhep
+            // dgvDSNghiPhep
             // 
-            this.dgDSNghiPhep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
-            this.dgDSNghiPhep.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.dgDSNghiPhep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDSNghiPhep.Location = new System.Drawing.Point(15, 198);
-            this.dgDSNghiPhep.Name = "dgDSNghiPhep";
-            this.dgDSNghiPhep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDSNghiPhep.Size = new System.Drawing.Size(945, 309);
-            this.dgDSNghiPhep.TabIndex = 25;
-            this.dgDSNghiPhep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
+            this.dgvDSNghiPhep.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dgvDSNghiPhep.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgvDSNghiPhep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDSNghiPhep.Location = new System.Drawing.Point(15, 198);
+            this.dgvDSNghiPhep.Name = "dgvDSNghiPhep";
+            this.dgvDSNghiPhep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDSNghiPhep.Size = new System.Drawing.Size(945, 309);
+            this.dgvDSNghiPhep.TabIndex = 25;
+            this.dgvDSNghiPhep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
             // txtLydo
             // 
@@ -151,7 +151,7 @@
             // dtNgayPhep
             // 
             this.dtNgayPhep.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayPhep.Location = new System.Drawing.Point(127, 77);
+            this.dtNgayPhep.Location = new System.Drawing.Point(124, 77);
             this.dtNgayPhep.Name = "dtNgayPhep";
             this.dtNgayPhep.Size = new System.Drawing.Size(135, 26);
             this.dtNgayPhep.TabIndex = 18;
@@ -159,7 +159,7 @@
             // 
             // txtMaNV
             // 
-            this.txtMaNV.Location = new System.Drawing.Point(138, 31);
+            this.txtMaNV.Location = new System.Drawing.Point(124, 34);
             this.txtMaNV.MaxLength = 5;
             this.txtMaNV.Name = "txtMaNV";
             this.txtMaNV.Size = new System.Drawing.Size(135, 26);
@@ -199,6 +199,22 @@
             this.gbThongTin.TabIndex = 24;
             this.gbThongTin.TabStop = false;
             this.gbThongTin.Text = "Nhập thông tin";
+            // 
+            // txtSoNgayNghi
+            // 
+            this.txtSoNgayNghi.Location = new System.Drawing.Point(124, 127);
+            this.txtSoNgayNghi.Name = "txtSoNgayNghi";
+            this.txtSoNgayNghi.Size = new System.Drawing.Size(138, 26);
+            this.txtSoNgayNghi.TabIndex = 24;
+            // 
+            // cboNV
+            // 
+            this.cboNV.FormattingEnabled = true;
+            this.cboNV.Location = new System.Drawing.Point(344, 30);
+            this.cboNV.Name = "cboNV";
+            this.cboNV.Size = new System.Drawing.Size(151, 27);
+            this.cboNV.TabIndex = 23;
+            this.cboNV.SelectedIndexChanged += new System.EventHandler(this.cboNV_SelectedIndexChanged_1);
             // 
             // gbChon
             // 
@@ -258,22 +274,6 @@
             this.btnTim.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnTim.UseVisualStyleBackColor = true;
             // 
-            // cboNV
-            // 
-            this.cboNV.FormattingEnabled = true;
-            this.cboNV.Location = new System.Drawing.Point(344, 30);
-            this.cboNV.Name = "cboNV";
-            this.cboNV.Size = new System.Drawing.Size(151, 27);
-            this.cboNV.TabIndex = 23;
-            this.cboNV.SelectedIndexChanged += new System.EventHandler(this.cboNV_SelectedIndexChanged_1);
-            // 
-            // txtSoNgayNghi
-            // 
-            this.txtSoNgayNghi.Location = new System.Drawing.Point(124, 127);
-            this.txtSoNgayNghi.Name = "txtSoNgayNghi";
-            this.txtSoNgayNghi.Size = new System.Drawing.Size(138, 26);
-            this.txtSoNgayNghi.TabIndex = 24;
-            // 
             // lbl1
             // 
             this.lbl1.AutoSize = true;
@@ -298,14 +298,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 519);
-            this.Controls.Add(this.dgDSNghiPhep);
+            this.Controls.Add(this.dgvDSNghiPhep);
             this.Controls.Add(this.gbThongTin);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmNghiPhep";
             this.Load += new System.EventHandler(this.frmNghiPhep_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgDSNghiPhep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDSNghiPhep)).EndInit();
             this.gbThongTin.ResumeLayout(false);
             this.gbThongTin.PerformLayout();
             this.gbChon.ResumeLayout(false);
@@ -321,7 +321,7 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.DataGridView dgDSNghiPhep;
+        private System.Windows.Forms.DataGridView dgvDSNghiPhep;
         private System.Windows.Forms.TextBox txtLydo;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
