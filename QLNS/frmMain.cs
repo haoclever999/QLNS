@@ -186,6 +186,11 @@ namespace QLNS
             Minimize(this);
         }
 
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void menuTroGiup_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmTroGiup));
@@ -206,7 +211,7 @@ namespace QLNS
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bạn có muốn đăng xuất?", "THÔNG BÁO");
+            MessageBox.Show("Bạn đã đăng xuất!!!", "THÔNG BÁO");
             frmDangNhap fdn = new frmDangNhap();
             this.Hide();
             fdn.ShowDialog();

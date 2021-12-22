@@ -20,8 +20,8 @@ namespace QLNS
         DataSet ds = new DataSet("dsQLHD");
         SqlCommand cmd;
         SqlDataAdapter daNhanVien;
-       // SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
         private void ResetTT()
         {
             //Trả thông tin nhập về trống như ban đầu
@@ -109,6 +109,7 @@ namespace QLNS
             cboNV.DisplayMember = "HoTenNV";
             cboNV.ValueMember = "MaNV";
             txtMaNV.Text = cboNV.SelectedValue.ToString();
+            SetHeaderText();
         }
 
         private void cboNV_SelectedIndexChanged(object sender, EventArgs e)
@@ -184,6 +185,26 @@ namespace QLNS
                 }
         }
 
-       
+        private void dtgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string nbd = dtNgayBD.Value.ToString("yyyy/MM/dd");
+            int i = e.RowIndex;
+            txtMaNV.Text = dtgvDSNV.Rows[i].Cells["MaNV"].Value.ToString();
+            cboNV.Text = dtgvDSNV.Rows[i].Cells["HoTenNV"].Value.ToString();
+            txtHanHD.Text = dtgvDSNV.Rows[i].Cells["HanHD"].Value.ToString();
+            dtNgayBD.Text = dtgvDSNV.Rows[i].Cells["NgayBD"].Value.ToString();
+           
+        }
+        void SetHeaderText()
+        {
+            //đặt tên cột
+            
+            dtgvDSNV.Columns["MaHD"].HeaderText = "Mã hợp đồng";
+            dtgvDSNV.Columns["NgayBD"].HeaderText = "Ngày bắt đầu";
+            dtgvDSNV.Columns["HanHD"].HeaderText = "Hạn HĐ";
+            dtgvDSNV.Columns["MaNV"].HeaderText = "Mã NV";
+            dtgvDSNV.Columns["HoTenNV"].HeaderText = "Tên NV";
+            
+        }
     }
 }
