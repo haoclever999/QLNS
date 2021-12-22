@@ -37,6 +37,7 @@ namespace QLNS
             radNu.Checked = false;
             txtMaNV.Focus();
         }
+
         private Boolean KTThongTin()
         {
             //Kiểm tra tên không bỏ trống
@@ -116,11 +117,13 @@ namespace QLNS
             }
             return true;
         }
+
         public void loadDataGirdView()
         {
             string query = "select nv.MaNV, nv.HoTenNV, nv.DiaChi, nv.CMND, nv.SDT, nv.GioiTinh, nv.Email, nv.NgaySinh, pb.TenPB, cv.TenCV from NhanVien nv, ChucVu cv, PhongBan pb where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB";
             dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
+
         void SetHeaderText()
         {
             //đặt tên cột
@@ -135,6 +138,7 @@ namespace QLNS
             dtgvDSNV.Columns["TenPB"].HeaderText = "Phòng ban";
             dtgvDSNV.Columns["TenCV"].HeaderText = "Chức vụ";
         }
+
         void loadComboBox()
         {
             string query1 = "select TenCV from ChucVu";
@@ -144,11 +148,27 @@ namespace QLNS
             cmbChucVu.DisplayMember = "TenCV";
             cmbPhongBan.DisplayMember = "TenPB";
         }
+
         private void txtSDT_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
+
+        string getMaPB(string tenpb)
+        {
+            string query = "select MaPB from PhongBan where TenPB = N'" + tenpb + "'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows[0].ToString();
+        }
+
+        string getMaCV(string tencv)
+        {
+            string query = "select MaCV from ChucVu where TenCV = N'" + tencv + "'";
+            DataTable data = DataProvider.Instance.ExcuteQuery(query);
+            return data.Rows[0].ToString();
+        }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             string gioitinh = "";
@@ -156,19 +176,24 @@ namespace QLNS
                 gioitinh = "Nam";
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
-            string insert = "insert into NhanVien values(N'" + txtMaNV.Text + "',N'" + txtHoTen.Text + "',N'" + txtDiaChi.Text + "',N'" +txtCMND.Text + "',N'" + txtSDT.Text + "',N'" + gioitinh + "',N'" + txtEmail.Text + "',N'" + dtpNgaySinh.Text + "')";
+
+            string mapb = getMaPB(cmbPhongBan.SelectedItem.ToString());
+            string macv = getMaCV(cmbChucVu.SelectedItem.ToString());
+
+            string insert = "exec insertNV @MaNV , @HoTenNV , @DiaChi , @CMND , @SDT , @GioiTinh , @Email , @NgaySinh , @HinhNV , @MaCV , @MaPB";
             //Còn chức vụ và phòng ban
             if ((DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) && (DataProvider.Instance.ExcuteQuery("select Email from NhanVien").ToString() != txtEmail.Text) && (DataProvider.Instance.ExcuteQuery("select SDT from NhanVien").ToString() != txtSDT.Text) && (DataProvider.Instance.ExcuteQuery("select CMND from NhanVien").ToString() != txtCMND.Text))
             {
                 if(KTThongTin())
                 {
-                    DataProvider.Instance.ExcuteNonQuery(insert);
+                    DataProvider.Instance.ExcuteNonQuery(insert, new object[] {txtMaNV.Text, txtHoTen.Text, txtDiaChi.Text, txtCMND.Text, txtSDT.Text, gioitinh, txtEmail.Text, dtpNgaySinh.Value.ToString(), "NULL", macv, mapb });
                     dtgvDSNV.Refresh();
                     loadDataGirdView();
                     MessageBox.Show("Thêm thành công");
                 }
             }
         }
+
         private void btnSua_Click(object sender, EventArgs e)
         {
             string gioitinh = "";
@@ -188,8 +213,8 @@ namespace QLNS
                     MessageBox.Show("Sửa thành công");
                 }
             }
-            
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string delete = "delete from NhanVien where MaNV = '" + txtMaNV.Text + "'";
@@ -203,12 +228,14 @@ namespace QLNS
             if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) 
                 MessageBox.Show("Nhân viên này chưa có dữ liệu, không thể xóa");
         }
+
         private void frmNhanSu_Load(object sender, EventArgs e)
         {
             loadComboBox();
             loadDataGirdView();
             SetHeaderText();
         }
+
         private void dtgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //đổ dữ liệu lên textbox, combobox
@@ -227,11 +254,13 @@ namespace QLNS
             cmbPhongBan.SelectedValue = dtgvDSNV.Rows[i].Cells["TenPB"].Value.ToString();
             cmbChucVu.SelectedValue = dtgvDSNV.Rows[i].Cells["TenCV"].Value.ToString();
         }
+
         private void btnTim_Click(object sender, EventArgs e)
         {
             if ((txtTimKiem.Text == "") || (txtTimKiem.Text == "Nhập thông tin tìm kiếm"))
             {
                 MessageBox.Show("Bạn chưa nhập thông tin cần tìm", "THÔNG BÁO");
+                txtTimKiem.Focus();
             }
             else
             {
@@ -249,21 +278,13 @@ namespace QLNS
                     MessageBox.Show("Không tìm thấy thông tin", "THÔNG BÁO");
             }
         }
+
         private void txtCMND_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
         }
 
-        private void gbThongTin_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnChonHinh_Click(object sender, EventArgs e)
-        {
-
-        }
         //nút Button thêm sửa xóa còn lỗi
     }
 }

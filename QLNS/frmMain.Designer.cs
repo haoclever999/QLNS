@@ -42,7 +42,7 @@
             this.panelSlide = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelCentral = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.menuQLNS = new System.Windows.Forms.MenuStrip();
             this.menuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -52,7 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
+            this.menuQLNS.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelLeft
@@ -216,7 +216,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panelCentral);
-            this.panel1.Controls.Add(this.menuStrip1);
+            this.panel1.Controls.Add(this.menuQLNS);
             this.panel1.Location = new System.Drawing.Point(116, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(978, 543);
@@ -234,16 +234,16 @@
             this.panelCentral.Size = new System.Drawing.Size(978, 519);
             this.panelCentral.TabIndex = 27;
             // 
-            // menuStrip1
+            // menuQLNS
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuTaiKhoan,
             this.menuTroGiup});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(978, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
+            this.menuQLNS.Location = new System.Drawing.Point(0, 0);
+            this.menuQLNS.Name = "menuQLNS";
+            this.menuQLNS.Size = new System.Drawing.Size(978, 24);
+            this.menuQLNS.TabIndex = 0;
+            this.menuQLNS.Text = "menuStrip1";
             // 
             // menuTaiKhoan
             // 
@@ -291,21 +291,20 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLeft);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenuStrip = this.menuStrip1;
+            this.MainMenuStrip = this.menuQLNS;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "Quản lý nhân sự";
-            this.MaximumSizeChanged += new System.EventHandler(this.frmMain_MaximumSizeChanged);
-            this.MinimumSizeChanged += new System.EventHandler(this.frmMain_MinimumSizeChanged);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmMain_FormClosing);
+            this.Load += new System.EventHandler(this.frmMain_Load);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.menuQLNS.ResumeLayout(false);
+            this.menuQLNS.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -314,7 +313,7 @@
 
         private System.Windows.Forms.Panel panelLeft;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip menuQLNS;
         private System.Windows.Forms.ToolStripMenuItem menuTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem menuTroGiup;
         private System.Windows.Forms.Button btnDangXuat;

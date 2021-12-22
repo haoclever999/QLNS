@@ -37,11 +37,13 @@ namespace QLNS
             }
             return true;
         }
+
         public void loadDataGirdView()
         {
             string query = "select TenDangNhap, MatKhau, PhanQuyen from TaiKhoan";
             dtgvDSTK.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
+
         void SetHeaderText()
         {
             //đặt tên cột
@@ -49,6 +51,7 @@ namespace QLNS
             dtgvDSTK.Columns["MatKhau"].HeaderText = "Mật khẩu";
             dtgvDSTK.Columns["PhanQuyen"].HeaderText = "Quyền";
         }
+
         private void btnThem_Click(object sender, EventArgs e)
         {
             string insert = "insert into TaiKhoan values(N'" + txtTaiKhoan.Text + "',N'" + txtMatKhau.Text + "')";
@@ -78,6 +81,7 @@ namespace QLNS
                 }
             }
         }
+
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string delete = "delete from TaiKhoan where TenDangNhap = '" + txtTaiKhoan.Text + "'";
@@ -91,6 +95,7 @@ namespace QLNS
             if (DataProvider.Instance.ExcuteQuery("select TenDangNhap from TaiKhoan").ToString() != txtTaiKhoan.Text)
                 MessageBox.Show("Tài Khoản không tồn tại, không thể xóa");
         }
+
         private void frmUser_Load(object sender, EventArgs e)
         {
             loadDataGirdView();

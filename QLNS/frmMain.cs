@@ -16,48 +16,14 @@ namespace QLNS
         {
             InitializeComponent();
         }
-        static bool isMax;
-        static Point old_loc, default_loc;
-        static Size old_size, default_size;
-        public static void SetIntial(Form frm)
-        {
-            old_loc = frm.Location;
-            old_size = frm.Size;
-            default_loc = frm.Location;
-            default_size = frm.Size;
-        }
-        public static void Maximize(Form frm)
-        {
-            if (isMax == false)//chưa maximized
-            {
-                old_loc = new Point(frm.Location.X, frm.Location.Y);
-                old_size = new Size(frm.Size.Width, frm.Size.Height);
-                int x = SystemInformation.WorkingArea.Width;
-                int y = SystemInformation.WorkingArea.Height;
-                frm.WindowState = FormWindowState.Normal;
-                frm.Location = new Point(0, 0);
-                frm.Size = new Size(x, y);
-                isMax = true;
-            }
-            else //đang Maximized
-            {
-                frm.Location = old_loc;
-                frm.Size = old_size;
-                isMax = false;
-            }
-        }
-        public static void Minimize(Form frm)
-        {
-            if (frm.WindowState == FormWindowState.Minimized)
-                frm.WindowState = FormWindowState.Normal;
-            else if (frm.WindowState == FormWindowState.Normal)
-                frm.WindowState = FormWindowState.Minimized;
-        }
+        public string quyen;
+       
         private void DiChuyenPanel(Button btn)
         {
             panelSlide.Top = btn.Top;
             panelSlide.Height = btn.Height;
         }
+
         private Form KTForm(Type form)
         {
             foreach (Form f in this.MdiChildren)
@@ -65,6 +31,7 @@ namespace QLNS
                     return f;
             return null;
         }
+
         private void btnTongQuan_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmMain));
@@ -176,16 +143,6 @@ namespace QLNS
                 e.Cancel = true;
         }
 
-        private void frmMain_MaximumSizeChanged(object sender, EventArgs e)
-        {
-            Maximize(this);
-        }
-
-        private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
-        {
-            Minimize(this);
-        }
-
         private void menuTroGiup_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmTroGiup));
@@ -210,6 +167,22 @@ namespace QLNS
             frmDangNhap fdn = new frmDangNhap();
             this.Hide();
             fdn.ShowDialog();
+        }
+
+        private void frmMain_Load(object sender, EventArgs e)
+        {
+            if (quyen == "admin")
+            {
+                menuQuanLyTaiKhoan.Enabled = true;
+                menuDangXuat.Enabled = true;
+                menuDoiMatKhau.Enabled = true;
+            }
+            else if (quyen == "user")
+            {
+                menuQuanLyTaiKhoan.Enabled = false;
+                menuDangXuat.Enabled = true;
+                menuDoiMatKhau.Enabled = true;
+            }
         }
     }
 }

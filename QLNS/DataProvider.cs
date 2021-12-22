@@ -19,7 +19,7 @@ namespace QLNS
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True";
+        private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QLNSu;Integrated Security=True";
 
         public DataTable ExcuteQuery(string query, object[] parameter = null) //Trả về giá trị được cung cấp bởi CSDL thông qua lệnh select
         {

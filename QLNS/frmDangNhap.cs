@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,9 +18,11 @@ namespace QLNS
             InitializeComponent();
            
         }
+        SqlCommand cmd;
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
+            string query = "Select * From TaiKhoan where TenDangNhap='" + txtTenDangNhap.Text + "' and MatKhau='" + txtMatKhau.Text + "' and PhanQuyen='Admin'";
             if (txtTenDangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập ");
@@ -32,17 +35,21 @@ namespace QLNS
             }
             else
             {
-                if ((txtTenDangNhap.Text == "admin") && (txtMatKhau.Text == "admin"))
+                DataTable table = DataProvider.Instance.ExcuteQuery(query);
+                int quyen = Convert.ToInt32(table);
+                if (table.Rows.Count>0)
                 {
-                    MessageBox.Show("Đăng nhập thành công(Quyền admin)", "THÔNG BÁO");
+                    MessageBox.Show("Đăng nhập thành công (quyền admin)", "THÔNG BÁO");
                     frmMain f1 = new frmMain();
+                    f1.quyen = "admin";
                     this.Hide();
                     f1.ShowDialog();
                 }
-                else if((txtTenDangNhap.Text == "user") && (txtMatKhau.Text == "user"))
+                else if(table.Rows.Count > 0)
                 {
-                    MessageBox.Show("Đăng nhập thành công(Quyền user)", "THÔNG BÁO");
+                    MessageBox.Show("Đăng nhập thành công (quyền user)", "THÔNG BÁO");
                     frmMain f1 = new frmMain();
+                    f1.quyen = "user";
                     this.Hide();
                     f1.ShowDialog();
                 }
@@ -55,6 +62,7 @@ namespace QLNS
                 }
             }
         }
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             Application.Exit();
