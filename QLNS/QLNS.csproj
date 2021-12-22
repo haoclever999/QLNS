@@ -205,5 +205,8 @@
   <ItemGroup>
     <None Include="Hinh\logout %281%29.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Hinh\kisspng-cathay-financial-holding-co-ltd-cathay-life-insu-5ae2cb84b8cf52.086449961524812676757.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -225,6 +225,17 @@ namespace QLNS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap kisspng_cathay_financial_holding_co_ltd_cathay_life_insu_5ae2cb84b8cf52_086449961524812676757 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-cathay-financial-holding-co-ltd-cathay-life-insu-5ae2cb84b8cf52.086449961" +
+                        "524812676757", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap log_out {
             get {
                 object obj = ResourceManager.GetObject("log-out", resourceCulture);
