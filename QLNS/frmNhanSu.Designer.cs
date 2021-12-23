@@ -168,6 +168,7 @@
             this.txtTimKiem.Size = new System.Drawing.Size(239, 26);
             this.txtTimKiem.TabIndex = 17;
             this.txtTimKiem.Text = "Nhập thông tin tìm kiếm";
+            this.txtTimKiem.Click += new System.EventHandler(this.txtTimKiem_Click);
             // 
             // btnTim
             // 

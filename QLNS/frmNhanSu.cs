@@ -132,7 +132,7 @@ namespace QLNS
             dtgvDSNV.Columns["HoTenNV"].HeaderText = "Họ tên";
             dtgvDSNV.Columns["DiaChi"].HeaderText = "Địa chỉ";
             dtgvDSNV.Columns["CMND"].HeaderText = "CMND";
-            dtgvDSNV.Columns["SDT"].HeaderText = "SDT";
+            dtgvDSNV.Columns["SDT"].HeaderText = "Số điện thoại";
             dtgvDSNV.Columns["GioiTinh"].HeaderText = "Giới tính";
             dtgvDSNV.Columns["Email"].HeaderText = "Email";
             dtgvDSNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
@@ -159,15 +159,15 @@ namespace QLNS
         string getMaPB(string tenpb)
         {
             string query = "select MaPB from PhongBan where TenPB = N'" + tenpb + "'";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            return data.Rows[0].ToString();
+            String str = DataProvider.Instance.ExcuteScalar(query).ToString();
+            return str;
         }
 
         string getMaCV(string tencv)
         {
             string query = "select MaCV from ChucVu where TenCV = N'" + tencv + "'";
-            DataTable data = DataProvider.Instance.ExcuteQuery(query);
-            return data.Rows[0].ToString();
+            String str = DataProvider.Instance.ExcuteScalar(query).ToString();
+            return str;
         }
 
         private void btnThem_Click(object sender, EventArgs e)
@@ -178,16 +178,15 @@ namespace QLNS
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
 
-            string mapb = getMaPB(cmbPhongBan.SelectedItem.ToString());
-            string macv = getMaCV(cmbChucVu.SelectedItem.ToString());
+            string mapb = getMaPB(cmbPhongBan.Text);
+            string macv = getMaCV(cmbChucVu.Text);
 
-            string insert = "exec insertNV @MaNV , @HoTenNV , @DiaChi , @CMND , @SDT , @GioiTinh , @Email , @NgaySinh , @HinhNV , @MaCV , @MaPB";
-            //Còn chức vụ và phòng ban
+            string insert = "exec insertNV @MaNV , @HoTenNV , @DiaChi , @CMND , @SDT , @GioiTinh , @Email , @NgaySinh , @MaCV , @MaPB";
             if ((DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) && (DataProvider.Instance.ExcuteQuery("select Email from NhanVien").ToString() != txtEmail.Text) && (DataProvider.Instance.ExcuteQuery("select SDT from NhanVien").ToString() != txtSDT.Text) && (DataProvider.Instance.ExcuteQuery("select CMND from NhanVien").ToString() != txtCMND.Text))
             {
                 if(KTThongTin())
                 {
-                    DataProvider.Instance.ExcuteNonQuery(insert, new object[] {txtMaNV.Text, txtHoTen.Text, txtDiaChi.Text, txtCMND.Text, txtSDT.Text, gioitinh, txtEmail.Text, dtpNgaySinh.Value.ToString(), "NULL", macv, mapb });
+                    DataProvider.Instance.ExcuteNonQuery(insert, new object[] {txtMaNV.Text, txtHoTen.Text, txtDiaChi.Text, txtCMND.Text, txtSDT.Text, gioitinh, txtEmail.Text, dtpNgaySinh.Value, macv, mapb });
                     dtgvDSNV.Refresh();
                     loadDataGirdView();
                     MessageBox.Show("Thêm thành công");
@@ -195,14 +194,17 @@ namespace QLNS
             }
         }
 
-        private void btnSua_Click(object sender, EventArgs e)
+        private void btnSua_Click(object sender, EventArgs e)//chưa được
         {
             string gioitinh = "";
             if (radNam.Checked == true)
                 gioitinh = "Nam";
             if (radNu.Checked == true)
                 gioitinh = "Nữ";
-            string update = "update NhanVien set HoTenNV = N'" + txtHoTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',CMND = N'" + txtCMND.Text + "',SDT = N'" + txtSDT.Text + "',GioiTinh = N'" + gioitinh + "',Email = N'" + txtEmail.Text + "',NgaySinh = N'" + dtpNgaySinh.Text + "'where MaNV = N'" +txtMaNV.Text + "'";
+            string mapb = getMaPB(cmbPhongBan.Text);
+            string macv = getMaCV(cmbChucVu.Text);
+
+            string update = "update NhanVien set HoTenNV = N'" + txtHoTen.Text + "',DiaChi=N'" + txtDiaChi.Text + "',CMND = N'" + txtCMND.Text + "',SDT = N'" + txtSDT.Text + "',GioiTinh = N'" + gioitinh + "',Email = N'" + txtEmail.Text + "',NgaySinh = N'" + dtpNgaySinh.Text + "',MaCV = N'" + macv + "',MaPB = N'" + mapb + "'where MaNV = N'" +txtMaNV.Text + "'";
             
             if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() == txtMaNV.Text)
             {
@@ -221,13 +223,16 @@ namespace QLNS
             string delete = "delete from NhanVien where MaNV = '" + txtMaNV.Text + "'";
             if (MessageBox.Show("Bạn có muốn xóa không", "DELETE", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                DataProvider.Instance.ExcuteNonQuery(delete);
-                dtgvDSNV.Refresh();
-                loadDataGirdView();
-                MessageBox.Show("Đã xóa dữ liệu");
+                if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text)
+                    MessageBox.Show("Nhân viên này chưa có dữ liệu, không thể xóa");
+                else
+                {
+                    DataProvider.Instance.ExcuteNonQuery(delete);
+                    dtgvDSNV.Refresh();
+                    loadDataGirdView();
+                    MessageBox.Show("Đã xóa dữ liệu");
+                }
             }
-            if (DataProvider.Instance.ExcuteQuery("select MaNV from NhanVien").ToString() != txtMaNV.Text) 
-                MessageBox.Show("Nhân viên này chưa có dữ liệu, không thể xóa");
         }
 
         private void frmNhanSu_Load(object sender, EventArgs e)
@@ -267,12 +272,13 @@ namespace QLNS
             {
                 if (radMaNV.Checked == true)
                 {
-                    string query = "select * from NhanVien where MaCV=N'" + txtTimKiem.Text + "'";
+                    string query = "select * from NhanVien where MaNV like N'%" + txtTimKiem.Text + "%'";
                     dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
+                    
                 }
                 else if (radHoTen.Checked == true)
                 {
-                    string query = "select * from NhanVien where HoTenNV=N'" + txtTimKiem.Text + "'";
+                    string query = "select * from NhanVien where HoTenNV like N'%" + txtTimKiem.Text + "%'";
                     dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
                 }
                 else
@@ -284,6 +290,11 @@ namespace QLNS
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void txtTimKiem_Click(object sender, EventArgs e)
+        {
+            txtTimKiem.Text = "";
         }
 
         //nút Button thêm sửa xóa còn lỗi
