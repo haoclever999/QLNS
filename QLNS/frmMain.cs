@@ -143,6 +143,24 @@ namespace QLNS
                 e.Cancel = true;
         }
 
+<<<<<<< HEAD
+=======
+        private void frmMain_MaximumSizeChanged(object sender, EventArgs e)
+        {
+            Maximize(this);
+        }
+
+        private void frmMain_MinimumSizeChanged(object sender, EventArgs e)
+        {
+            Minimize(this);
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+>>>>>>> 59d1f8da8e27b4d51321031cf1884346cf2a0bf3
         private void menuTroGiup_Click(object sender, EventArgs e)
         {
             Form frm = this.KTForm(typeof(frmTroGiup));
@@ -163,7 +181,7 @@ namespace QLNS
 
         private void btnDangXuat_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Bạn có muốn đăng xuất?", "THÔNG BÁO");
+            MessageBox.Show("Bạn đã đăng xuất!!!", "THÔNG BÁO");
             frmDangNhap fdn = new frmDangNhap();
             this.Hide();
             fdn.ShowDialog();

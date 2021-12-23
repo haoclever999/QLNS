@@ -62,7 +62,7 @@
             this.grbThongTin.ForeColor = System.Drawing.Color.Black;
             this.grbThongTin.Location = new System.Drawing.Point(12, 93);
             this.grbThongTin.Name = "grbThongTin";
-            this.grbThongTin.Size = new System.Drawing.Size(386, 391);
+            this.grbThongTin.Size = new System.Drawing.Size(332, 391);
             this.grbThongTin.TabIndex = 23;
             this.grbThongTin.TabStop = false;
             this.grbThongTin.Text = "Nhập thông tin";
@@ -82,16 +82,16 @@
             // cboNV
             // 
             this.cboNV.FormattingEnabled = true;
-            this.cboNV.Location = new System.Drawing.Point(167, 80);
+            this.cboNV.Location = new System.Drawing.Point(139, 77);
             this.cboNV.Name = "cboNV";
-            this.cboNV.Size = new System.Drawing.Size(193, 27);
+            this.cboNV.Size = new System.Drawing.Size(166, 27);
             this.cboNV.TabIndex = 29;
             this.cboNV.SelectedIndexChanged += new System.EventHandler(this.cboNV_SelectedIndexChanged);
             // 
             // btnSua
             // 
             this.btnSua.Image = global::QLNS.Properties.Resources.adjust;
-            this.btnSua.Location = new System.Drawing.Point(139, 278);
+            this.btnSua.Location = new System.Drawing.Point(114, 278);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(102, 43);
             this.btnSua.TabIndex = 31;
@@ -103,16 +103,15 @@
             // txtMaNV
             // 
             this.txtMaNV.BackColor = System.Drawing.SystemColors.Window;
-            this.txtMaNV.Enabled = false;
-            this.txtMaNV.Location = new System.Drawing.Point(167, 31);
+            this.txtMaNV.Location = new System.Drawing.Point(139, 31);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(193, 26);
+            this.txtMaNV.Size = new System.Drawing.Size(166, 26);
             this.txtMaNV.TabIndex = 21;
             // 
             // btnXoa
             // 
             this.btnXoa.Image = global::QLNS.Properties.Resources.garbage_bin_10420;
-            this.btnXoa.Location = new System.Drawing.Point(278, 278);
+            this.btnXoa.Location = new System.Drawing.Point(222, 279);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(102, 44);
             this.btnXoa.TabIndex = 32;
@@ -125,7 +124,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(37, 79);
+            this.label4.Location = new System.Drawing.Point(18, 80);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(92, 19);
             this.label4.TabIndex = 19;
@@ -133,16 +132,18 @@
             // 
             // dtNgayBD
             // 
-            this.dtNgayBD.Location = new System.Drawing.Point(167, 167);
+            this.dtNgayBD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtNgayBD.Location = new System.Drawing.Point(139, 167);
             this.dtNgayBD.Name = "dtNgayBD";
-            this.dtNgayBD.Size = new System.Drawing.Size(193, 26);
+            this.dtNgayBD.Size = new System.Drawing.Size(166, 26);
             this.dtNgayBD.TabIndex = 17;
+            this.dtNgayBD.Value = new System.DateTime(2021, 12, 22, 19, 22, 25, 0);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(41, 34);
+            this.label1.Location = new System.Drawing.Point(18, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(90, 19);
             this.label1.TabIndex = 1;
@@ -152,7 +153,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(41, 126);
+            this.label2.Location = new System.Drawing.Point(18, 126);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(95, 19);
             this.label2.TabIndex = 2;
@@ -161,16 +162,16 @@
             // txtHanHD
             // 
             this.txtHanHD.BackColor = System.Drawing.SystemColors.Window;
-            this.txtHanHD.Location = new System.Drawing.Point(167, 123);
+            this.txtHanHD.Location = new System.Drawing.Point(139, 123);
             this.txtHanHD.Name = "txtHanHD";
-            this.txtHanHD.Size = new System.Drawing.Size(193, 26);
+            this.txtHanHD.Size = new System.Drawing.Size(166, 26);
             this.txtHanHD.TabIndex = 10;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(41, 167);
+            this.label8.Location = new System.Drawing.Point(22, 167);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(91, 19);
             this.label8.TabIndex = 8;
@@ -181,11 +182,12 @@
             this.dtgvDSNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
             this.dtgvDSNV.BackgroundColor = System.Drawing.SystemColors.Control;
             this.dtgvDSNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvDSNV.Location = new System.Drawing.Point(416, 102);
+            this.dtgvDSNV.Location = new System.Drawing.Point(354, 102);
             this.dtgvDSNV.Name = "dtgvDSNV";
             this.dtgvDSNV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvDSNV.Size = new System.Drawing.Size(549, 382);
+            this.dtgvDSNV.Size = new System.Drawing.Size(611, 382);
             this.dtgvDSNV.TabIndex = 26;
+            this.dtgvDSNV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgvDSNV_CellClick);
             // 
             // label3
             // 
@@ -194,7 +196,7 @@
             this.label3.ForeColor = System.Drawing.Color.LimeGreen;
             this.label3.Location = new System.Drawing.Point(348, 38);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(294, 31);
+            this.label3.Size = new System.Drawing.Size(293, 31);
             this.label3.TabIndex = 27;
             this.label3.Text = "QUẢN LÝ HỢP ĐỒNG";
             // 

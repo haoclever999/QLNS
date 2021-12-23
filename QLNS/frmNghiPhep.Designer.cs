@@ -151,7 +151,7 @@
             // dtNgayPhep
             // 
             this.dtNgayPhep.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtNgayPhep.Location = new System.Drawing.Point(124, 77);
+            this.dtNgayPhep.Location = new System.Drawing.Point(125, 77);
             this.dtNgayPhep.Name = "dtNgayPhep";
             this.dtNgayPhep.Size = new System.Drawing.Size(135, 26);
             this.dtNgayPhep.TabIndex = 18;

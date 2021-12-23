@@ -252,8 +252,8 @@ namespace QLNS
                 radNu.Checked = true;
             txtEmail.Text = dtgvDSNV.Rows[i].Cells["Email"].Value.ToString();
             dtpNgaySinh.Text = dtgvDSNV.Rows[i].Cells["NgaySinh"].Value.ToString();
-            cmbPhongBan.SelectedValue = dtgvDSNV.Rows[i].Cells["TenPB"].Value.ToString();
-            cmbChucVu.SelectedValue = dtgvDSNV.Rows[i].Cells["TenCV"].Value.ToString();
+            cmbPhongBan.Text = dtgvDSNV.Rows[i].Cells["TenPB"].Value.ToString();
+            cmbChucVu.Text = dtgvDSNV.Rows[i].Cells["TenCV"].Value.ToString();
         }
 
         private void btnTim_Click(object sender, EventArgs e)

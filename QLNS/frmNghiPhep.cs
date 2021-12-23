@@ -20,8 +20,8 @@ namespace QLNS
         DataSet ds = new DataSet("dsQLNP");
         SqlCommand cmd;
         SqlDataAdapter daNhanVien;
-       // SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
 
         private void ResetTT()
         {
@@ -177,11 +177,13 @@ namespace QLNS
             cboNV.DisplayMember = "HoTenNV";
             cboNV.ValueMember = "MaNV";
             txtMaNV.Text = cboNV.SelectedValue.ToString();
+            SetHeaderText();
         }
 
         private void dtgvDSNV_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //Trả các dữ liệu của hàng đang chọn lên các textbox nhập
+            string nn = dtNgayPhep.Value.ToString("yyyy/MM/dd");
             int i = e.RowIndex;
             txtMaNghiPhep.Text = dgvDSNghiPhep.Rows[i].Cells["MaNghiPhep"].Value.ToString();
             dtNgayPhep.Text = dgvDSNghiPhep.Rows[i].Cells["NgayNghi"].Value.ToString();

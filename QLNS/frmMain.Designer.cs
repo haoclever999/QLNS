@@ -30,14 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
+<<<<<<< HEAD
             this.menuQLNS = new System.Windows.Forms.MenuStrip();
+=======
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+>>>>>>> 59d1f8da8e27b4d51321031cf1884346cf2a0bf3
             this.menuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTroGiup = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -72,6 +76,29 @@
             this.panel1.Size = new System.Drawing.Size(978, 543);
             this.panel1.TabIndex = 1;
             // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.Image = global::QLNS.Properties.Resources.x_button;
+            this.btnThoat.Location = new System.Drawing.Point(949, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(29, 24);
+            this.btnThoat.TabIndex = 28;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.White;
+            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
+            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCentral.Location = new System.Drawing.Point(0, 24);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(978, 519);
+            this.panelCentral.TabIndex = 27;
+            // 
             // menuStrip1
             // 
             this.menuQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -90,58 +117,36 @@
             this.menuDoiMatKhau,
             this.menuDangXuat});
             this.menuTaiKhoan.Name = "menuTaiKhoan";
-            this.menuTaiKhoan.Size = new System.Drawing.Size(70, 20);
+            this.menuTaiKhoan.Size = new System.Drawing.Size(69, 20);
             this.menuTaiKhoan.Text = "Tài khoản";
             // 
             // menuQuanLyTaiKhoan
             // 
             this.menuQuanLyTaiKhoan.Name = "menuQuanLyTaiKhoan";
-            this.menuQuanLyTaiKhoan.Size = new System.Drawing.Size(180, 22);
+            this.menuQuanLyTaiKhoan.Size = new System.Drawing.Size(167, 22);
             this.menuQuanLyTaiKhoan.Text = "Quản lý tài khoản";
             this.menuQuanLyTaiKhoan.Click += new System.EventHandler(this.menuQuanLyTaiKhoan_Click);
             // 
             // menuDoiMatKhau
             // 
             this.menuDoiMatKhau.Name = "menuDoiMatKhau";
-            this.menuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.menuDoiMatKhau.Size = new System.Drawing.Size(167, 22);
             this.menuDoiMatKhau.Text = "Đổi mật khẩu";
             this.menuDoiMatKhau.Click += new System.EventHandler(this.menuDoiMatKhau_Click);
             // 
             // menuDangXuat
             // 
             this.menuDangXuat.Name = "menuDangXuat";
-            this.menuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.menuDangXuat.Size = new System.Drawing.Size(167, 22);
             this.menuDangXuat.Text = "Đăng xuất";
             this.menuDangXuat.Click += new System.EventHandler(this.menuDangXuat_Click);
             // 
             // menuTroGiup
             // 
             this.menuTroGiup.Name = "menuTroGiup";
-            this.menuTroGiup.Size = new System.Drawing.Size(63, 20);
+            this.menuTroGiup.Size = new System.Drawing.Size(62, 20);
             this.menuTroGiup.Text = "Trợ giúp";
             this.menuTroGiup.Click += new System.EventHandler(this.menuTroGiup_Click);
-            // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.Image = global::QLNS.Properties.Resources.x_button;
-            this.btnThoat.Location = new System.Drawing.Point(949, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(29, 24);
-            this.btnThoat.TabIndex = 28;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            // 
-            // panelCentral
-            // 
-            this.panelCentral.BackColor = System.Drawing.Color.White;
-            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
-            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelCentral.Location = new System.Drawing.Point(0, 24);
-            this.panelCentral.Name = "panelCentral";
-            this.panelCentral.Size = new System.Drawing.Size(978, 519);
-            this.panelCentral.TabIndex = 27;
             // 
             // panelLeft
             // 
@@ -247,7 +252,6 @@
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
-            this.btnTongQuan.Image = global::QLNS.Properties.Resources.Cty1;
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTongQuan.ImageKey = "(none)";
             this.btnTongQuan.Location = new System.Drawing.Point(5, 73);

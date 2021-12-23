@@ -144,11 +144,12 @@ namespace QLNS
         private void dtgvDSLuong_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //đổ dữ liệu lên textbox, combobox
+
             int i = e.RowIndex;
             txtMaNV.Text = dtgvDSLuong.Rows[i].Cells["MaNV"].Value.ToString();
             txtHoTen.Text = dtgvDSLuong.Rows[i].Cells["HoTenNV"].Value.ToString();
-            cmbPhongBan.SelectedValue = dtgvDSLuong.Rows[i].Cells["TenPB"].Value.ToString();
-            cmbChucVu.SelectedValue = dtgvDSLuong.Rows[i].Cells["TenCV"].Value.ToString();
+            cmbPhongBan.Text = dtgvDSLuong.Rows[i].Cells["TenPB"].Value.ToString();
+            cmbChucVu.Text = dtgvDSLuong.Rows[i].Cells["TenCV"].Value.ToString();
             txtThuong.Text = dtgvDSLuong.Rows[i].Cells["Thuong"].Value.ToString();
             txtPhuCap.Text = dtgvDSLuong.Rows[i].Cells["PhuCap"].Value.ToString();
             txtLCB.Text = dtgvDSLuong.Rows[i].Cells["LuongCB"].Value.ToString();
