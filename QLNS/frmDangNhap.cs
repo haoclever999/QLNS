@@ -22,7 +22,8 @@ namespace QLNS
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            string query = "Select * From TaiKhoan where TenDangNhap='" + txtTenDangNhap.Text + "' and MatKhau='" + txtMatKhau.Text + "' and PhanQuyen='Admin'";
+            string query1 = "Select * From TaiKhoan where TenDangNhap='" + txtTenDangNhap.Text + "' and MatKhau='" + txtMatKhau.Text + "' and PhanQuyen='admin'";
+            string query2 = "Select * From TaiKhoan where TenDangNhap='" + txtTenDangNhap.Text + "' and MatKhau='" + txtMatKhau.Text + "' and PhanQuyen='user'";
             if (txtTenDangNhap.Text == "")
             {
                 MessageBox.Show("Vui lòng nhập tên đăng nhập ");
@@ -35,9 +36,9 @@ namespace QLNS
             }
             else
             {
-                DataTable table = DataProvider.Instance.ExcuteQuery(query);
-                int quyen = Convert.ToInt32(table);
-                if (table.Rows.Count>0)
+                DataTable table1 = DataProvider.Instance.ExcuteQuery(query1);
+                DataTable table2 = DataProvider.Instance.ExcuteQuery(query2);
+                if (table1.Rows.Count>0)
                 {
                     MessageBox.Show("Đăng nhập thành công (quyền admin)", "THÔNG BÁO");
                     frmMain f1 = new frmMain();
@@ -45,7 +46,7 @@ namespace QLNS
                     this.Hide();
                     f1.ShowDialog();
                 }
-                else if(table.Rows.Count > 0)
+                else if(table2.Rows.Count > 0)
                 {
                     MessageBox.Show("Đăng nhập thành công (quyền user)", "THÔNG BÁO");
                     frmMain f1 = new frmMain();
@@ -79,6 +80,11 @@ namespace QLNS
             {
                 btnDangNhap_Click(sender, e);
             }
+        }
+
+        private void frmDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

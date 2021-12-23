@@ -20,7 +20,8 @@ namespace QLNS
         DataSet ds = new DataSet("dsQLHD");
         SqlCommand cmd;
         SqlDataAdapter daNhanVien;
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+       // SqlConnection conn = new SqlConnection(@"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-01UK3N8\SQLEXPRESS;Initial Catalog=QLNSu; Integrated Security=True");
         private void ResetTT()
         {
             //Trả thông tin nhập về trống như ban đầu
@@ -91,8 +92,12 @@ namespace QLNS
             //Nếu chưa return true
             return true;
         }
-       
 
+        public void loadDataGirdView()
+        {
+            string query = "select nv.MaNV, nv.HoTenNV, cv.TenCV, pb.TenPB, l.Thuong, l.PhuCap, l.LuongCB, l.HSL, l.KiLuat, l.GhiChu from NhanVien nv, ChucVu cv, PhongBan pb, Luong l where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB and nv.MaNV=l.MaNV";
+            dtgvDSNV.DataSource = DataProvider.Instance.ExcuteQuery(query);
+        }
         private void frmHopDong_Load(object sender, EventArgs e)
         {
             Connectionsql();

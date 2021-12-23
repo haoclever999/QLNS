@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.menuQLNS = new System.Windows.Forms.MenuStrip();
+            this.menuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuTroGiup = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnThoat = new System.Windows.Forms.Button();
+            this.panelCentral = new System.Windows.Forms.Panel();
             this.panelLeft = new System.Windows.Forms.Panel();
             this.btnDangXuat = new System.Windows.Forms.Button();
-            this.lblUser = new System.Windows.Forms.Label();
-            this.picHinh = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnNghiPhep = new System.Windows.Forms.Button();
             this.btnHopDong = new System.Windows.Forms.Button();
@@ -49,17 +56,97 @@
             this.menuDangXuat = new System.Windows.Forms.ToolStripMenuItem();
             this.menuTroGiup = new System.Windows.Forms.ToolStripMenuItem();
             this.panelLeft.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.menuQLNS.SuspendLayout();
             this.SuspendLayout();
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.btnThoat);
+            this.panel1.Controls.Add(this.panelCentral);
+            this.panel1.Controls.Add(this.menuQLNS);
+            this.panel1.Location = new System.Drawing.Point(116, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(978, 543);
+            this.panel1.TabIndex = 1;
+            // 
+            // menuStrip1
+            // 
+            this.menuQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuTaiKhoan,
+            this.menuTroGiup});
+            this.menuQLNS.Location = new System.Drawing.Point(0, 0);
+            this.menuQLNS.Name = "menuQLNS";
+            this.menuQLNS.Size = new System.Drawing.Size(978, 24);
+            this.menuQLNS.TabIndex = 0;
+            this.menuQLNS.Text = "menuQLNS";
+            // 
+            // menuTaiKhoan
+            // 
+            this.menuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuQuanLyTaiKhoan,
+            this.menuDoiMatKhau,
+            this.menuDangXuat});
+            this.menuTaiKhoan.Name = "menuTaiKhoan";
+            this.menuTaiKhoan.Size = new System.Drawing.Size(70, 20);
+            this.menuTaiKhoan.Text = "Tài khoản";
+            // 
+            // menuQuanLyTaiKhoan
+            // 
+            this.menuQuanLyTaiKhoan.Name = "menuQuanLyTaiKhoan";
+            this.menuQuanLyTaiKhoan.Size = new System.Drawing.Size(180, 22);
+            this.menuQuanLyTaiKhoan.Text = "Quản lý tài khoản";
+            this.menuQuanLyTaiKhoan.Click += new System.EventHandler(this.menuQuanLyTaiKhoan_Click);
+            // 
+            // menuDoiMatKhau
+            // 
+            this.menuDoiMatKhau.Name = "menuDoiMatKhau";
+            this.menuDoiMatKhau.Size = new System.Drawing.Size(180, 22);
+            this.menuDoiMatKhau.Text = "Đổi mật khẩu";
+            this.menuDoiMatKhau.Click += new System.EventHandler(this.menuDoiMatKhau_Click);
+            // 
+            // menuDangXuat
+            // 
+            this.menuDangXuat.Name = "menuDangXuat";
+            this.menuDangXuat.Size = new System.Drawing.Size(180, 22);
+            this.menuDangXuat.Text = "Đăng xuất";
+            this.menuDangXuat.Click += new System.EventHandler(this.menuDangXuat_Click);
+            // 
+            // menuTroGiup
+            // 
+            this.menuTroGiup.Name = "menuTroGiup";
+            this.menuTroGiup.Size = new System.Drawing.Size(63, 20);
+            this.menuTroGiup.Text = "Trợ giúp";
+            this.menuTroGiup.Click += new System.EventHandler(this.menuTroGiup_Click);
+            // 
+            // btnThoat
+            // 
+            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
+            this.btnThoat.Image = global::QLNS.Properties.Resources.x_button;
+            this.btnThoat.Location = new System.Drawing.Point(949, 0);
+            this.btnThoat.Name = "btnThoat";
+            this.btnThoat.Size = new System.Drawing.Size(29, 24);
+            this.btnThoat.TabIndex = 28;
+            this.btnThoat.UseVisualStyleBackColor = false;
+            // 
+            // panelCentral
+            // 
+            this.panelCentral.BackColor = System.Drawing.Color.White;
+            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
+            this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCentral.Location = new System.Drawing.Point(0, 24);
+            this.panelCentral.Name = "panelCentral";
+            this.panelCentral.Size = new System.Drawing.Size(978, 519);
+            this.panelCentral.TabIndex = 27;
+            // 
             // panelLeft
             // 
+            this.panelLeft.BackgroundImage = global::QLNS.Properties.Resources.c41af8sehaf1d3be;
             this.panelLeft.Controls.Add(this.btnDangXuat);
-            this.panelLeft.Controls.Add(this.lblUser);
-            this.panelLeft.Controls.Add(this.picHinh);
             this.panelLeft.Controls.Add(this.pictureBox1);
             this.panelLeft.Controls.Add(this.btnNghiPhep);
             this.panelLeft.Controls.Add(this.btnHopDong);
@@ -76,30 +163,15 @@
             // btnDangXuat
             // 
             this.btnDangXuat.BackColor = System.Drawing.Color.Transparent;
-            this.btnDangXuat.Image = global::QLNS.Properties.Resources.log_out;
-            this.btnDangXuat.Location = new System.Drawing.Point(25, 503);
+            this.btnDangXuat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDangXuat.ForeColor = System.Drawing.Color.Transparent;
+            this.btnDangXuat.Image = global::QLNS.Properties.Resources.power;
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 485);
             this.btnDangXuat.Name = "btnDangXuat";
-            this.btnDangXuat.Size = new System.Drawing.Size(58, 38);
+            this.btnDangXuat.Size = new System.Drawing.Size(113, 55);
             this.btnDangXuat.TabIndex = 34;
             this.btnDangXuat.UseVisualStyleBackColor = false;
             this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
-            // 
-            // lblUser
-            // 
-            this.lblUser.AutoSize = true;
-            this.lblUser.Location = new System.Drawing.Point(32, 472);
-            this.lblUser.Name = "lblUser";
-            this.lblUser.Size = new System.Drawing.Size(38, 19);
-            this.lblUser.TabIndex = 43;
-            this.lblUser.Text = "User";
-            // 
-            // picHinh
-            // 
-            this.picHinh.Location = new System.Drawing.Point(12, 397);
-            this.picHinh.Name = "picHinh";
-            this.picHinh.Size = new System.Drawing.Size(94, 72);
-            this.picHinh.TabIndex = 42;
-            this.picHinh.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -175,6 +247,7 @@
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
+            this.btnTongQuan.Image = global::QLNS.Properties.Resources.Cty1;
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTongQuan.ImageKey = "(none)";
             this.btnTongQuan.Location = new System.Drawing.Point(5, 73);
@@ -299,7 +372,6 @@
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.panelLeft.ResumeLayout(false);
             this.panelLeft.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picHinh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -317,8 +389,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem menuTroGiup;
         private System.Windows.Forms.Button btnDangXuat;
-        private System.Windows.Forms.Label lblUser;
-        private System.Windows.Forms.PictureBox picHinh;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnNghiPhep;
         private System.Windows.Forms.Button btnHopDong;
@@ -330,5 +400,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuQuanLyTaiKhoan;
         private System.Windows.Forms.ToolStripMenuItem menuDoiMatKhau;
         private System.Windows.Forms.ToolStripMenuItem menuDangXuat;
+        private System.Windows.Forms.Button btnThoat;
     }
 }

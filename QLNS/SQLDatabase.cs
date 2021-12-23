@@ -13,7 +13,7 @@ namespace QLNS
         string connect = @"Data Source=TIEN-PC\SQLEXPRESS;Initial Catalog=QLNSu;Integrated Security=True";
         SqlConnection conn;
         SqlCommand cmd;
-        SqlDataAdapter da;
+        //SqlDataAdapter da;
         DataTable table = new DataTable();
         public void KetNoi()
         {
