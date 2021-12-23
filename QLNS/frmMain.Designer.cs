@@ -13,7 +13,7 @@
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
-            if (disposing && (components != null))
+            if(disposing && (components != null))
             {
                 components.Dispose();
             }
@@ -23,20 +23,15 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
+        /// Required method for Designer support - do not modify the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(
+                typeof(frmMain));
             this.panel1 = new System.Windows.Forms.Panel();
-<<<<<<< HEAD
+            
             this.menuQLNS = new System.Windows.Forms.MenuStrip();
-=======
-            this.btnThoat = new System.Windows.Forms.Button();
-            this.panelCentral = new System.Windows.Forms.Panel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
->>>>>>> 59d1f8da8e27b4d51321031cf1884346cf2a0bf3
             this.menuTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuanLyTaiKhoan = new System.Windows.Forms.ToolStripMenuItem();
             this.menuDoiMatKhau = new System.Windows.Forms.ToolStripMenuItem();
@@ -67,8 +62,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.btnThoat);
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panelCentral);
             this.panel1.Controls.Add(this.menuQLNS);
             this.panel1.Location = new System.Drawing.Point(116, 0);
@@ -76,24 +71,19 @@
             this.panel1.Size = new System.Drawing.Size(978, 543);
             this.panel1.TabIndex = 1;
             // 
-            // btnThoat
-            // 
-            this.btnThoat.BackColor = System.Drawing.Color.Transparent;
-            this.btnThoat.Image = global::QLNS.Properties.Resources.x_button;
-            this.btnThoat.Location = new System.Drawing.Point(949, 0);
-            this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(29, 24);
-            this.btnThoat.TabIndex = 28;
-            this.btnThoat.UseVisualStyleBackColor = false;
-            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
-            // 
             // panelCentral
             // 
             this.panelCentral.BackColor = System.Drawing.Color.White;
-            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
+            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject(
+                "panelCentral.BackgroundImage")));
             this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCentral.Font = new System.Drawing.Font(
+                "Times New Roman",
+                14.25F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.panelCentral.Location = new System.Drawing.Point(0, 24);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(978, 519);
@@ -101,9 +91,8 @@
             // 
             // menuStrip1
             // 
-            this.menuQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTaiKhoan,
-            this.menuTroGiup});
+            this.menuQLNS.Items
+                .AddRange(new System.Windows.Forms.ToolStripItem[] { this.menuTaiKhoan, this.menuTroGiup });
             this.menuQLNS.Location = new System.Drawing.Point(0, 0);
             this.menuQLNS.Name = "menuQLNS";
             this.menuQLNS.Size = new System.Drawing.Size(978, 24);
@@ -112,10 +101,14 @@
             // 
             // menuTaiKhoan
             // 
-            this.menuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuQuanLyTaiKhoan,
-            this.menuDoiMatKhau,
-            this.menuDangXuat});
+            this.menuTaiKhoan.DropDownItems
+                .AddRange(
+                    new System.Windows.Forms.ToolStripItem[]
+                    {
+                        this.menuQuanLyTaiKhoan,
+                        this.menuDoiMatKhau,
+                        this.menuDangXuat
+                    });
             this.menuTaiKhoan.Name = "menuTaiKhoan";
             this.menuTaiKhoan.Size = new System.Drawing.Size(69, 20);
             this.menuTaiKhoan.Text = "Tài khoản";
@@ -193,7 +186,12 @@
             this.btnNghiPhep.BackColor = System.Drawing.Color.Transparent;
             this.btnNghiPhep.FlatAppearance.BorderSize = 0;
             this.btnNghiPhep.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNghiPhep.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNghiPhep.Font = new System.Drawing.Font(
+                "Times New Roman",
+                15F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.btnNghiPhep.Image = global::QLNS.Properties.Resources.switch_off;
             this.btnNghiPhep.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNghiPhep.Location = new System.Drawing.Point(4, 285);
@@ -211,7 +209,12 @@
             this.btnHopDong.BackColor = System.Drawing.Color.Transparent;
             this.btnHopDong.FlatAppearance.BorderSize = 0;
             this.btnHopDong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHopDong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHopDong.Font = new System.Drawing.Font(
+                "Times New Roman",
+                15F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.btnHopDong.Image = global::QLNS.Properties.Resources.icons8_signing_a_document_48;
             this.btnHopDong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnHopDong.Location = new System.Drawing.Point(4, 232);
@@ -229,7 +232,12 @@
             this.btnLuong.BackColor = System.Drawing.Color.Transparent;
             this.btnLuong.FlatAppearance.BorderSize = 0;
             this.btnLuong.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLuong.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuong.Font = new System.Drawing.Font(
+                "Times New Roman",
+                15F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.btnLuong.Image = global::QLNS.Properties.Resources.coin_dollar_2534;
             this.btnLuong.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLuong.Location = new System.Drawing.Point(4, 179);
@@ -244,13 +252,19 @@
             // 
             // btnTongQuan
             // 
-            this.btnTongQuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnTongQuan.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top |
+                        System.Windows.Forms.AnchorStyles.Bottom) |
+                    System.Windows.Forms.AnchorStyles.Left) |
+                System.Windows.Forms.AnchorStyles.Right)));
             this.btnTongQuan.BackColor = System.Drawing.Color.Transparent;
             this.btnTongQuan.FlatAppearance.BorderSize = 0;
             this.btnTongQuan.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTongQuan.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTongQuan.Font = new System.Drawing.Font(
+                "Times New Roman",
+                15F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.btnTongQuan.ForeColor = System.Drawing.Color.Black;
             this.btnTongQuan.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnTongQuan.ImageKey = "(none)";
@@ -268,7 +282,12 @@
             this.btnNhanSu.BackColor = System.Drawing.Color.Transparent;
             this.btnNhanSu.FlatAppearance.BorderSize = 0;
             this.btnNhanSu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNhanSu.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNhanSu.Font = new System.Drawing.Font(
+                "Times New Roman",
+                15F,
+                System.Drawing.FontStyle.Bold,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.btnNhanSu.Image = global::QLNS.Properties.Resources.icons8_people_64;
             this.btnNhanSu.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnNhanSu.Location = new System.Drawing.Point(4, 126);
@@ -291,7 +310,8 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top |
+                System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.panelCentral);
             this.panel1.Controls.Add(this.menuQLNS);
             this.panel1.Location = new System.Drawing.Point(116, 0);
@@ -302,10 +322,16 @@
             // panelCentral
             // 
             this.panelCentral.BackColor = System.Drawing.Color.White;
-            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelCentral.BackgroundImage")));
+            this.panelCentral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject(
+                "panelCentral.BackgroundImage")));
             this.panelCentral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelCentral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelCentral.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelCentral.Font = new System.Drawing.Font(
+                "Times New Roman",
+                14.25F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.panelCentral.Location = new System.Drawing.Point(0, 24);
             this.panelCentral.Name = "panelCentral";
             this.panelCentral.Size = new System.Drawing.Size(978, 519);
@@ -313,9 +339,8 @@
             // 
             // menuQLNS
             // 
-            this.menuQLNS.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuTaiKhoan,
-            this.menuTroGiup});
+            this.menuQLNS.Items
+                .AddRange(new System.Windows.Forms.ToolStripItem[] { this.menuTaiKhoan, this.menuTroGiup });
             this.menuQLNS.Location = new System.Drawing.Point(0, 0);
             this.menuQLNS.Name = "menuQLNS";
             this.menuQLNS.Size = new System.Drawing.Size(978, 24);
@@ -324,10 +349,14 @@
             // 
             // menuTaiKhoan
             // 
-            this.menuTaiKhoan.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuQuanLyTaiKhoan,
-            this.menuDoiMatKhau,
-            this.menuDangXuat});
+            this.menuTaiKhoan.DropDownItems
+                .AddRange(
+                    new System.Windows.Forms.ToolStripItem[]
+                    {
+                        this.menuQuanLyTaiKhoan,
+                        this.menuDoiMatKhau,
+                        this.menuDangXuat
+                    });
             this.menuTaiKhoan.Name = "menuTaiKhoan";
             this.menuTaiKhoan.Size = new System.Drawing.Size(69, 20);
             this.menuTaiKhoan.Text = "Tài khoản";
@@ -367,7 +396,12 @@
             this.ClientSize = new System.Drawing.Size(1094, 543);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelLeft);
-            this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font(
+                "Times New Roman",
+                12F,
+                System.Drawing.FontStyle.Regular,
+                System.Drawing.GraphicsUnit.Point,
+                ((byte)(0)));
             this.MainMenuStrip = this.menuQLNS;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
@@ -382,9 +416,7 @@
             this.menuQLNS.ResumeLayout(false);
             this.menuQLNS.PerformLayout();
             this.ResumeLayout(false);
-
         }
-
         #endregion
 
         private System.Windows.Forms.Panel panelLeft;
