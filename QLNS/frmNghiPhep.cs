@@ -78,17 +78,17 @@ namespace QLNS
         void SetHeaderText()
         {
             //đặt tên cột
-            dgvDSNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
-            dgvDSNghiPhep.Columns["MaNV"].HeaderText = "Mã NV";
-            dgvDSNghiPhep.Columns["HoTenNV"].HeaderText = "Họ tên";
-            dgvDSNghiPhep.Columns["SoNgayNghi"].HeaderText = "Số ngày nghỉ";
-            dgvDSNghiPhep.Columns["LyDo"].HeaderText = "Lý do";
-            dgvDSNghiPhep.Columns["NgayNghi"].HeaderText = "Ngày nghỉ";
+            dtgvDSNghiPhep.Columns["MaNghiPhep"].HeaderText = "Mã nghỉ phép";
+            dtgvDSNghiPhep.Columns["MaNV"].HeaderText = "Mã NV";
+            dtgvDSNghiPhep.Columns["HoTenNV"].HeaderText = "Họ tên";
+            dtgvDSNghiPhep.Columns["SoNgayNghi"].HeaderText = "Số ngày nghỉ";
+            dtgvDSNghiPhep.Columns["LyDo"].HeaderText = "Lý do";
+            dtgvDSNghiPhep.Columns["NgayNghi"].HeaderText = "Ngày nghỉ";
         }
         public void loadDataGirdView()
         {
             string query = "select nv.MaNV, nv.HoTenNV, where nv.MaCV=cv.MaCV and nv.MaPB=pb.MaPB and nv.MaNV=l.MaNV";
-            dgvDSNghiPhep.DataSource = DataProvider.Instance.ExcuteQuery(query);
+            dtgvDSNghiPhep.DataSource = DataProvider.Instance.ExcuteQuery(query);
         }
         private void Connectionsql()
         {
@@ -108,7 +108,7 @@ namespace QLNS
             //Đóng kết nối
             conn.Close();
             //Đổ dữ liệu vào datagridview
-            dgvDSNghiPhep.DataSource = dt;
+            dtgvDSNghiPhep.DataSource = dt;
             //Reset thông tin trên hàng nhập
             txtMaNV.Enabled = false;
             ResetTT();
@@ -185,12 +185,12 @@ namespace QLNS
             //Trả các dữ liệu của hàng đang chọn lên các textbox nhập
             string nn = dtNgayPhep.Value.ToString("yyyy/MM/dd");
             int i = e.RowIndex;
-            txtMaNghiPhep.Text = dgvDSNghiPhep.Rows[i].Cells["MaNghiPhep"].Value.ToString();
-            dtNgayPhep.Text = dgvDSNghiPhep.Rows[i].Cells["NgayNghi"].Value.ToString();
-            txtMaNV.Text = dgvDSNghiPhep.Rows[i].Cells["MaNV"].Value.ToString();
-            cboNV.Text = dgvDSNghiPhep.Rows[i].Cells["HoTenNV"].Value.ToString();
-            txtSoNgayNghi.Text = dgvDSNghiPhep.Rows[i].Cells["SoNgayNghi"].Value.ToString();
-            txtLydo.Text = dgvDSNghiPhep.Rows[i].Cells["LyDo"].Value.ToString();
+            txtMaNghiPhep.Text = dtgvDSNghiPhep.Rows[i].Cells["MaNghiPhep"].Value.ToString();
+            dtNgayPhep.Text = dtgvDSNghiPhep.Rows[i].Cells["NgayNghi"].Value.ToString();
+            txtMaNV.Text = dtgvDSNghiPhep.Rows[i].Cells["MaNV"].Value.ToString();
+            cboNV.Text = dtgvDSNghiPhep.Rows[i].Cells["HoTenNV"].Value.ToString();
+            txtSoNgayNghi.Text = dtgvDSNghiPhep.Rows[i].Cells["SoNgayNghi"].Value.ToString();
+            txtLydo.Text = dtgvDSNghiPhep.Rows[i].Cells["LyDo"].Value.ToString();
         }
 
         private void cboNV_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,6 +228,41 @@ namespace QLNS
         {
             //Khi thay đổi combobox tên NV thì textbox mã NV thay đổi theo
             txtMaNV.Text = cboNV.SelectedValue.ToString();
+        }
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+            if ((txtTimKiem.Text == "") || (txtTimKiem.Text == "Nhập thông tin tìm kiếm"))
+            {
+                MessageBox.Show("Bạn chưa nhập thông tin cần tìm", "THÔNG BÁO");
+                txtTimKiem.Focus();
+            }
+            else
+            {
+                if (radMaNV.Checked == true)
+                {
+                    string query = "select * from NhanVien where MaNV like N'%" + txtTimKiem.Text + "%'";
+                    dtgvDSNghiPhep.DataSource = DataProvider.Instance.ExcuteQuery(query);
+
+                }
+                else if (radHoTen.Checked == true)
+                {
+                    string query = "select * from NhanVien where HoTenNV like N'%" + txtTimKiem.Text + "%'";
+                    dtgvDSNghiPhep.DataSource = DataProvider.Instance.ExcuteQuery(query);
+                }
+                else
+                    MessageBox.Show("Không tìm thấy thông tin", "THÔNG BÁO");
+            }
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLydo_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
